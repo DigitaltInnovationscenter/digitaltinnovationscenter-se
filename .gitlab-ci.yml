@@ -1,0 +1,6 @@
+include:
+  # https://docs.gitlab.com/ee/user/application_security/dependency_scanning/
+  - template: Security/Dependency-Scanning.gitlab-ci.yml
+variables:
+  SECURE_LOG_LEVEL: debug
+  DS_MAX_DEPTH: 3
