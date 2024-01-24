@@ -1,0 +1,19 @@
+{
+  "name": "planeringssamtal-vr",
+  "version": "1.0.0",
+  "description": "digitaltinnovationscenter.se",
+  "main": "index.js",
+  "scripts": {
+    "build:frontend": "npm run --prefix ./frontend build && mv ./frontend/build ./build && cp ./frontend/package.json ./build && cp ./frontend/package-lock.json ./build",
+    "build:api": "npm run --prefix ./backend build",
+    "pre:build": "npm run --prefix ./backend pre:build && npm run --prefix ./frontend pre:build",
+    "_build": "npm run pre:build && npm run build:client && npm run build:server",
+    "build": "npm run build:frontend",
+    "_start": "node ./backend/build/index.js",
+    "start": "node build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
