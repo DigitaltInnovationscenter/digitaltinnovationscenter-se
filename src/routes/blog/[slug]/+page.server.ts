@@ -9,3 +9,5 @@ export const load = async ({ params }) => {
     title: post.data.attributes.title,
   };
 };
+
+export const prerender = true;
