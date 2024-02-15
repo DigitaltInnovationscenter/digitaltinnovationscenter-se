@@ -1,8 +1,8 @@
-import { env } from "$env/dynamic/private";
+import { CMS_URL, AUTH_TOKEN } from "$env/static/private";
 
 export const getPosts = async () => {
-  const res = await fetch(`${env.CMS_URL}/api/blogs`, {
-    headers: { Authorization: `Bearer ${env.AUTH_TOKEN}` },
+  const res = await fetch(`${CMS_URL}/api/blogs`, {
+    headers: { Authorization: `Bearer ${AUTH_TOKEN}` },
   });
 
   if (!res.ok) {
