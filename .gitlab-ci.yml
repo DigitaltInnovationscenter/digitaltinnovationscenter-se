@@ -1,50 +1,3 @@
-workflow:
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-      variables:
-        DEPLOY_NAME: $NAME
-    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
-      variables:
-        DEPLOY_NAME: $NAME-$CI_COMMIT_BRANCH
-
-create-webapp-branch:
-  image: mcr.microsoft.com/azure-cli
-  stage: deploy
-  environment:
-    name: $DEPLOY_NAME
-    url: $DYNAMIC_ENV_URL
-    on_stop: remove-webapp-branch
-  rules:
-    - if: $CI_COMMIT_BEFORE_SHA == "0000000000000000000000000000000000000000" && $CI_PIPELINE_SOURCE == "push"
-      when: always
-    - when: manual
-  before_script:
-    - az login --service-principal -u $AZURE_APP_ID -p $AZURE_PASSWORD --tenant $AZURE_TENANT
-    - FIXED_DEPLOY_NAME=$(echo $DEPLOY_NAME | sed -E 's/[^[:alnum:]]/-/g')
-    - echo "DYNAMIC_ENV_URL=https://$FIXED_DEPLOY_NAME.azurewebsites.net" >> deploy.env
-  script:
-    - echo Creating new webapp for branch
-    - az webapp create --resource-group $RESOURCE_GROUP --name $FIXED_DEPLOY_NAME --runtime "node:18-LTS" --plan $SERVICE_PLAN
-  artifacts:
-    reports:
-      dotenv: deploy.env
-
-remove-webapp-branch:
-  image: mcr.microsoft.com/azure-cli
-  stage: deploy
-  variables:
-    GIT_STRATEGY: none
-  environment:
-    name: $DEPLOY_NAME
-    action: stop
-  before_script:
-    - az login --service-principal -u $AZURE_APP_ID -p $AZURE_PASSWORD --tenant $AZURE_TENANT
-    - FIXED_DEPLOY_NAME=$(echo $DEPLOY_NAME | sed -E 's/\//-/g')
-  script:
-    - echo Removing webapp for branch!
-    - az webapp delete --resource-group $RESOURCE_GROUP --name $FIXED_DEPLOY_NAME
-  when: manual
-
 build:
   image: node:latest
   stage: build
@@ -60,22 +13,14 @@ deploy:
     - build
   image: mcr.microsoft.com/azure-cli
   stage: deploy
-  rules:
-    - if: $CI_COMMIT_BEFORE_SHA == "0000000000000000000000000000000000000000" && $CI_PIPELINE_SOURCE == "push"
-      when: delayed
-      start_in: 5 minutes
-    - if: $CI_COMMIT_BEFORE_SHA != "0000000000000000000000000000000000000000" && $CI_PIPELINE_SOURCE == "push"
-      when: always
+  only:
+    - main
   before_script:
     - apk add --update zip
     - echo "The service-principal is '$AZURE_APP_ID'"
     - az login --service-principal -u $AZURE_APP_ID -p $AZURE_PASSWORD --tenant $AZURE_TENANT
-    - FIXED_DEPLOY_NAME=$(echo $DEPLOY_NAME | sed -E 's/\//-/g')
   script:
-    - zip -r deploy.zip . -x ./frontend/\* -x ./api/\*
-    - az webapp stop --resource-group $RESOURCE_GROUP --name $FIXED_DEPLOY_NAME
-    - az webapp deploy --resource-group $RESOURCE_GROUP --name $FIXED_DEPLOY_NAME --src-path deploy.zip --timeout 600
-    - az webapp start --resource-group $RESOURCE_GROUP --name $FIXED_DEPLOY_NAME
+    - az storage blob upload-batch -s ./build --account-name $STORAGE_ACCOUNT_NAME -d '$web' --overwrite
 
 include:
   # https://docs.gitlab.com/ee/user/application_security/dependency_scanning/
