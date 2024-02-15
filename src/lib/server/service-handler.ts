@@ -16,9 +16,7 @@ export const getPosts = async () => {
 };
 
 export const getPost = async (id: number) => {
-  return null;
-
-  const res = await fetch(`http://localhost:1337/api/blogs/${id}`, {
+  const res = await fetch(`${CMS_URL}/api/blogs/${id}`, {
     headers: { Authorization: `Bearer ${AUTH_TOKEN}` },
   });
 

@@ -10,4 +10,4 @@ export const load = async ({ params }) => {
   };
 };
 
-export const prerender = false;
+export const prerender = true;
