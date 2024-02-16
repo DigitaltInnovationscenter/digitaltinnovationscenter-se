@@ -18,8 +18,8 @@ deploy:
   before_script:
     - apk add --update zip
     - echo "The service-principal is '$AZURE_APP_ID'"
-    - az login --service-principal -u $AZURE_APP_ID -p $AZURE_PASSWORD --tenant $AZURE_TENANT
   script:
+    - az login --service-principal -u $AZURE_APP_ID -p $AZURE_PASSWORD --tenant $AZURE_TENANT
     - az storage blob upload-batch -s ./build/ --account-name $STORAGE_ACCOUNT_NAME -d '$web' --overwrite
 
 include:
