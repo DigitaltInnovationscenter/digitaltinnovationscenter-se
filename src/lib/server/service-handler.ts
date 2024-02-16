@@ -11,7 +11,7 @@ export const getPosts = async () => {
 
   const data = await res.json();
   return data.data.map((p) => {
-    return { id: p.id, title: p.attributes.title, text: p.attributes.text };
+    return { id: p.id, title: p.attributes.header, text: p.attributes.text };
   });
 };
 

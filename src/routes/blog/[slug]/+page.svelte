@@ -3,5 +3,5 @@
   console.log(data);
 </script>
 
-<h1>{data.title}</h1>
+<h1>{data.header}</h1>
 <div>{@html data.text}</div>

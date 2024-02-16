@@ -1,31 +1,27 @@
-<script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+<script lang="ts">
+	export let data;
 </script>
 
 <svelte:head>
 	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="Digitalt Innovationscenter" />
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
+	<div class="my-4">
+		<h1 class="text-center text-3xl font-bold">Digitalt Innovationscenter</h1>
 
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+		<div class="container flex flex-col">
+			{#each data.posts as post}
+				<div class="m-4 bg-slate-300 p-4">
+					<h2 class="text-3xl">
+						<a href={`/blog/${post.id}`}>{post.title}</a>
+					</h2>
+					<p class="text-xl">{post.text}</p>
+				</div>
+			{/each}
+		</div>
+	</div>
 </section>
 
 <style>

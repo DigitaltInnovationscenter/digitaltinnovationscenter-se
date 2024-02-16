@@ -6,7 +6,7 @@ export const load = async ({ params }) => {
   return {
     id: post.data.id,
     text: post.data.attributes.text,
-    title: post.data.attributes.title,
+    header: post.data.attributes.header,
   };
 };
 
