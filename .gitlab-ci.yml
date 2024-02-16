@@ -19,7 +19,8 @@ deploy:
     - apk add --update zip
     - echo "The service-principal is '$AZURE_APP_ID'"
   script:
-    - az login --service-principal -u $AZURE_APP_ID -p $AZURE_PASSWORD --tenant $AZURE_TENANT
+    # - az login --service-principal -u $AZURE_APP_ID -p $AZURE_PASSWORD --tenant $AZURE_TENANT
+    - echo "az storage blob upload-batch -s ./build/ --account-name $STORAGE_ACCOUNT_NAME -d '$web' --overwrite --sas-token '$SAS_TOKEN'"
     - az storage blob upload-batch -s ./build/ --account-name $STORAGE_ACCOUNT_NAME -d '$web' --overwrite --sas-token '$SAS_TOKEN'
 
 include:
