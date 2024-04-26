@@ -1,9 +1,7 @@
 import { CMS_URL, AUTH_TOKEN } from "$env/static/private";
 
 export const getPosts = async () => {
-  const res = await fetch(`${CMS_URL}/api/blogs`, {
-    headers: { Authorization: `Bearer ${AUTH_TOKEN}` },
-  });
+  const res = await fetch(`${CMS_URL}/api/blogs`);
 
   if (!res.ok) {
     return [];
@@ -16,9 +14,7 @@ export const getPosts = async () => {
 };
 
 export const getPost = async (id: number) => {
-  const res = await fetch(`${CMS_URL}/api/blogs/${id}`, {
-    headers: { Authorization: `Bearer ${AUTH_TOKEN}` },
-  });
+  const res = await fetch(`${CMS_URL}/api/blogs/${id}`);
 
   if (!res.ok) {
     return null;
@@ -26,5 +22,18 @@ export const getPost = async (id: number) => {
 
   const data = await res.json();
   console.log("fetching post for id ", id);
+  return data;
+};
+
+export const getStartPage = async (id: number) => {
+  const res = await fetch(
+    `${CMS_URL}/api/landing-pages/${id}?populate[page][populate]=*`,
+  );
+
+  if (!res.ok) {
+    return null;
+  }
+
+  const data = await res.json();
   return data;
 };
