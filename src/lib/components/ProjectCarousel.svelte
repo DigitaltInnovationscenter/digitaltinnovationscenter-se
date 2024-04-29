@@ -3,7 +3,7 @@
   import LargeCard from "./LargeCard.svelte";
 </script>
 
-<div class="flex flex-col gap-10 pt-32 p-8">
+<div class="flex flex-col gap-10 pt-32">
   <Heading class="self-start text-start">
     Vår output är till för att <br /> kunskapshöja på myndigheten.</Heading
   >

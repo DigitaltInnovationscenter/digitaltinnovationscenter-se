@@ -5,7 +5,7 @@
   export let data;
 </script>
 
-<div class="flex flex-col items-start pt-32">
+<div class="flex flex-col items-start pt-32 gap-10">
   <Heading>Det här gör vi just nu</Heading>
   <div class="flex gap-10">
     <EventCard />

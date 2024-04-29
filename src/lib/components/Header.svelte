@@ -3,14 +3,14 @@
 	import logo from "$lib/images/svelte-logo.svg";
 </script>
 
-<header class="flex flex-row justify-between">
+<header class="flex flex-row justify-between px-10 py-5 bg-gray-50">
 	<a href="https://www.digitaltinnovationscenter.se">
 		<img src="https://via.placeholder.com/150x30" />
 		<!-- <img src={logo} alt="SvelteKit" /> -->
 	</a>
 
 	<nav>
-		<ul class="flex flex-row">
+		<ul class="flex flex-row gap-5">
 			<li aria-current={$page.url.pathname === "/" ? "page" : undefined}>
 				<a href="/">Start</a>
 			</li>

@@ -4,12 +4,10 @@
   export let data: any;
 </script>
 
-<div class="bg-gray-50">
-  <div class="container mx-auto flex items-center">
-    <div
-      class="flex-1 w-full justify-center flex flex-col gap-10 ml-10 items-start"
-    >
-      <h1 class="text-left text-6xl">{data.header}</h1>
+<div class="bg-gray-50 p-10">
+  <div class="container flex items-center">
+    <div class="flex-1 w-full justify-center flex flex-col gap-10 items-start">
+      <h1 class="text-left text-4xl">{data.header}</h1>
       <Button text={data.ctaText} href={data.ctaUrl} />
     </div>
     <img
