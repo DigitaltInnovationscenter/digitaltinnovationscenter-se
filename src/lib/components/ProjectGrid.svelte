@@ -1,15 +1,15 @@
 <script lang="ts">
   import Heading from "$lib/components/Heading.svelte";
-  import EventCard from "./EventCard.svelte";
+  import ProjectCard from "./ProjectCard.svelte";
 
   export let data;
 </script>
 
 <div class="flex flex-col items-start pt-32 gap-10">
-  <Heading>Det här gör vi just nu</Heading>
+  <Heading>{data.Header}</Heading>
   <div class="flex gap-10">
-    <EventCard />
-    <EventCard />
-    <EventCard />
+    {#each data.Projects as project}
+      <ProjectCard data={project} />
+    {/each}
   </div>
 </div>

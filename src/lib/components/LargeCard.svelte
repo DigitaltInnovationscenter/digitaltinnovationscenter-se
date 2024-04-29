@@ -1,20 +1,24 @@
 <script>
+  import { getContext } from "svelte";
   import Heading from "./Heading.svelte";
+
+  export let data;
+
+  const cms_url = getContext("cms_url");
 </script>
 
 <div class="bg-white rounded flex justify-between gap-10 items-center">
-  <div class="flex flex-col gap-5 items-center grow">
+  <div class="flex flex-col gap-5 items-center grow shrink basis-0">
     <div class="flex items-start gap-5 flex-col">
-      <Heading>Experiment 2033</Heading>
+      <Heading>{data.Header}</Heading>
       <p>
-        En utställning där mening möter AI i ett experiment <br /> skapat med spekulativ
-        design
+        {@html data.Description}
       </p>
     </div>
   </div>
   <img
-    src="https://via.placeholder.com/700x400"
+    src={`${cms_url}${data.Image.data.attributes.url}`}
     alt="Placeholder"
-    class="rounded-l"
+    class="rounded-l w-0 grow shrink basis-0"
   />
 </div>
