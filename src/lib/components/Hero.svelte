@@ -10,7 +10,7 @@
 </script>
 
 <div class="bg-gray-50 p-10">
-  <div class="container flex items-center">
+  <div class="container flex items-center mx-auto">
     <div class="flex-1 w-full justify-center flex flex-col gap-10 items-start">
       <h1 class="text-left text-4xl">{data.Header}</h1>
       <Button text={data.CTA.text} href={data.CTA.url} />

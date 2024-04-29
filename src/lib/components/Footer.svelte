@@ -20,7 +20,7 @@
   };
 </script>
 
-<div class="bg-gray-100 flex justify-between px-10 py-5">
+<div class="bg-gray-100 flex justify-evenly px-10 py-5">
   <div class="flex flex-col items-start gap-4">
     <img class="pb-4" src="https://via.placeholder.com/150x30" />
     <p class="max-w-[250px]">
