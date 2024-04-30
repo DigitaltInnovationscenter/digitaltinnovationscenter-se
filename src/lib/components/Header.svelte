@@ -1,11 +1,11 @@
 <script>
 	import { page } from "$app/stores";
-	import logo from "$lib/images/svelte-logo.svg";
+	import logo from "$lib/images/logo.svg";
 </script>
 
 <header class="flex flex-row justify-between px-10 py-5 bg-gray-50">
 	<a href="https://www.digitaltinnovationscenter.se">
-		<img src="https://via.placeholder.com/150x30" />
+		<img src={logo} />
 		<!-- <img src={logo} alt="SvelteKit" /> -->
 	</a>
 

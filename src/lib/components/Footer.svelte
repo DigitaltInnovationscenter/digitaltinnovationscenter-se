@@ -4,6 +4,7 @@
   import twitter from "$lib/images/twitter.svg";
   import youtube from "$lib/images/youtube.svg";
   import copy from "$lib/images/copy.svg";
+  import logo from "$lib/images/logo.svg";
 
   let copied = false;
 
@@ -22,7 +23,7 @@
 
 <div class="bg-gray-100 flex justify-evenly px-10 py-5">
   <div class="flex flex-col items-start gap-4">
-    <img class="pb-4" src="https://via.placeholder.com/150x30" />
+    <img class="pb-4" src={logo} />
     <p class="max-w-[250px]">
       Har du några funderingar? Du får gärna kontakta oss! Det gör du via mejlen
       nedanför.
