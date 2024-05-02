@@ -5,9 +5,9 @@
   export let data;
 </script>
 
-<div class="flex flex-col items-start pt-32 gap-10">
+<div class="flex flex-col items-center md:items-start pt-32 gap-10">
   <Heading>{data.Header}</Heading>
-  <div class="flex gap-10">
+  <div class="flex gap-10 flex-col md:flex-row items-center">
     {#each data.Projects as project}
       <ProjectCard data={project} />
     {/each}

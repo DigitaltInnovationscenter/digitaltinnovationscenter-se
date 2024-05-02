@@ -7,7 +7,7 @@
 
 <div class="flex gap-10 flex-col items-start pt-64 pb-32">
   <Heading>{data.Header}</Heading>
-  <div class="flex gap-10">
+  <div class="flex gap-10 flex-col md:flex-row">
     {#each data.Cards as card}
       <Card data={card} />
     {/each}
