@@ -27,7 +27,7 @@ export const getPost = async (id: number) => {
 
 export const getStartPage = async (id: number) => {
   const res = await fetch(
-    `${CMS_URL}/api/landing-pages/${id}?populate=deep`,
+    `${CMS_URL}/api/landing-pages/${id}?populate=deep`
     // `${CMS_URL}/api/landing-pages/${id}?populate[page][populate]=*`,
   );
 
