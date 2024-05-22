@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import behanch from "$lib/images/behanch.svg";
   import facebook from "$lib/images/facebook.svg";
   import twitter from "$lib/images/twitter.svg";
@@ -8,7 +8,7 @@
 
   let copied = false;
 
-  const copyMailToClipboard = (e) => {
+  const copyMailToClipboard = (e: any) => {
     e.preventDefault();
     const mail = "info@digitaltinnovationscenter.se";
     navigator.clipboard.writeText(mail);
@@ -21,7 +21,7 @@
   };
 </script>
 
-<div class="bg-gray-100 flex justify-evenly px-10 py-5">
+<div class="bg-[#eeeeee] flex justify-evenly px-10 py-20">
   <div class="flex flex-col items-start gap-4">
     <img class="pb-4" src={logo} />
     <p class="max-w-[250px]">
