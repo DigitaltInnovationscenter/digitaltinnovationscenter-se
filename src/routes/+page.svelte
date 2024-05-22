@@ -1,8 +1,6 @@
 <script lang="ts">
   import CardGrid from "$lib/components/CardGrid.svelte";
   import Container from "$lib/components/Container.svelte";
-  import Footer from "$lib/components/Footer.svelte";
-  import Header from "$lib/components/Header.svelte";
   import Hero from "$lib/components/Hero.svelte";
   import ProjectCarousel from "$lib/components/ProjectCarousel.svelte";
   import ProjectGrid from "$lib/components/ProjectGrid.svelte";
@@ -15,7 +13,6 @@
   console.log(data);
 </script>
 
-<Header />
 <div class="flex flex-col">
   {#each data.pages as page}
     {#if page.__component == "block.hero"}
@@ -35,4 +32,3 @@
     {/if}
   {/each}
 </div>
-<Footer />
