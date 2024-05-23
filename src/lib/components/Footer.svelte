@@ -65,7 +65,9 @@
 <div class="bg-[#eeeeee]">
   <div class="flex justify-between max-w-[1366px] w-full m-auto px-10 py-20">
     <div class="flex flex-col items-start gap-4">
-      <img class="pb-4" src={logo} alt="logotype" />
+      <a href="/">
+        <img class="pb-4" src={logo} alt="logotype" />
+      </a>
       <p class="max-w-[250px]">
         Har du några funderingar? Du får gärna kontakta oss! Det gör du via
         mejlen nedanför.

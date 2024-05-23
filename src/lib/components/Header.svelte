@@ -28,7 +28,7 @@
   <div
     class="px-10 py-6 max-w-[1366px] w-full flex flex-row justify-between m-auto"
   >
-    <a href="https://www.digitaltinnovationscenter.se">
+    <a href="/">
       <img src={logo} alt="logotype" />
     </a>
 
