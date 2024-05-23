@@ -1,4 +1,4 @@
-import { CMS_URL, AUTH_TOKEN } from "$env/static/private";
+import { CMS_URL } from "$env/static/private";
 
 export const getPosts = async () => {
   const res = await fetch(`${CMS_URL}/api/blogs`);

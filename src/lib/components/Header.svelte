@@ -1,29 +1,54 @@
 <script>
   import { page } from "$app/stores";
   import logo from "$lib/images/logo.svg";
+
+  const links = [
+    {
+      name: "Start",
+      path: "/",
+    },
+    {
+      name: "Om oss",
+      path: "/about",
+    },
+    {
+      name: "Projekt",
+      path: "/projects",
+    },
+    {
+      name: "Nyheter",
+      path: "/news",
+    },
+  ];
+
+  $: route = $page.route.id;
 </script>
 
-<header class="flex flex-row justify-between px-10 py-6 bg-gray-50">
-  <a href="https://www.digitaltinnovationscenter.se">
-    <img src={logo} />
-  </a>
+<header class="bg-gray-50">
+  <div
+    class="px-10 py-6 max-w-[1366px] w-full flex flex-row justify-between m-auto"
+  >
+    <a href="https://www.digitaltinnovationscenter.se">
+      <img src={logo} alt="logotype" />
+    </a>
 
-  <nav class="flex items-center">
-    <ul class="flex flex-row space-x-16">
-      <li aria-current={$page.url.pathname === "/" ? "page" : undefined}>
-        <a href="/">Start</a>
-      </li>
-      <li aria-current={$page.url.pathname === "/about/" ? "page" : undefined}>
-        <a href="/about">Om oss</a>
-      </li>
-      <li
-        aria-current={$page.url.pathname === "/projects/" ? "page" : undefined}
-      >
-        <a href="/projects">Projekt</a>
-      </li>
-      <li aria-current={$page.url.pathname === "/news/" ? "page" : undefined}>
-        <a href="/news">Nyheter</a>
-      </li>
-    </ul>
-  </nav>
+    <nav class="flex items-center">
+      <ul class="flex flex-row space-x-16">
+        {#each links as link}
+          <li
+            aria-current={route === link.path ? "page" : undefined}
+            class:active={route === link.path}
+          >
+            <a href={link.path}>{link.name}</a>
+          </li>
+        {/each}
+      </ul>
+    </nav>
+  </div>
 </header>
+
+<style>
+  .active {
+    font-weight: bold;
+  }
+</style>
