@@ -1,20 +1,28 @@
 <script lang="ts">
-  import CardGrid from "$lib/components/CardGrid.svelte";
-  import Container from "$lib/components/Container.svelte";
-  import Hero from "$lib/components/Hero.svelte";
-  import ProjectCarousel from "$lib/components/ProjectCarousel.svelte";
-  import ProjectGrid from "$lib/components/ProjectGrid.svelte";
-  import { setContext } from "svelte";
+  // import CardGrid from "$lib/components/CardGrid.svelte";
+  // import Container from "$lib/components/Container.svelte";
+  // import Hero from "$lib/components/Hero.svelte";
+  // import ProjectCarousel from "$lib/components/ProjectCarousel.svelte";
+  // import ProjectGrid from "$lib/components/ProjectGrid.svelte";
+  // import { setContext } from "svelte";
+  import ActiveProjects from "$lib/components/start/ActiveProjects.svelte";
+  import Explorative from "$lib/components/start/Explorative.svelte";
+  import Hero from "$lib/components/start/Hero.svelte";
+  import ProjectSwiper from "$lib/components/start/ProjectSwiper.svelte";
 
-  export let data;
+  // export let data;
 
-  setContext("cms_url", data.cms_url);
+  // setContext("cms_url", data.cms_url);
 
-  console.log(data);
+  // console.log(data);
 </script>
 
 <div class="flex flex-col">
-  {#each data.pages as page}
+  <Hero />
+  <ProjectSwiper />
+  <Explorative />
+  <ActiveProjects />
+  <!-- {#each data.pages as page}
     {#if page.__component == "block.hero"}
       <Hero data={page} />
     {:else if page.__component == "block.project-carousel"}
@@ -30,5 +38,5 @@
         <ProjectGrid data={page} />
       </Container>
     {/if}
-  {/each}
+  {/each} -->
 </div>
