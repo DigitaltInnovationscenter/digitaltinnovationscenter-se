@@ -1,35 +1,10 @@
 <script lang="ts">
-  import img from "$lib/images/0_3 34.png";
   import { onMount } from "svelte";
 
-  const projects = [
-    {
-      header: "Experiment 2033",
-      content:
-        "En utställning där mening möter AI i ett experiment skapat med spekulativ design.",
-      img: img,
-    },
-    {
-      header: "Experiment 2033",
-      content:
-        "En utställning där mening möter AI i ett experiment skapat med spekulativ design.",
-      img: img,
-    },
-    {
-      header: "Experiment 2033",
-      content:
-        "En utställning där mening möter AI i ett experiment skapat med spekulativ design.",
-      img: img,
-    },
-    {
-      header: "Experiment 2033",
-      content:
-        "En utställning där mening möter AI i ett experiment skapat med spekulativ design.",
-      img: img,
-    },
-  ];
+  export let data;
 
   let Swiper: any;
+
   onMount(async () => {
     const module = await import("./Swiper.svelte");
     Swiper = module.default;
@@ -41,11 +16,11 @@
     <div class="max-w-[1280px] w-full m-auto py-24 space-y-20">
       <div class="w-full max-w-[900px]">
         <h3 class="text-6xl font-bold text-slate-800">
-          Vår output är till för att kunskapshöja på myndigheten.
+          {data.Header}
         </h3>
       </div>
       <div class="relative">
-        <svelte:component this={Swiper} {projects} />
+        <svelte:component this={Swiper} {data} />
       </div>
     </div>
   </div>

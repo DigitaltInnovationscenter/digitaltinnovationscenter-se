@@ -1,8 +1,9 @@
 <script lang="ts">
   import { ArrowLeft, ArrowRight, ArrowUp, Icon } from "svelte-hero-icons";
   import { register } from "swiper/element/bundle";
+  import { PUBLIC_CMS_URL } from "$env/static/public";
 
-  export let projects: any = [];
+  export let data: any = [];
 
   register();
 
@@ -43,25 +44,25 @@
     loop="true"
     class="rounded-3xl overflow-hidden shadow-lg"
   >
-    {#each projects as project}
+    {#each data.Projects as project}
       <swiper-slide class="cursor-pointer swiper-slide-card">
         <div
           class="w-full aspect-[3.1/1] bg-white grid grid-cols-2 gap-4 overflow-hidden"
         >
           <div class="flex flex-col items-start justify-center p-16 space-y-4">
             <h4 class="text-5xl font-bold text-left text-slate-800">
-              {project.header}
+              {project.Header}
             </h4>
-            <p class="text-slate-800 text-left text-lg pr-12">
-              {project.content}
+            <p class="text-gray-600 text-left text-lg pr-12">
+              {project.Description}
             </p>
           </div>
           <div class="relative">
             <!-- svelte-ignore a11y-img-redundant-alt -->
             <img
-              src={project.img}
+              src={PUBLIC_CMS_URL + project.Image.data.attributes.url}
               alt="project-image"
-              class="absolute right-0 top-0 h-full"
+              class="absolute right-0 top-0 h-full w-full"
             />
             <div
               class="absolute flex items-center justify-center right-0 top-0 h-full w-0 backdrop-blur-sm transition-all figure-block-effect"

@@ -1,14 +1,20 @@
-import { CMS_URL } from "$env/static/private";
 import { getStartPage } from "$lib/server/service-handler";
+import { PUBLIC_CMS_URL } from "$env/static/public";
 
 export const load = async ({ params }) => {
-  // const startPage = await getStartPage(1);
-  // console.log("startPage", startPage);
+  const landingPageResponse: Response = await fetch(
+    `${PUBLIC_CMS_URL}/api/landing-pages/1?populate=deep`
+  );
 
-  // const pages = startPage.data.attributes.page;
+  let pages;
 
-  // return { pages, cms_url: CMS_URL };
-  return { cms_url: CMS_URL };
+  if (landingPageResponse.ok) {
+    const result: any = await landingPageResponse.json();
+
+    pages = result.data.attributes.page;
+  }
+
+  return { pages, cms_url: PUBLIC_CMS_URL };
 };
 
 export const prerender = true;

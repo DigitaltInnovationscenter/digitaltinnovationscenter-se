@@ -1,21 +1,23 @@
 <script lang="ts">
   import { Icon, ArrowRight, ArrowUp } from "svelte-hero-icons";
+
+  export let data;
 </script>
 
 <div
-  class="h-full max-h-[800px] bg-slate-800 w-full gradient-animation relative"
+  class="h-full max-h-screen bg-slate-800 w-full gradient-animation relative"
 >
   <div class="h-full w-full flex items-center pb-24 absolute top-0 left-0 z-50">
     <div
       class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-start space-y-8"
     >
       <h6 class="font-bold text-7xl text-white pr-64 leading-snug font-serif">
-        Vi jobbar utforskande med innovation för att forma framtidens lösningar.
+        {data.Header}
       </h6>
       <a
-        href="/about"
-        class="left py-3 px-8 bg-white rounded-full text-[#9B4AFF] flex flex-row items-center"
-        >Läs mer om hur vi jobbar
+        href={data.CTA.url}
+        class="left py-3 px-8 bg-white rounded-full text-[#9B4AFF] flex flex-row items-center shadow-lg"
+        >{data.CTA.text}
         <span class="rotate-90 ml-4">
           <Icon src={ArrowUp} class="w-6 animate-bounce" />
         </span>
