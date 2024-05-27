@@ -6,9 +6,6 @@
   import ProjectSwiper from "$lib/components/start/ProjectSwiper.svelte";
 
   export let data;
-
-  $: console.log(data);
-
   setContext("cms_url", data.cms_url);
 </script>
 
