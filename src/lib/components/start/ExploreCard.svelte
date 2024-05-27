@@ -2,7 +2,7 @@
   export let data: any = [];
 </script>
 
-<div class="p-6 bg-white flex flex-col rounded-2xl shadow-lg">
+<div class="p-8 bg-white flex flex-col rounded-2xl shadow-lg">
   <div class="grow">
     <a
       href="/"
