@@ -5,11 +5,13 @@
 </script>
 
 <div
-  class="h-full max-h-screen bg-slate-800 w-full gradient-animation relative"
+  class="h-full min-h-[800px] max-h-screen bg-slate-800 w-full gradient-animation relative"
 >
-  <div class="h-full w-full flex items-center pb-24 absolute top-0 left-0 z-50">
+  <div
+    class="h-full w-full flex items-center pb-24 absolute top-0 left-0 z-50 pt-[45px]"
+  >
     <div
-      class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-start space-y-8"
+      class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-start space-y-12"
     >
       <h6 class="font-bold text-7xl text-white pr-64 leading-snug font-serif">
         {data.Header}
