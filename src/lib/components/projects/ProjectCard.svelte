@@ -4,7 +4,10 @@
 </script>
 
 {#if data}
-  <div class="bg-white flex flex-col rounded-2xl shadow-lg overflow-hidden">
+  <a
+    href="/"
+    class="bg-white flex flex-col rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden"
+  >
     <div class="grow">
       <div style="aspect-ratio: 1.7/1;" class="overflow-hidden relative">
         <!-- svelte-ignore a11y-img-redundant-alt -->
@@ -34,5 +37,5 @@
         >
       {/if}
     </div>
-  </div>
+  </a>
 {/if}

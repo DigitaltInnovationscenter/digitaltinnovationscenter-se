@@ -1,5 +1,4 @@
 <script lang="ts">
-  import img from "$lib/images/0_3 5.png";
   import { formatDate } from "$lib/assets/helperFunctions";
   import { PUBLIC_CMS_URL } from "$env/static/public";
 
