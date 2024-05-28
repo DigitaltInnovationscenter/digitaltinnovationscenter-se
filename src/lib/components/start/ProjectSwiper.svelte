@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import Container from "../shared/Container.svelte";
 
   export let data;
 
@@ -11,20 +12,18 @@
   });
 </script>
 
-<div class="w-full bg-white">
-  <div class="w-full bg-[#eeeeee]">
-    <div class="max-w-[1280px] w-full m-auto py-24 space-y-20">
-      <div class="w-full max-w-[900px]">
-        <h3 class="text-6xl font-bold text-slate-800">
-          {data.Header}
-        </h3>
-      </div>
-      <div class="relative">
-        <svelte:component this={Swiper} {data} />
-      </div>
+<Container backgroundColor="bg-[#eeeeee]" rounded={false}>
+  <div class="max-w-[1280px] w-full m-auto space-y-20">
+    <div class="w-full max-w-[900px]">
+      <h3 class="text-6xl font-bold text-slate-800">
+        {data.Header}
+      </h3>
+    </div>
+    <div class="relative">
+      <svelte:component this={Swiper} {data} />
     </div>
   </div>
-</div>
+</Container>
 
 <style>
   html,

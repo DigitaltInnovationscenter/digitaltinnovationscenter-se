@@ -1,11 +1,11 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import ActiveProjects from "$lib/components/start/ActiveProjects.svelte";
   import Explorative from "$lib/components/start/Explorative.svelte";
   import Hero from "$lib/components/start/Hero.svelte";
   import ProjectSwiper from "$lib/components/start/ProjectSwiper.svelte";
-
+  import NewsOverview from "$lib/components/shared/NewsOverview.svelte";
   export let data;
+
   setContext("cms_url", data.cms_url);
 </script>
 
@@ -18,7 +18,7 @@
     {:else if page.__component == "block.card-grid"}
       <Explorative data={page} />
     {:else if page.__component == "block.project-grid"}
-      <ActiveProjects data={page} />
+      <NewsOverview data={page} />
     {/if}
   {/each}
 </div>

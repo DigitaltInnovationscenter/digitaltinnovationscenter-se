@@ -15,7 +15,7 @@
       <div>
         <h2 class="text-center text-[41px] font-light">
           <span class="text-gray-600"
-            >Hur vi jobbar med <span
+            >Arbetsförmedlingen jobbar med <span
               class="underline decoration-4 underline-offset-8">innovation</span
             ></span
           ><span class="text-[#7EC13D]">*</span>
