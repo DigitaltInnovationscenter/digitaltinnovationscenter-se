@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Hero from "$lib/components/projects/Hero.svelte";
+  import Hero from "$lib/components/shared/Hero.svelte";
   import OurTech from "$lib/components/projects/OurTech.svelte";
   import ProjectHighlight from "$lib/components/projects/ProjectHighlight.svelte";
   import ProjectsOverview from "$lib/components/projects/ProjectsOverview.svelte";

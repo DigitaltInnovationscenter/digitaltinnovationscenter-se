@@ -2,7 +2,10 @@
   export let data: any = [];
 </script>
 
-<div class="p-8 bg-white flex flex-col rounded-2xl shadow-lg">
+<a
+  href="/"
+  class="p-8 bg-white flex flex-col rounded-2xl shadow-lg hover:shadow-xl transition"
+>
   <div class="grow">
     <a
       href="/"
@@ -20,4 +23,4 @@
       >{data.Button.text}</a
     >
   </div>
-</div>
+</a>

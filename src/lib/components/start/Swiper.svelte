@@ -42,7 +42,7 @@
   <swiper-container
     bind:this={swiperContainer}
     loop="true"
-    class="rounded-3xl overflow-hidden shadow-lg"
+    class="rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition"
   >
     {#each data.Projects as project}
       <swiper-slide class="cursor-pointer swiper-slide-card">
