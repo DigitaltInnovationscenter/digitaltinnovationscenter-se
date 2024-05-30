@@ -6,20 +6,24 @@
   import bulbBottom from "$lib/images/bulbBottom.svg";
   import logotypeSvg from "$lib/images/af-logotype.svg";
   import Container from "../shared/Container.svelte";
+  import Hero from "../shared/Hero.svelte";
 
   let bulbSection: null | string = null;
 </script>
 
 <Container backgroundColor="bg-[#eee]" foreGroundColor="bg-white">
-  <div class="max-w-[1280px] m-auto space-y-20 flex flex-col">
+  <div class="max-w-[1362px] m-auto space-y-20 flex flex-col">
     <div>
-      <h2 class="text-center text-[41px] font-light">
-        <span class="text-gray-600"
-          >Arbetsförmedlingen jobbar med <span
-            class="underline decoration-4 underline-offset-8">innovation</span
-          ></span
-        ><span class="text-[#7EC13D]">*</span>
-      </h2>
+      <Hero
+        suffix="*"
+        bgColor="bg-white"
+        data={{
+          SubHeader: "Vår innovationsmodell",
+          MainHeader: "Hur Arbetsförmedlingen jobbar med innovation",
+          Description:
+            "Arbetsförmedlingen har tagit fram en modell för att visualisera hur man kan jobba med innovation på olika nivåer. Man kan både utveckla våra nuvarande arbetssätt och tjänster, samtidigt som man kan skapa nytt. Innovationscenter jobbar främst i horisont 2 och 3.",
+        }}
+      />
     </div>
     <div class="grid grid-cols-6 gap-2">
       <div class="grid grid-rows-2 grid-flow-col gap-48">

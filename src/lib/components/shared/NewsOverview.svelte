@@ -2,12 +2,15 @@
   import Container from "./Container.svelte";
   import NewsCard from "./NewsCard.svelte";
 
-  export let headerType: "simple" | "extra" = "simple";
+  export let headerType: "simple" | "extra" | null = "simple";
   export let data: any = [];
+
+  export let bgColor = "bg-[#eeeeee]";
+  export let fgColor = "bg-white";
 </script>
 
-<Container backgroundColor="bg-[#eeeeee]" foreGroundColor="bg-white">
-  <div class="max-w-[1280px] w-full m-auto space-y-20">
+<Container backgroundColor={bgColor} foreGroundColor={fgColor}>
+  <div class="max-w-[1362px] w-full m-auto space-y-20">
     {#if headerType === "simple"}
       <div class="w-full text-left">
         <h3 class="text-6xl font-bold text-slate-800">
@@ -30,8 +33,10 @@
           vi har byggt våra moduler.
         </p>
       </div>
+    {:else if headerType === null}
+      <!-- No Header -->
     {/if}
-    <div class="grid grid-cols-3 gap-6">
+    <div class="grid grid-cols-3 gap-8">
       {#each data.Projects as card}
         <NewsCard data={card} />
       {/each}

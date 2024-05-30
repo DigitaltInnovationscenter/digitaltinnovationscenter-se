@@ -71,7 +71,7 @@
 >
   {#if showHeader}
     <div
-      class="absolute top-[18%] text-6xl font-bold w-full max-w-[1280px] m-auto text-left"
+      class="absolute top-[18%] text-6xl font-bold w-full max-w-[1362px] m-auto text-left"
     >
       <span transition:fade={{ delay: 0, duration: 150 }}>{data.header}</span>
     </div>

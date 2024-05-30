@@ -7,7 +7,7 @@
 </script>
 
 <Container foreGroundColor="bg-[#eeeeee]" rounded={false}>
-  <div class="max-w-[1280px] w-full m-auto space-y-20">
+  <div class="max-w-[1362px] w-full m-auto space-y-20">
     <div class="w-full text-center">
       <h3 class="text-6xl font-bold text-slate-800">
         {data.Header}

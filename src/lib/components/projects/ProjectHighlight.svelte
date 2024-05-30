@@ -88,7 +88,7 @@
 {#if browser}
   <div class="w-full bg-[#F9FAFB]">
     <div class="w-full bg-[#eeeeee] py-32 rounded-t-[50px]">
-      <div class="max-w-[1280px] w-full m-auto py-18 space-y-14">
+      <div class="max-w-[1362px] w-full m-auto py-18 space-y-14">
         <div
           class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-center space-y-10"
         >

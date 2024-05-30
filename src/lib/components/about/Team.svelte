@@ -14,7 +14,7 @@
 </script>
 
 <Container backgroundColor="bg-white" foreGroundColor="bg-[#eeeeee]">
-  <div class="max-w-[1280px] m-auto space-y-12">
+  <div class="max-w-[1362px] m-auto space-y-12">
     <h3 class="text-6xl font-bold">{data.header}</h3>
     <div class="grid grid-cols-5 gap-10">
       {#each data.content as member}

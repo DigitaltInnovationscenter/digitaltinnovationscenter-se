@@ -7,7 +7,7 @@
 
 <div class="w-full bg-white">
   <div class="w-full bg-gray-50 py-10 rounded-t-[50px]">
-    <div class="max-w-[1280px] w-full m-auto py-48 space-y-20">
+    <div class="max-w-[1362px] w-full m-auto py-48 space-y-20">
       <div
         class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-center"
       >

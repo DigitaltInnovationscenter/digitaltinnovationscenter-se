@@ -5,14 +5,14 @@
 </script>
 
 <div
-  class="p-4 hover:bg-gray-100 transition rounded-2xl flex flex-col cursor-pointer"
+  class="p-4 hover:bg-gray-100 transition rounded-2xl flex flex-col cursor-pointer relative top-0 hover:-top-4 transition-all duration-300"
 >
   <div class="grow">
     <!-- svelte-ignore a11y-img-redundant-alt -->
-    <div class="aspect-[1.68/1] overflow-hidden mb-6 rounded-xl">
+    <div class="aspect-[1.68/1] overflow-hidden mb-6 rounded-xl relative">
       <img
         src={PUBLIC_CMS_URL + data.Image.data.attributes.url}
-        class="w-full h-full"
+        class="min-w-full min-h-full absolute absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
         alt="image"
       />
     </div>
