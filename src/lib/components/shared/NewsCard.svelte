@@ -5,7 +5,7 @@
 </script>
 
 <div
-  class="p-4 hover:bg-gray-100 transition rounded-2xl flex flex-col cursor-pointer relative top-0 hover:-top-4 transition-all duration-300"
+  class="p-4 hover:bg-gray-100 transition rounded-2xl flex flex-col cursor-pointer relative top-0 hover:-top-4 transition-all duration-300 delay-100"
 >
   <div class="grow">
     <!-- svelte-ignore a11y-img-redundant-alt -->

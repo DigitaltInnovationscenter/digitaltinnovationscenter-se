@@ -67,7 +67,7 @@
 </script>
 
 <div
-  class="h-[1000px] w-full m-auto flex flex-col items-center justify-center relative mb-28"
+  class="h-[1000px] w-full m-auto flex flex-col items-center justify-center relative my-28"
 >
   {#if showHeader}
     <div

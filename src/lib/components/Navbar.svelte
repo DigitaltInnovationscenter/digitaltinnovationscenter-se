@@ -25,9 +25,7 @@
 </script>
 
 <header class="bg-white/75 fixed w-full top-0 z-[100]">
-  <div
-    class="px-10 py-6 max-w-[1366px] w-full flex flex-row justify-between m-auto"
-  >
+  <div class="py-6 max-w-[1366px] w-full flex flex-row justify-between m-auto">
     <a href="/">
       <img src={logo} alt="logotype" />
     </a>

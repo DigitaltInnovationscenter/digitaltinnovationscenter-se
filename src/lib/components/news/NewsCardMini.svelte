@@ -5,7 +5,7 @@
 </script>
 
 <div
-  class="flex flex-row space-x-4 p-3 hover:bg-gray-100 transition rounded-xl cursor-pointer relative top-0 hover:-top-2 transition-all duration-300"
+  class="flex flex-row space-x-4 p-3 hover:bg-gray-100 transition rounded-xl cursor-pointer relative top-0 hover:-top-2 transition-all duration-300 delay-100"
 >
   <div
     class="aspect-square min-w-[80px] h-[80px] bg-neutral-50 relative rounded-lg overflow-hidden"

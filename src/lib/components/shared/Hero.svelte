@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { Icon, ArrowRight, ArrowUp } from "svelte-hero-icons";
-
   export let data;
   export let bgColor: string = "bg-[#F9FAFB]";
   export let suffix: string = "";

@@ -8,7 +8,7 @@
 </script>
 
 {#each data.pages as page}
-  {#if page.__component == "block.project-hero"}
+  {#if page.__component == "block.text-hero"}
     <Hero data={page} />
   {:else if page.__component == "block.project-group"}
     <ProjectHighlight data={page.Project[0]} />

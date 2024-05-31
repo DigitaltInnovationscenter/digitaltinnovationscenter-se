@@ -23,9 +23,11 @@
           class="hover:underline text-2xl font-semibold mb-4 text-[#9B4AFF]"
           >{data.MainHeader}</a
         >
-        <p class="my-4 text-gray-600">
-          {data.RRT[0].Content}
-        </p>
+        {#if data.RRT && data.RRT[0]}
+          <p class="my-4 text-gray-600">
+            {data.RRT[0].Content}
+          </p>
+        {/if}
       </div>
     </div>
     <div class="px-8 pb-8">
