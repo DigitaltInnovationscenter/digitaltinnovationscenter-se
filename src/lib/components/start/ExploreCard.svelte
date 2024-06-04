@@ -12,15 +12,13 @@
       class="hover:underline text-2xl font-semibold mb-4 text-[#9B4AFF]"
       >{data.Header}</a
     >
-    <p class="mb-8 mt-4 text-gray-600">
-      {data.Body}
+    <p class="mb-16 mt-4 text-gray-600">
+      {data.Content}
     </p>
-  </div>
-  <div>
     <a
-      href={data.Button.url}
+      href="/"
       class="rounded-full bg-[#9B4AFF] text-white py-3 px-6 transition hover:opacity-75"
-      >{data.Button.text}</a
+      >Läs mer</a
     >
   </div>
 </a>

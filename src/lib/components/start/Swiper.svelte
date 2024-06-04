@@ -2,6 +2,7 @@
   import { ArrowLeft, ArrowRight, ArrowUp, Icon } from "svelte-hero-icons";
   import { register } from "swiper/element/bundle";
   import { PUBLIC_CMS_URL } from "$env/static/public";
+  // import Button from "../Button.svelte";
 
   export let data: any = [];
 
@@ -42,25 +43,26 @@
   <swiper-container
     bind:this={swiperContainer}
     loop="true"
-    class="rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition"
+    class="rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
   >
-    {#each data.Projects as project}
+    {#each data.projects.data as project}
       <swiper-slide class="cursor-pointer swiper-slide-card">
         <div
           class="w-full aspect-[3.1/1] bg-white grid grid-cols-2 gap-4 overflow-hidden"
         >
           <div class="flex flex-col items-start justify-center p-16 space-y-4">
             <h4 class="text-5xl font-bold text-left text-slate-800">
-              {project.Header}
+              {project.attributes.MainHeader}
             </h4>
             <p class="text-gray-600 text-left text-lg pr-12">
-              {project.Description}
+              {project.attributes.RepeatableRichText[0].Content}
             </p>
           </div>
           <div class="relative">
             <!-- svelte-ignore a11y-img-redundant-alt -->
             <img
-              src={PUBLIC_CMS_URL + project.Image.data.attributes.url}
+              src={PUBLIC_CMS_URL +
+                project.attributes.Banner.data[0].attributes.url}
               alt="project-image"
               class="absolute right-0 top-0 h-full w-full"
             />

@@ -14,20 +14,20 @@
       </h3>
     </div>
     <div class="grid grid-cols-3 gap-10">
-      {#each data.Cards as card}
+      {#each data.TechCard as card}
         <ExploreCard data={card} />
       {/each}
     </div>
     <div class="w-full text-center text-[#9B4AFF]">
-      <a
-        href="/"
-        class="flex items-center justify-center transition hover:opacity-50 font-semibold"
-      >
-        Dokumentation av utveckling <Icon
-          src={ArrowTopRightOnSquare}
-          class="w-6 h-6 inline ml-2"
-        />
-      </a>
+      {#if data.CTA && data.CTA[0]}
+        <a
+          href={data.CTA[0].url}
+          class="flex items-center justify-center transition hover:opacity-50 font-semibold"
+        >
+          {data.CTA[0].text}
+          <Icon src={ArrowTopRightOnSquare} class="w-6 h-6 inline ml-2" />
+        </a>
+      {/if}
     </div>
   </div>
 </Container>

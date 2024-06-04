@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { Icon, ArrowRight, ArrowUp } from "svelte-hero-icons";
-
+  import { Icon, ArrowUp } from "svelte-hero-icons";
   export let data;
 </script>
 
@@ -14,16 +13,20 @@
       class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-start space-y-12"
     >
       <h6 class="font-bold text-7xl text-white pr-64 leading-snug font-serif">
-        {data.Header}
+        {data.MainHeader}
       </h6>
-      <a
-        href={data.CTA.url}
-        class="left py-3 px-8 bg-white rounded-full text-[#9B4AFF] flex flex-row items-center shadow-lg"
-        >{data.CTA.text}
-        <span class="rotate-90 ml-4">
-          <Icon src={ArrowUp} class="w-6 animate-bounce" />
-        </span>
-      </a>
+      {#if data.CTA && data.CTA.length > 0}
+        {#each data.CTA as btn}
+          <a
+            href={btn.url}
+            class="left py-3 px-8 bg-white rounded-full text-[#9B4AFF] flex flex-row items-center shadow-lg"
+            >{btn.text}
+            <span class="rotate-90 ml-4">
+              <Icon src={ArrowUp} class="w-6 animate-bounce" />
+            </span>
+          </a>
+        {/each}
+      {/if}
     </div>
   </div>
   <div class="w-full h-full opacity-50 backdrop-blur-sm">
