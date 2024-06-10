@@ -50,7 +50,7 @@
           </h3>
           <p class="text-center text-sm text-gray-500">
             Upprätthålla tjänster och se till att allt fungerar. Vi rättar fel
-            genom att behandla symptom och inte orsaken
+            genom att behandla symptom och inte orsaken.
           </p>
         </div>
         <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -71,13 +71,17 @@
           >
             Horisont <span
               class="bg-[#7EC13D] text-white w-12 h-12 flex items-center justify-center ml-3 text-3xl rounded-full block font-semibold"
-              >3</span
+              >3<span class="relative"
+                ><span class="absolute -top-11 -right-8 text-6xl text-[#C88AFF]"
+                  >*</span
+                ></span
+              ></span
             >
           </h3>
           <p class="text-center text-sm text-gray-500">
             Ta sig an utmaningar som inte kan lösas genom att optimera eller
             förbättra. Genom att utforska, experimentera och testa kan man visa
-            på möjligheter och inspirera
+            på möjligheter och inspirera.
           </p>
         </div>
       </div>
@@ -343,7 +347,11 @@
           >
             Horisont <span
               class="bg-[#060693] text-white w-12 h-12 flex items-center justify-center ml-3 text-3xl rounded-full block font-semibold"
-              >2</span
+              >2<span class="relative"
+                ><span class="absolute -top-11 -right-8 text-6xl text-[#C88AFF]"
+                  >*</span
+                ></span
+              ></span
             >
           </h3>
           <p class="text-center text-sm text-gray-500">
@@ -353,12 +361,22 @@
           </p>
         </div>
       </div>
-      <div class="col-span-6 py-12 text-center text-lg w-[400px] m-auto">
-        <span class="text-[#7EC13D]">*</span><span
-          class="text-gray-500 font-light"
-          >Värdeskapande utveckling för att framtidssäkra och problemlösa
-          effektivt och långsiktigt</span
-        >
+      <div
+        class="col-span-6 pt-12 text-center text-lg w-[400px] m-auto space-y-24"
+      >
+        <div>
+          <span class="text-[#7EC13D]">*</span><span
+            class="text-gray-500 font-light"
+            >Värdeskapande utveckling för att framtidssäkra och problemlösa
+            effektivt och långsiktigt</span
+          >
+        </div>
+        <div>
+          <span class="text-[#C88AFF]">*</span><span
+            class="text-gray-500 font-light"
+            >Vi jobbar i den här horisonten.</span
+          >
+        </div>
       </div>
     </div>
   </div>

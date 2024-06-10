@@ -18,7 +18,7 @@
     {:else if page.__component == "block.tech-group"}
       <Explorative data={page} />
     {:else if page.__component == "block.section-post"}
-      <NewsOverview data={page} headerType="simple" />
+      <NewsOverview data={page.posts.data} headerType="simple" />
     {/if}
   {/each}
 </div>
