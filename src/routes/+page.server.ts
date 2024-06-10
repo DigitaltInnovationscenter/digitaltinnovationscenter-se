@@ -13,7 +13,26 @@ export const load = async ({ params }) => {
     pages = [...result.data.attributes.DynamicPage];
   }
 
-  console.log(pages);
+  let sectionPost = pages?.find(
+    ({ __component }) => __component === "block.section-post"
+  );
+
+  /**
+   * The purpose of having an empty section-post array is to tell the system to retrieve the latest
+   */
+  if (sectionPost && sectionPost.posts.data.length === 0) {
+    const latestPostsResponse = await fetch(
+      "http://localhost:1337/api/posts?populate=deep",
+      {
+        method: "GET",
+      }
+    );
+
+    if (latestPostsResponse.ok) {
+      const result = await latestPostsResponse.json();
+      sectionPost.posts.data = result.data.reverse().slice(0, 3);
+    }
+  }
 
   return { pages, cms_url: PUBLIC_CMS_URL };
 };

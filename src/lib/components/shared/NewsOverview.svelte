@@ -37,9 +37,11 @@
       <!-- No Header -->
     {/if}
     <div class="grid grid-cols-3 gap-8">
-      {#each data.posts.data as card}
-        <NewsCard data={card} />
-      {/each}
+      {#if data.posts.data && data.posts.data.length > 0}
+        {#each data.posts.data as card}
+          <NewsCard data={card} />
+        {/each}
+      {/if}
     </div>
   </div>
 </Container>
