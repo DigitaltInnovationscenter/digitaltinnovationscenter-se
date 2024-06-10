@@ -1,7 +1,9 @@
 <script lang="ts">
   import ProjectCard from "./ProjectCard.svelte";
 
-  export let data;
+  export let data: any;
+
+  $: data = data.data;
 </script>
 
 <div class="w-full bg-[#eeeeee]">
@@ -13,7 +15,7 @@
       </div>
       <div class="grid grid-cols-3 gap-14">
         {#each data as card}
-          <ProjectCard data={card} />
+          <ProjectCard data={card.attributes} />
         {/each}
       </div>
     </div>

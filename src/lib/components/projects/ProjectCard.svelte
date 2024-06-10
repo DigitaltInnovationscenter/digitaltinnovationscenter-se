@@ -1,5 +1,6 @@
 <script lang="ts">
   import { PUBLIC_CMS_URL } from "$env/static/public";
+  import { parseMarkdown } from "$lib/assets/helperFunctions";
   export let data: any;
 </script>
 
@@ -23,9 +24,11 @@
           class="hover:underline text-2xl font-semibold mb-4 text-[#9B4AFF]"
           >{data.MainHeader}</a
         >
-        {#if data.RRT && data.RRT[0]}
+        {#if data.RepeatableRichText && data.RepeatableRichText[0]}
           <p class="my-4 text-gray-600">
-            {data.RRT[0].Content}
+            {@html parseMarkdown(
+              data.RepeatableRichText[0].Content.slice(0, 250)
+            )}
           </p>
         {/if}
       </div>

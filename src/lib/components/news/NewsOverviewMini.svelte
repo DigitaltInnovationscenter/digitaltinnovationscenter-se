@@ -12,7 +12,7 @@
       <div class="w-24 h-1 bg-[#9B4AFF] mt-5"></div>
     </div>
     <div class="grid grid-cols-3 gap-7">
-      {#each data.Projects as card}
+      {#each data as card}
         <NewsCardMini data={card} />
       {/each}
     </div>

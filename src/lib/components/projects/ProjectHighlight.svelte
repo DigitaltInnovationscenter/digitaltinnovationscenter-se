@@ -1,61 +1,14 @@
 <script lang="ts">
   import { ArrowTopRightOnSquare, Icon, ArrowRight } from "svelte-hero-icons";
   import { PUBLIC_CMS_URL } from "$env/static/public";
-  import MarkdownIt from "markdown-it";
-  import DOMPurify from "dompurify";
   import { writable, type Writable } from "svelte/store";
   import { browser } from "$app/environment";
+  import { parseMarkdown } from "$lib/assets/helperFunctions";
 
   export let data: any;
+  $: data = data.data[0].attributes;
 
   let progress: Writable<number> = writable(0);
-
-  const parseMarkdown = (messages: string) => {
-    try {
-      const md = new MarkdownIt({
-        breaks: true,
-        linkify: true,
-        typographer: true,
-      });
-
-      let rawHtmlContent = md.render(messages);
-
-      // Wrap the content in a div with the class 'assistant-elem'
-      const wrapperDiv = document.createElement("div");
-      wrapperDiv.className = "space-y-2";
-      wrapperDiv.innerHTML = rawHtmlContent;
-
-      const headings = wrapperDiv.querySelectorAll("h1, h2, h3, h4, h5, h6");
-      headings.forEach(
-        (elem) => (elem.className = "font-semibold text-xl pt-4")
-      );
-
-      // Select all <ul> and <ol> elements
-      wrapperDiv.querySelectorAll("ul, ol").forEach((list) => {
-        // Add Tailwind classes to <ul> and <ol>
-        list.classList.add("px-4", "bg-transparent", "rounded-xl");
-
-        // Select all <li> elements within these lists
-        list.querySelectorAll("li").forEach((listItem) => {
-          // Add Tailwind classes to <li>
-          listItem.classList.add("pl-0", "pt-2", "list-disc");
-
-          // Select nested <ul> elements within <li>
-          listItem.querySelectorAll("ul").forEach((nestedList) => {
-            // Add Tailwind classes to nested <ul>
-            nestedList.classList.add("mt-0", "px-0");
-          });
-        });
-      });
-
-      // Serialize back to HTML
-      rawHtmlContent = wrapperDiv.outerHTML;
-
-      return DOMPurify.sanitize(rawHtmlContent);
-    } catch (error) {
-      console.error("parseMarkdown: ", error);
-    }
-  };
 
   const handleProgress = (_progress: string) => {
     try {
@@ -142,8 +95,8 @@
           {/if}
         </div>
         <div class="grid grid-cols-2 gap-14 w-full max-w-[1080px] m-auto">
-          {#if data.RRT}
-            {#each data.RRT as text}
+          {#if data.RepeatableRichText}
+            {#each data.RepeatableRichText as text}
               {@html parseMarkdown(text.Content)}
             {/each}
           {/if}

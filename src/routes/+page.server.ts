@@ -22,7 +22,7 @@ export const load = async ({ params }) => {
    */
   if (sectionPost && sectionPost.posts.data.length === 0) {
     const latestPostsResponse = await fetch(
-      "http://localhost:1337/api/posts?populate=deep",
+      `${PUBLIC_CMS_URL}/api/posts?populate=deep`,
       {
         method: "GET",
       }

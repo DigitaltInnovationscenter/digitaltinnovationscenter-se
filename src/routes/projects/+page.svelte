@@ -4,15 +4,16 @@
   import ProjectHighlight from "$lib/components/projects/ProjectHighlight.svelte";
   import ProjectsOverview from "$lib/components/projects/ProjectsOverview.svelte";
 
-  export let data;
+  export let data: any;
 </script>
 
 {#each data.pages as page}
-  {#if page.__component == "block.text-hero"}
+  {#if page.__component == "block.project-hero"}
     <Hero data={page} />
-  {:else if page.__component == "block.project-group"}
-    <ProjectHighlight data={page.Project[0]} />
-    <ProjectsOverview data={page.Project.slice(1)} />
+  {:else if page.__component == "block.section-project" && page.Header === "focused-project"}
+    <ProjectHighlight data={page.projects} />
+  {:else if page.__component == "block.section-project" && page.Header === "all-projects"}
+    <ProjectsOverview data={page.projects} />
   {:else if page.__component == "block.tech-group"}
     <OurTech data={page.TechCard} />
   {/if}

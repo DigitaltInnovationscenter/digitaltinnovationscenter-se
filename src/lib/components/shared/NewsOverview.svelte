@@ -37,8 +37,8 @@
       <!-- No Header -->
     {/if}
     <div class="grid grid-cols-3 gap-8">
-      {#if data.posts.data && data.posts.data.length > 0}
-        {#each data.posts.data as card}
+      {#if data && data.length > 0}
+        {#each data as card}
           <NewsCard data={card} />
         {/each}
       {/if}
