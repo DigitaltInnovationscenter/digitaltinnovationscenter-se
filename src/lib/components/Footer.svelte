@@ -22,7 +22,7 @@
     },
     {
       name: "Nyheter",
-      path: "/news",
+      path: "/posts",
     },
   ];
 

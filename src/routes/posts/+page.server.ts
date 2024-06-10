@@ -35,8 +35,6 @@ export const load = async ({ fetch }) => {
     }
   }
 
-  console.log(pages);
-
   return { pages };
 };
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import NewsOverviewMini from "$lib/components/news/NewsOverviewMini.svelte";
+  import NewsOverviewMini from "$lib/components/posts/NewsOverviewMini.svelte";
   import Hero from "$lib/components/shared/Hero.svelte";
   import NewsOverview from "$lib/components/shared/NewsOverview.svelte";
 

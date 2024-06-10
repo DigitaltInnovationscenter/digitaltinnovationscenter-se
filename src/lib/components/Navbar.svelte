@@ -17,7 +17,7 @@
     },
     {
       name: "Aktuellt",
-      path: "/news",
+      path: "/posts",
     },
   ];
 
