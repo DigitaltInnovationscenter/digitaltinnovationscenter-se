@@ -1,11 +1,12 @@
 <script lang="ts">
+  import { browser } from "$app/environment";
   import { PUBLIC_CMS_URL } from "$env/static/public";
   import { parseMarkdown } from "$lib/assets/helperFunctions";
   export let data: any;
   $: ({ id, attributes } = data);
 </script>
 
-{#if id}
+{#if id && browser}
   <a
     href="/projects/{id}"
     class="bg-white flex flex-col rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden"

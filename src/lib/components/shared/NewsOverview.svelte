@@ -3,7 +3,8 @@
   import NewsCard from "./NewsCard.svelte";
 
   export let headerType: "simple" | "extra" | null = "simple";
-  export let data: any = [];
+  export let data: any;
+  export let header: string | null = null;
 
   export let bgColor = "bg-[#eeeeee]";
   export let fgColor = "bg-white";
@@ -11,10 +12,10 @@
 
 <Container backgroundColor={bgColor} foreGroundColor={fgColor}>
   <div class="max-w-[1362px] w-full m-auto space-y-20">
-    {#if headerType === "simple"}
+    {#if headerType === "simple" && header}
       <div class="w-full text-left">
         <h3 class="text-6xl font-bold text-slate-800">
-          {data.Header}
+          {header}
         </h3>
       </div>
     {:else if headerType === "extra"}
@@ -37,11 +38,9 @@
       <!-- No Header -->
     {/if}
     <div class="grid grid-cols-3 gap-8">
-      {#if data && data.length > 0}
-        {#each data as card}
-          <NewsCard data={card} />
-        {/each}
-      {/if}
+      {#each data as card}
+        <NewsCard data={card} />
+      {/each}
     </div>
   </div>
 </Container>

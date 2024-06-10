@@ -17,9 +17,24 @@ export const load = async ({ params }) => {
     page = { ...result.data };
   }
 
-  console.log(page);
+  const latestPostsResponse = await fetch(
+    `${PUBLIC_CMS_URL}/api/posts?populate=deep`,
+    {
+      method: "GET",
+    }
+  );
 
-  return { page };
+  let latestPosts;
+
+  if (latestPostsResponse.ok) {
+    const result: any = await latestPostsResponse.json();
+    latestPosts = result.data
+      .filter((elem: any) => elem.id.toString() !== params.slug)
+      .reverse()
+      .slice(0, 3);
+  }
+
+  return { post: page, latestPosts };
 };
 
 export const prerender = true;
