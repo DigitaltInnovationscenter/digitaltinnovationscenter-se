@@ -49,11 +49,12 @@
             <span class="font-bold text-[#DF683B] text-lg"
               >{data.SubHeader}</span
             >
-            <h6
-              class="font-bold text-5xl text-[#4A2477] leading-snug text-center mb-8"
+            <a
+              href={data.CTA[0].url}
+              class="font-bold text-5xl text-[#4A2477] leading-snug text-center mb-8 block hover:underline transition-all"
             >
               {data.MainHeader}
-            </h6>
+            </a>
             <div class="text-center space-y-2">
               <span class="font-bold text-black">{data.Progress}</span>
               <div class="w-[570px] h-3 bg-[#DFE4EA] rounded-full">

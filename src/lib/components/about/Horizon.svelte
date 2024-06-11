@@ -362,7 +362,7 @@
         </div>
       </div>
       <div
-        class="col-span-6 pt-12 text-center text-lg w-[400px] m-auto space-y-24"
+        class="col-span-6 pt-12 text-center text-lg w-[400px] m-auto space-y-4"
       >
         <div>
           <span class="text-[#7EC13D]">*</span><span

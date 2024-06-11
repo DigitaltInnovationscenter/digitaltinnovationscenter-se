@@ -33,12 +33,29 @@ export function parseMarkdown(messages: string) {
     wrapperDiv.innerHTML = rawHtmlContent;
 
     const headings = wrapperDiv.querySelectorAll("h1, h2, h3, h4, h5, h6");
-    headings.forEach((elem) => (elem.className = "font-semibold text-xl pt-4"));
+    headings.forEach((elem) => (elem.className = "font-medium text-xl pt-4"));
+
+    const paragraph = wrapperDiv.querySelectorAll("p, span").forEach((p) => {
+      p.className = "font-light text-gray-700";
+
+      p.querySelectorAll("u").forEach((underline) => {
+        underline.classList.add("underline");
+      });
+    });
+
+    const underline = wrapperDiv.querySelectorAll("u");
+    underline.forEach((elem) => (elem.className = "underline"));
 
     // Select all <ul> and <ol> elements
     wrapperDiv.querySelectorAll("ul, ol").forEach((list) => {
       // Add Tailwind classes to <ul> and <ol>
-      list.classList.add("px-4", "bg-transparent", "rounded-xl");
+      list.classList.add(
+        "px-4",
+        "bg-transparent",
+        "rounded-xl",
+        "text-gray-700",
+        "font-light"
+      );
 
       // Select all <li> elements within these lists
       list.querySelectorAll("li").forEach((listItem) => {

@@ -10,7 +10,7 @@
 {#if data && browser}
   <a
     href="/posts/{id}"
-    class="p-4 hover:bg-gray-100 transition rounded-2xl flex flex-col cursor-pointer relative top-0 hover:-top-4 transition-all duration-300 delay-100"
+    class="p-4 hover:bg-gray-100 border border-transparent transition rounded-2xl flex flex-col cursor-pointer relative top-0 hover:-top-4 transition-all duration-300 delay-100"
   >
     <div class="grow">
       <div class="aspect-[1.68/1] overflow-hidden mb-6 rounded-xl relative">
