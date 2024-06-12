@@ -186,7 +186,7 @@
                 </div>
                 <h6 class="font-medium text-2xl">{attributes.Horisont}</h6>
                 <a
-                  href="/"
+                  href="/about#horizon"
                   class="absolute bottom-4 right-6 text-gray-400 text-sm underline hover:no-underline flex flex-row items-center font-thin underline-offset-4"
                   >Läs mer <Icon src={ArrowRight} class="w-4 ml-2" />
                 </a>

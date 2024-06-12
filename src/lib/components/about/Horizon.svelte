@@ -12,7 +12,7 @@
 </script>
 
 <Container backgroundColor="bg-[#eee]" foreGroundColor="bg-white">
-  <div class="max-w-[1362px] m-auto space-y-20 flex flex-col">
+  <div class="max-w-[1362px] m-auto space-y-20 flex flex-col" id="horizon">
     <div>
       <Hero
         suffix="*"
