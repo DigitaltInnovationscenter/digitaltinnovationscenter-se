@@ -152,7 +152,26 @@
               {@html parseMarkdown(Content)}
             {/each}
           </div>
-          <div class="grow">
+          <div class="grow space-y-12">
+            {#if attributes.CTACard.length > 0}
+              {#each attributes.CTACard as CTACard}
+                <div
+                  class="w-[370px] h-[264px] rounded-xl border border-gray-300 flex flex-col items-center justify-center relative"
+                >
+                  <h6 class="font-medium text-2xl mb-2">{CTACard.header}</h6>
+                  <p class="text-center mb-8 text-gray-500">
+                    {CTACard.description}
+                  </p>
+                  <a
+                    href={CTACard.url}
+                    class="text-center rounded-full bg-[#DF683B] py-3 px-8 text-white hover:bg-[#DF683B]/75 transition-all"
+                    target={CTACard.external ? "_blank" : ""}
+                    >{CTACard.buttonText}</a
+                  >
+                  <!-- {JSON.stringify(attributes.CTACard)} -->
+                </div>
+              {/each}
+            {/if}
             {#if attributes.Horisont}
               <div
                 class="w-[370px] h-[264px] rounded-xl border border-gray-300 flex flex-col items-center justify-center relative"
@@ -165,7 +184,7 @@
                 >
                   {attributes.Horisont.split(" ")[1]}
                 </div>
-                <h6 class="font-medium text-3xl">{attributes.Horisont}</h6>
+                <h6 class="font-medium text-2xl">{attributes.Horisont}</h6>
                 <a
                   href="/"
                   class="absolute bottom-4 right-6 text-gray-400 text-sm underline hover:no-underline flex flex-row items-center font-thin underline-offset-4"
