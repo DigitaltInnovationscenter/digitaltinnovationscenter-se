@@ -12,5 +12,4 @@
   <p class="pb-8">
     {data.Body}
   </p>
-  <Button class="mt-auto" text={data.Button.text} href={data.Button.url} />
 </div>
