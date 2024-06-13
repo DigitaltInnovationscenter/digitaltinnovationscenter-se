@@ -6,7 +6,7 @@
   $: ({ id, attributes } = data);
 </script>
 
-{#if id && browser}
+{#if id}
   <a
     href="/projects/{id}"
     class="bg-white flex flex-col rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden"
@@ -28,9 +28,11 @@
         >
         {#if attributes.RepeatableRichText && attributes.RepeatableRichText[0]}
           <p class="my-4 text-gray-600">
-            {@html parseMarkdown(
-              attributes.RepeatableRichText[0].Content.slice(0, 250)
-            )}
+            {#if browser}
+              {@html parseMarkdown(
+                attributes.RepeatableRichText[0].Content.slice(0, 250),
+              )}
+            {/if}
           </p>
         {/if}
       </div>
