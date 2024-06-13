@@ -20,8 +20,3 @@
     {/if}
   {/each}
 {/if}
-<!-- <NewsOverview
-  bgColor="bg-gray-50"
-  headerType={null}
-  data={}
-/> -->

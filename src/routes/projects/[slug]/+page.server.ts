@@ -1,5 +1,4 @@
 import { PUBLIC_CMS_URL } from "$env/static/public";
-import { getPost } from "$lib/server/service-handler";
 
 export const load = async ({ params }) => {
   const response: Response = await fetch(
