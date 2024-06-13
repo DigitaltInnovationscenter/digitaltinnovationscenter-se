@@ -34,6 +34,7 @@
       <ul class="flex flex-row space-x-16">
         {#each links as link}
           <li
+            class="font-light inline-block w-[60px]"
             aria-current={route === link.path ? "page" : undefined}
             class:active={route === link.path}
           >
