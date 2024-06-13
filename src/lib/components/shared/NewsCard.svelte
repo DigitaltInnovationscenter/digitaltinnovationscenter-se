@@ -7,17 +7,17 @@
   $: ({ id, attributes } = data);
 </script>
 
-{#if data && browser}
+{#if data}
   <a
     href="/posts/{id}"
-    class="p-4 hover:bg-gray-100 border border-transparent transition rounded-2xl flex flex-col cursor-pointer relative top-0 hover:-top-4 transition-all duration-300 delay-100"
+    class="p-4 hover:bg-gray-100 border border-transparent rounded-2xl flex flex-col cursor-pointer relative top-0 hover:-top-4 transition-all duration-300 delay-100"
   >
     <div class="grow">
       <div class="aspect-[1.68/1] overflow-hidden mb-6 rounded-xl relative">
         <!-- svelte-ignore a11y-img-redundant-alt -->
         <img
           src={PUBLIC_CMS_URL + attributes.Banner.data[0].attributes.url}
-          class="min-w-full min-h-full absolute absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
+          class="min-w-full min-h-full absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
           alt="image"
         />
       </div>
@@ -33,9 +33,11 @@
         {attributes.Header}
       </a>
       <p class="mb-8 mt-4 text-gray-600">
-        {@html parseMarkdown(
-          attributes.RepeatableRichText[0].Content.slice(0, 250)
-        )}
+        {#if browser}
+          {@html parseMarkdown(
+            attributes.RepeatableRichText[0].Content.slice(0, 250)
+          )}
+        {/if}
       </p>
     </div>
     <div class="flex flex-row items-center space-x-3 text-gray-500">
