@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Icon, ArrowUp } from "svelte-hero-icons";
+  import ButtonIcon from "../ButtonIcon.svelte";
   export let data;
 </script>
 
@@ -17,14 +18,9 @@
       </h6>
       {#if data.CTA && data.CTA.length > 0}
         {#each data.CTA as btn}
-          <a
-            href={btn.url}
-            class="left py-3 px-8 bg-white rounded-full text-[#9B4AFF] flex flex-row items-center shadow-lg"
-            >{btn.text}
-            <span class="rotate-90 ml-4">
-              <Icon src={ArrowUp} class="w-6 animate-bounce" />
-            </span>
-          </a>
+          <ButtonIcon href={btn.url} class="shadow-lg">
+            {btn.text}
+          </ButtonIcon>
         {/each}
       {/if}
     </div>

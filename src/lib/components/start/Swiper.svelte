@@ -2,6 +2,7 @@
   import { ArrowLeft, ArrowRight, ArrowUp, Icon } from "svelte-hero-icons";
   import { register } from "swiper/element/bundle";
   import { PUBLIC_CMS_URL } from "$env/static/public";
+  import ButtonIcon from "../ButtonIcon.svelte";
   // import Button from "../Button.svelte";
 
   export let data: any = [];
@@ -73,14 +74,12 @@
               <div
                 class="absolute flex items-center justify-center right-0 top-0 h-full w-0 backdrop-blur-sm transition-all figure-block-effect"
               >
-                <a
+                <ButtonIcon
+                  class="figure-block-button w-[260px]"
                   href={`projects/${project.id}`}
-                  class="w-[260px] figure-block-button left py-3 px-8 bg-white rounded-full text-[#9B4AFF] flex flex-row items-center"
-                  >Läs mer om projektet
-                  <span class="rotate-90 ml-4 transform-gpu">
-                    <Icon src={ArrowUp} class="w-6 animate-bounce" />
-                  </span></a
                 >
+                  Läs mer om projektet
+                </ButtonIcon>
               </div>
             </div>
           </div>
@@ -108,7 +107,7 @@
 </div>
 
 <style>
-  .figure-block-button {
+  :global(.figure-block-button) {
     visibility: hidden;
   }
 
@@ -116,7 +115,7 @@
     width: 100%;
   }
 
-  .swiper-slide-card:hover .figure-block-button {
+  :global(.swiper-slide-card:hover .figure-block-button) {
     visibility: visible;
   }
 </style>
