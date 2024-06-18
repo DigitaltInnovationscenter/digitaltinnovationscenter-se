@@ -15,7 +15,7 @@
       if (swiperContainer) {
         const swiper = swiperContainer.swiper;
         const swiperButtonNextEl = document.querySelector(
-          ".swiper-button-next"
+          ".swiper-button-next",
         );
         if (swiperButtonNextEl) {
           swiperButtonNextEl.addEventListener("click", () => {
@@ -23,7 +23,7 @@
           });
         }
         const swiperButtonPrevEl = document.querySelector(
-          ".swiper-button-prev"
+          ".swiper-button-prev",
         );
         if (swiperButtonPrevEl) {
           swiperButtonPrevEl.addEventListener("click", () => {
@@ -37,6 +37,7 @@
   };
 
   $: swiperContainer && initiateSwiper();
+  console.log("swiperContainer", data);
 </script>
 
 <div class="relative">
@@ -47,38 +48,43 @@
   >
     {#each data.projects.data as project}
       <swiper-slide class="cursor-pointer swiper-slide-card">
-        <div
-          class="w-full aspect-[3.1/1] bg-white grid grid-cols-2 gap-4 overflow-hidden"
-        >
-          <div class="flex flex-col items-start justify-center p-16 space-y-4">
-            <h4 class="text-5xl font-bold text-left text-slate-800">
-              {project.attributes.MainHeader}
-            </h4>
-            <p class="text-gray-600 text-left text-lg pr-12">
-              {project.attributes.RepeatableRichText[0].Content}
-            </p>
-          </div>
-          <div class="relative">
-            <!-- svelte-ignore a11y-img-redundant-alt -->
-            <img
-              src={PUBLIC_CMS_URL +
-                project.attributes.Banner.data[0].attributes.url}
-              alt="project-image"
-              class="absolute right-0 top-0 h-full w-full"
-            />
+        <a href={`projects/${project.id}`}>
+          <div
+            class="w-full aspect-[3.1/1] bg-white grid grid-cols-2 gap-4 overflow-hidden"
+          >
             <div
-              class="absolute flex items-center justify-center right-0 top-0 h-full w-0 backdrop-blur-sm transition-all figure-block-effect"
+              class="flex flex-col items-start justify-center p-16 space-y-4"
             >
-              <button
-                class="w-[260px] figure-block-button left py-3 px-8 bg-white rounded-full text-[#9B4AFF] flex flex-row items-center"
-                >Läs mer om projektet
-                <span class="rotate-90 ml-4 transform-gpu">
-                  <Icon src={ArrowUp} class="w-6 animate-bounce" />
-                </span></button
+              <h4 class="text-5xl font-bold text-left text-slate-800">
+                {project.attributes.MainHeader}
+              </h4>
+              <p class="text-gray-600 text-left text-lg pr-12">
+                {project.attributes.RepeatableRichText[0].Content}
+              </p>
+            </div>
+            <div class="relative">
+              <!-- svelte-ignore a11y-img-redundant-alt -->
+              <img
+                src={PUBLIC_CMS_URL +
+                  project.attributes.Banner.data[0].attributes.url}
+                alt="project-image"
+                class="absolute right-0 top-0 h-full w-full"
+              />
+              <div
+                class="absolute flex items-center justify-center right-0 top-0 h-full w-0 backdrop-blur-sm transition-all figure-block-effect"
               >
+                <a
+                  href={`projects/${project.id}`}
+                  class="w-[260px] figure-block-button left py-3 px-8 bg-white rounded-full text-[#9B4AFF] flex flex-row items-center"
+                  >Läs mer om projektet
+                  <span class="rotate-90 ml-4 transform-gpu">
+                    <Icon src={ArrowUp} class="w-6 animate-bounce" />
+                  </span></a
+                >
+              </div>
             </div>
           </div>
-        </div>
+        </a>
       </swiper-slide>
     {/each}
   </swiper-container>
