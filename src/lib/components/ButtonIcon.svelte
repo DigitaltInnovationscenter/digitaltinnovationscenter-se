@@ -8,7 +8,7 @@
 
 <a
   {href}
-  class={`${className} left py-3 px-8 bg-white rounded-full text-[#9B4AFF] flex flex-row items-center hover:bg-[#F3E5FF]`}
+  class={`${className} left py-3 px-8 bg-white rounded-full text-[#9B4AFF] flex flex-row items-center hover:bg-[#F3E5FF] duration-300 transition-colors`}
 >
   <slot />
   <span class="rotate-90 ml-4 transform-gpu">
