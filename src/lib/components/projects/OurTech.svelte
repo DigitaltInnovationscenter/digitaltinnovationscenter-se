@@ -23,7 +23,8 @@
           vi har byggt våra moduler.
         </p>
         <a
-          href="/"
+          href="https://docs.digitaltinnovationscenter.se"
+          target="_blank"
           class="flex items-center justify-center transition hover:opacity-50 font-semibold text-[#9B4AFF]"
         >
           Dokumentation av utveckling <Icon
