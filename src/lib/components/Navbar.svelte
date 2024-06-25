@@ -34,7 +34,7 @@
       <ul class="flex flex-row space-x-16">
         {#each links as link}
           <li
-            class="font-light inline-block w-[60px]"
+            class="font-light inline-block w-[60px] hover:text-[#9B4AFF] transition-colors duration-200"
             aria-current={route === link.path ? "page" : undefined}
             class:active={route === link.path}
           >
