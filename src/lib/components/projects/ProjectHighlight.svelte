@@ -46,10 +46,10 @@
         class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-center space-y-10"
       >
         <div class="text-center">
-          <span class="font-bold text-[#DF683B] text-lg">{data.SubHeader}</span>
+          <span class="font-bold text-[#9B4AFF] text-lg">{data.SubHeader}</span>
           <a
             href={`/projects/${projectId}/`}
-            class="font-bold text-5xl text-[#4A2477] leading-snug text-center mb-8 block hover:underline transition-all"
+            class="font-bold text-5xl text-slate-800 leading-snug text-center mb-8 block hover:underline transition-all"
           >
             {data.MainHeader}
           </a>
@@ -58,7 +58,7 @@
             <div class="w-[570px] h-3 bg-[#DFE4EA] rounded-full">
               <div
                 style="width: {$progress}%;"
-                class="bg-[#DF683B] h-full rounded-full"
+                class="bg-[#9B4AFF] h-full rounded-full"
               ></div>
             </div>
           </div>
@@ -74,7 +74,7 @@
       </div>
 
       <div
-        class="w-full text-center text-[#DF683B] flex flex-row items-center justify-center space-x-8"
+        class="w-full text-center text-[#9B4AFF] flex flex-row items-center justify-center space-x-8"
       >
         {#if data.CTA && data.CTA[0]}
           <a
