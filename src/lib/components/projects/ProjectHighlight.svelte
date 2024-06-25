@@ -6,6 +6,7 @@
   import { parseMarkdown } from "$lib/assets/helperFunctions";
 
   export let data: any;
+  let projectId: string = data.data[0].id;
   $: data = data.data[0].attributes;
 
   let progress: Writable<number> = writable(0);
@@ -47,7 +48,7 @@
         <div class="text-center">
           <span class="font-bold text-[#DF683B] text-lg">{data.SubHeader}</span>
           <a
-            href={data.CTA[0].url}
+            href={`/projects/${projectId}/`}
             class="font-bold text-5xl text-[#4A2477] leading-snug text-center mb-8 block hover:underline transition-all"
           >
             {data.MainHeader}
@@ -81,14 +82,20 @@
             class="flex items-center justify-center transition hover:opacity-50 text-lg"
           >
             {data.CTA[0].text}
-            <Icon src={ArrowTopRightOnSquare} class="w-6 h-6 inline ml-2" />
+            <Icon
+              src={data.CTA[0].external ? ArrowTopRightOnSquare : ArrowRight}
+              class="w-6 h-6 inline ml-2"
+            />
           </a>
           <a
             href={data.CTA[1].url}
             class="flex items-center justify-center transition hover:opacity-50 text-lg"
           >
             {data.CTA[1].text}
-            <Icon src={ArrowRight} class="w-6 h-6 inline ml-2" />
+            <Icon
+              src={data.CTA[1].external ? ArrowTopRightOnSquare : ArrowRight}
+              class="w-6 h-6 inline ml-2"
+            />
           </a>
         {/if}
       </div>
