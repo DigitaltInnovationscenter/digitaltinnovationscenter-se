@@ -22,7 +22,7 @@
         />
       </div>
       <div class="mb-6">
-        <span class="py-2 px-4 bg-[#DAB1FF] rounded-lg text-sm"
+        <span class="py-2 px-4 bg-[#DAB1FF] rounded-lg text-sm text-[#111928]"
           >{formatDate(attributes.Date)}</span
         >
       </div>
@@ -35,7 +35,7 @@
       <p class="mb-8 mt-4 text-gray-600">
         {#if browser}
           {@html parseMarkdown(
-            attributes.RepeatableRichText[0].Content.slice(0, 250)
+            attributes.RepeatableRichText[0].Content.slice(0, 250),
           )}
         {/if}
       </p>

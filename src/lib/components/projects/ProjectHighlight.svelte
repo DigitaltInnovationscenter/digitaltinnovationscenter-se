@@ -54,7 +54,7 @@
             {data.MainHeader}
           </a>
           <div class="text-center space-y-2">
-            <span class="font-bold text-black">{data.Progress}</span>
+            <span class="font-bold text-gray-800">{data.Progress}</span>
             <div class="w-[570px] h-3 bg-[#DFE4EA] rounded-full">
               <div
                 style="width: {$progress}%;"

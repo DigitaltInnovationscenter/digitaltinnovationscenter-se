@@ -134,7 +134,9 @@
 
             {#if attributes.Horisont}
               <div class="text-center space-y-2">
-                <span class="font-bold text-black">{attributes.Progress}</span>
+                <span class="font-bold text-gray-800"
+                  >{attributes.Progress}</span
+                >
                 <div class="w-[570px] m-auto h-3 bg-[#DFE4EA] rounded-full">
                   <div
                     style="width: {handleProgress(attributes.Progress)}%;"
@@ -158,7 +160,9 @@
                 <div
                   class="w-[370px] h-[264px] rounded-xl border border-gray-300 flex flex-col items-center justify-center relative"
                 >
-                  <h6 class="font-medium text-2xl mb-2">{CTACard.header}</h6>
+                  <h6 class="font-medium text-2xl mb-2 text-slate-800">
+                    {CTACard.header}
+                  </h6>
                   <p class="text-center mb-8 text-gray-500">
                     {CTACard.description}
                   </p>

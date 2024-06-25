@@ -35,6 +35,12 @@ export function parseMarkdown(messages: string) {
     const headings = wrapperDiv.querySelectorAll("h1, h2, h3, h4, h5, h6");
     headings.forEach((elem) => (elem.className = "font-medium text-xl pt-4"));
 
+    headings.forEach((elem) => {
+      if (elem.tagName === "H4") {
+        elem.classList.add("text-slate-800");
+      }
+    });
+
     const paragraph = wrapperDiv.querySelectorAll("p, span").forEach((p) => {
       p.className = "font-light text-gray-700";
 
@@ -54,7 +60,7 @@ export function parseMarkdown(messages: string) {
         "bg-transparent",
         "rounded-xl",
         "text-gray-700",
-        "font-light"
+        "font-light",
       );
 
       // Select all <li> elements within these lists
