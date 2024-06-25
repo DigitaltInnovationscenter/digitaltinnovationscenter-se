@@ -64,23 +64,24 @@
 
 <div class="bg-[#eeeeee]">
   <div class="flex justify-between max-w-[1366px] w-full m-auto px-10 py-20">
-    <div class="flex flex-col items-start gap-4">
+    <div class="flex flex-col items-start gap-6">
       <a href="/">
-        <img class="pb-4" src={logo} alt="logotype" />
+        <img src={logo} alt="logotype" />
       </a>
-      <p class="max-w-[250px]">
+      <p class="max-w-[250px] font-thin text-[#4b5563]">
         Har du några funderingar? Du får gärna kontakta oss! Det gör du via
         mejlen nedanför.
       </p>
       <button class:copied on:click={copyMailToClipboard}
         ><img src={copy} class="w-6 h-6 inline-block" alt="copy-icon" /><span
-          class="pl-2 underline">Kopiera mejdadressen här!</span
+          class="pl-2 text-[#1f2a37] hover:text-[#9b4aff]"
+          >Kopiera mejladressen här!</span
         ></button
       >
     </div>
-    <div>
-      <h1 class="pb-8 font-bold">Sidor</h1>
-      <ul class="flex flex-col gap-2">
+    <div class="flex flex-col gap-6">
+      <h1 class="font-bold text-[#1f2a37]">Sidor</h1>
+      <ul class="flex flex-col gap-2 font-thin text-[#4b5563]">
         {#each links as link}
           <li aria-current={route === link.path ? "page" : undefined}>
             <a href={link.path}>{link.name}</a>
@@ -88,14 +89,14 @@
         {/each}
       </ul>
     </div>
-    <div>
-      <h1 class="pb-8 font-bold">Följ oss</h1>
+    <div class="flex flex-col gap-6">
+      <h1 class=" font-bold text-[#1f2a37]">Följ oss</h1>
       <ul class="flex flex-row gap-2">
         {#each socialMediaLinks as link}
           <li><img src={link.img} alt={link.name} /></li>
         {/each}
       </ul>
-      <p class="pt-8">2023 Innovationscenter</p>
+      <p class="font-thin text-[#4b5563]">2024 Innovationscenter</p>
     </div>
   </div>
 </div>
