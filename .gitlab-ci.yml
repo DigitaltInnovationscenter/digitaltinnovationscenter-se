@@ -43,7 +43,7 @@ pages:
   only:
     # Trigger a new build and deploy only when there is a push to the
     # below branch(es)
-    - main
+    # - main
     - pages
 
 include:
