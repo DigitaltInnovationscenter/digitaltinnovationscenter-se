@@ -1,20 +1,33 @@
 import { getPost, getPosts } from "$lib/server/service-handler";
+import { error } from "@sveltejs/kit";
 
 export const load = async ({ params }) => {
-  const id = parseInt(params.slug);
-  const post = await getPost(id);
-  const posts: any = await getPosts();
+  try {
+    const id = parseInt(params.slug);
+    const postObject: any = await getPost(id);
+    const posts: any = await getPosts();
 
-  let latestPosts = [];
+    if (!postObject.post) {
+      error(404, {
+        message: `Post with id not found: ${id}.`,
+      });
+    }
 
-  if (posts) {
-    latestPosts = posts
-      .filter((elem: any) => elem.id.toString() !== params.slug)
-      .reverse()
-      .slice(0, 3);
+    let latestPosts = [];
+
+    if (posts) {
+      latestPosts = posts
+        .filter((elem: any) => elem.id.toString() !== params.slug)
+        .reverse()
+        .slice(0, 3);
+    }
+
+    return { ...postObject, latestPosts: [...latestPosts] };
+  } catch (err) {
+    error(404, {
+      message: `Something went wrong trying to retrieve post.`,
+    });
   }
-
-  return { ...post, latestPosts: [...latestPosts] };
 };
 
 export const prerender = true;

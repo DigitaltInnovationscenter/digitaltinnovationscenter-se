@@ -1,13 +1,23 @@
 import { getProject } from "$lib/server/service-handler.js";
+import { error } from "@sveltejs/kit";
 
 export const load = async ({ params }) => {
   try {
     const id = parseInt(params.slug);
-    const project = await getProject(id);
-    return project;
-  } catch (error) {
-    console.error(error);
-    return { project: {} };
+    const projectObject: any = await getProject(id);
+
+    if (!projectObject.project) {
+      error(404, {
+        message: `Something went wrong trying to retrieve project: ${id}`,
+      });
+    }
+
+    return projectObject;
+  } catch (err) {
+    console.log(err);
+    error(404, {
+      message: `Something went wrong trying to retrieve project.`,
+    });
   }
 };
 
