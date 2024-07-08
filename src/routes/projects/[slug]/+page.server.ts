@@ -1,21 +1,14 @@
-import { PUBLIC_CMS_URL } from "$env/static/public";
+import { getProject } from "$lib/server/service-handler.js";
 
 export const load = async ({ params }) => {
-  const response: Response = await fetch(
-    `${PUBLIC_CMS_URL}/api/projects/${params.slug}?populate=deep`,
-    {
-      method: "GET",
-    }
-  );
-
-  let page;
-
-  if (response.ok) {
-    const result = await response.json();
-    page = { ...result.data };
+  try {
+    const id = parseInt(params.slug);
+    const project = await getProject(id);
+    return project;
+  } catch (error) {
+    console.error(error);
+    return { project: {} };
   }
-
-  return { post: page };
 };
 
 export const prerender = true;

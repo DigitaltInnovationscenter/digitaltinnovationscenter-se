@@ -1,22 +1,18 @@
 <script lang="ts">
   import { PUBLIC_CMS_URL } from "$env/static/public";
-  import { formatDate, parseMarkdown } from "$lib/assets/helperFunctions";
+  import { parseMarkdown } from "$lib/assets/helperFunctions";
   import Container from "$lib/components/shared/Container.svelte";
   import { ArrowRight, Icon } from "svelte-hero-icons";
   import linkedin from "$lib/images/linkedin.svg";
   import facebook from "$lib/images/facebook.svg";
   import x from "$lib/images/x.svg";
   import youtube from "$lib/images/youtube.svg";
-  import NewsOverview from "$lib/components/shared/NewsOverview.svelte";
   import { browser } from "$app/environment";
-  import { writable, type Writable } from "svelte/store";
 
   export let data: any;
 
-  let progress: Writable<number> = writable(0);
-
-  $: ({ post, latestPosts } = data);
-  $: ({ id, attributes } = post);
+  $: ({ project } = data);
+  $: ({ attributes } = project);
 
   const socialMediaLinks = [
     {
@@ -73,8 +69,6 @@
       console.error(error);
     }
   };
-
-  // $: attributes && handleProgress(attributes.Progress);
 </script>
 
 {#if browser}
@@ -183,7 +177,7 @@
                 <div
                   class="rounded-full aspect-square mb-3 flex items-center justify-center text-white text-4xl p-2"
                   style="background-color: {handleHorizonColor(
-                    attributes.Horisont,
+                    attributes.Horisont
                   )}"
                 >
                   {attributes.Horisont.split(" ")[1]}
