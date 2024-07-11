@@ -10,10 +10,10 @@
   <div
     class="h-full w-full flex items-center pb-24 absolute top-0 left-0 z-50 pt-[45px]"
   >
-    <div
-      class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-start space-y-12"
-    >
-      <h6 class="font-bold text-7xl text-white pr-64 leading-snug font-serif">
+    <div class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-start">
+      <h6
+        class="font-bold text-4xl lg:text-7xl text-white leading-snug mb-12 lg:pr-64 font-serif lg:leading-snug"
+      >
         {data.MainHeader}
       </h6>
       {#if data.CTA && data.CTA.length > 0}
@@ -45,7 +45,7 @@
     </svg>
   </div>
   <div
-    class="w-full h-24 rounded-t-[50px] absolute bottom-0 bg-[#eeeeee]"
+    class="w-full h-24 rounded-t-[50px] absolute -bottom-1 bg-[#eeeeee]"
   ></div>
 </div>
 

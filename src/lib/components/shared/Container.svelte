@@ -7,9 +7,9 @@
 
 <div class="w-full {backgroundColor} m-auto">
   <div
-    class="w-full {foreGroundColor} {paddingTop} pb-48 {rounded
-      ? 'rounded-t-[80px]'
-      : ''}"
+    class="w-full {foreGroundColor} {paddingTop == '0'
+      ? 'pt-0'
+      : 'pt-0 lg:pt-36'} pb-48 {rounded ? 'rounded-t-[80px]' : ''}"
   >
     <slot />
   </div>

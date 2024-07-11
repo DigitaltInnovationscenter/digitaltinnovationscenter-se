@@ -2,18 +2,21 @@
   import { ArrowTopRightOnSquare, Icon } from "svelte-hero-icons";
   import ExploreCard from "./ExploreCard.svelte";
   import Container from "../shared/Container.svelte";
+  import { register } from "swiper/element/bundle";
 
   export let data: any = [];
+
+  register();
 </script>
 
 <Container foreGroundColor="bg-[#eeeeee]" rounded={false}>
-  <div class="max-w-[1362px] w-full m-auto space-y-20">
+  <div class="max-w-[1362px] w-full m-auto space-y-12 lg:space-y-20 px-10">
     <div class="w-full text-center">
-      <h3 class="text-6xl font-bold text-slate-800">
+      <h3 class="text-3xl leading-snug lg:text-6xl font-bold text-slate-800">
         {data.Header}
       </h3>
     </div>
-    <div class="grid grid-cols-3 gap-10">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
       {#each data.TechCard as card}
         <ExploreCard data={card} />
       {/each}

@@ -11,10 +11,12 @@
 </script>
 
 <Container backgroundColor={bgColor} foreGroundColor={fgColor}>
-  <div class="max-w-[1362px] w-full m-auto space-y-20">
+  <div class="max-w-[1362px] w-full m-auto space-y-12 lg:space-y-20 px-10">
     {#if headerType === "simple" && header}
       <div class="w-full text-left">
-        <h3 class="text-6xl font-bold text-slate-800">
+        <h3
+          class="text-3xl leading-snug lg:text-6xl font-bold text-slate-800 pt-24 lg:pt-0"
+        >
           {header}
         </h3>
       </div>
@@ -37,7 +39,7 @@
     {:else if headerType === null}
       <!-- No Header -->
     {/if}
-    <div class="grid grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8">
       {#each data as card}
         <NewsCard data={card} />
       {/each}

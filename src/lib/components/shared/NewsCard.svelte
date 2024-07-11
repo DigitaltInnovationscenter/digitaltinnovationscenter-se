@@ -10,7 +10,7 @@
 {#if data}
   <a
     href="/posts/{id}"
-    class="p-4 hover:bg-gray-100 border border-transparent rounded-2xl flex flex-col cursor-pointer relative top-0 hover:-top-4 transition-all duration-300 delay-100"
+    class="lg:p-4 lg:hover:bg-gray-100 border border-transparent rounded-2xl flex flex-col cursor-pointer relative top-0 lg:hover:-top-4 transition-all duration-300 delay-100"
   >
     <div class="grow">
       <div class="aspect-[1.68/1] overflow-hidden mb-6 rounded-xl relative">
@@ -35,7 +35,7 @@
       <p class="mb-8 mt-4 text-gray-600">
         {#if browser}
           {@html parseMarkdown(
-            attributes.RepeatableRichText[0].Content.slice(0, 250),
+            attributes.RepeatableRichText[0].Content.slice(0, 250)
           )}
         {/if}
       </p>

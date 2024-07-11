@@ -3,6 +3,7 @@
   import { register } from "swiper/element/bundle";
   import { PUBLIC_CMS_URL } from "$env/static/public";
   import ButtonIcon from "../ButtonIcon.svelte";
+  import { onMount } from "svelte";
   // import Button from "../Button.svelte";
 
   export let data: any = [];
@@ -11,12 +12,14 @@
 
   let swiperContainer: any;
 
+  let screenX: number;
+
   const initiateSwiper = () => {
     try {
       if (swiperContainer) {
         const swiper = swiperContainer.swiper;
         const swiperButtonNextEl = document.querySelector(
-          ".swiper-button-next",
+          ".swiper-button-next"
         );
         if (swiperButtonNextEl) {
           swiperButtonNextEl.addEventListener("click", () => {
@@ -24,7 +27,7 @@
           });
         }
         const swiperButtonPrevEl = document.querySelector(
-          ".swiper-button-prev",
+          ".swiper-button-prev"
         );
         if (swiperButtonPrevEl) {
           swiperButtonPrevEl.addEventListener("click", () => {
@@ -38,44 +41,76 @@
   };
 
   $: swiperContainer && initiateSwiper();
-  console.log("swiperContainer", data);
+
+  onMount(() => {
+    // Check the initial screen width
+    screenX = window.innerWidth;
+    console.log("Screen width on mount:", screenX);
+
+    // Add an event listener to update screenX when the window is resized
+    const handleResize = () => {
+      screenX = window.innerWidth;
+      console.log("Screen width after resize:", screenX);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component is destroyed
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
 </script>
 
 <div class="relative">
   <swiper-container
     bind:this={swiperContainer}
     loop="true"
-    class="rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
+    class="rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all bg-white"
+    pagination={screenX < 1024 ? true : false}
   >
     {#each data.projects.data as project}
-      <swiper-slide class="cursor-pointer swiper-slide-card">
+      <swiper-slide class="cursor-pointer swiper-slide-card bg-white">
         <a href={`projects/${project.id}`}>
           <div
-            class="w-full aspect-[3.1/1] bg-white grid grid-cols-2 gap-4 overflow-hidden"
+            class="w-full h-full lg:aspect-[3.1/1] grid grid-cols-1 lg:grid-cols-2 lg:gap-4 overflow-hidden"
           >
+            <!-- pb-0 on this element handles a swiper padding issue -->
             <div
-              class="flex flex-col items-start justify-center p-16 space-y-4"
+              class="flex flex-col items-start justify-center p-10 lg:p-16 space-y-6 order-2 lg:order-1"
             >
-              <h4 class="text-5xl font-bold text-left text-slate-800">
+              <h4
+                class="text-xl md:text-3xl lg:text-5xl font-bold text-left text-slate-800"
+              >
                 {project.attributes.MainHeader}
               </h4>
-              <p class="text-gray-600 text-left text-lg pr-12">
+              <p class="text-gray-600 text-left text-md lg:text-lg pr-12">
                 {project.attributes.RepeatableRichText[0].Content}
               </p>
+
+              <ButtonIcon
+                hover={false}
+                class="!p-0 w-full overflow-hidden text-wrap visible lg:invisible text-md"
+                href={`projects/${project.id}`}
+              >
+                Läs mer
+              </ButtonIcon>
             </div>
-            <div class="relative">
+            <div
+              class="relative order-1 lg:order-2 aspect-[1.68/1] lg:aspect-auto overflow-hidden"
+            >
               <!-- svelte-ignore a11y-img-redundant-alt -->
               <img
                 src={PUBLIC_CMS_URL +
                   project.attributes.Banner.data[0].attributes.url}
                 alt="project-image"
-                class="absolute right-0 top-0 h-full w-full"
+                class="absolute lg:right-0 lg:top-0 h-full w-full"
               />
               <div
-                class="absolute flex items-center justify-center right-0 top-0 h-full w-0 backdrop-blur-sm transition-all figure-block-effect"
+                class="absolute flex items-center justify-center right-0 top-0 h-full w-0 backdrop-blur-sm transition-all figure-block-effect opacity-0 lg:opacity-100"
               >
                 <ButtonIcon
-                  class="figure-block-button w-[260px]"
+                  class="figure-block-button min-w-[260px] max-h-[48px] overflow-hidden text-wrap opacity-0 lg:opacity-100"
                   href={`projects/${project.id}`}
                 >
                   Läs mer om projektet
@@ -89,7 +124,7 @@
   </swiper-container>
   <!-- Custom navigation buttons -->
   <div
-    class="swiper-button-prev absolute top-1/2 -left-[13px] transform -translate-x-[13px] -translate-y-1/2 z-50 cursor-pointer"
+    class="invisible lg:visible swiper-button-prev absolute top-1/2 -left-[13px] transform -translate-x-[13px] -translate-y-1/2 z-50 cursor-pointer"
   >
     <Icon
       src={ArrowLeft}
@@ -97,7 +132,7 @@
     />
   </div>
   <div
-    class="swiper-button-next absolute top-1/2 -right-[44px] transform -translate-x-[20px] -translate-y-1/2 z-50 cursor-pointer"
+    class="invisible lg:visible swiper-button-next absolute top-1/2 -right-[44px] transform -translate-x-[20px] -translate-y-1/2 z-50 cursor-pointer"
   >
     <Icon
       src={ArrowRight}
