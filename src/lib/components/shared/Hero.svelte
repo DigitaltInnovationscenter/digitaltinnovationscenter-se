@@ -6,7 +6,7 @@
 
 <div class="h-full min-h-[550px] {bgColor} w-full relative">
   <div
-    class="h-full w-full flex items-center pb-6 absolute top-0 left-0 z-50 pt-[90px]"
+    class="h-full w-full flex items-center pb-6 absolute top-0 left-0 pt-[90px]"
   >
     <div class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-center">
       <span class="font-bold text-[#9B4AFF] text-lg">{data.SubHeader}</span>
