@@ -63,8 +63,10 @@
 </script>
 
 <div class="bg-[#eeeeee]">
-  <div class="flex justify-between max-w-[1366px] w-full m-auto px-10 py-20">
-    <div class="flex flex-col items-start gap-6">
+  <div
+    class="lg:flex lg:justify-between grid grid-cols-2 gap-24 max-w-[1366px] w-full m-auto px-10 py-20"
+  >
+    <div class="col-span-2 flex flex-col items-start gap-6">
       <a href="/">
         <img src={logo} alt="logotype" />
       </a>
