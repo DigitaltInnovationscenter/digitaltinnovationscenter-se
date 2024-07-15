@@ -2,6 +2,7 @@
   import { fly, fade } from "svelte/transition";
   import { quintOut } from "svelte/easing";
   import { PUBLIC_CMS_URL } from "$env/static/public";
+  import { onMount } from "svelte";
 
   export let data: {
     header: string;
@@ -64,10 +65,29 @@
 
   const headerBreakpoints = "text-md xl:text-lg 2xl:text-xl";
   const paragraphBreakpoints = "text-sm 2xl:text-lg";
+
+  let screenX: number;
+
+  onMount(() => {
+    // Check the initial screen width
+    screenX = window.innerWidth;
+
+    // Add an event listener to update screenX when the window is resized
+    const handleResize = () => {
+      screenX = window.innerWidth;
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component is destroyed
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
 </script>
 
 <div
-  class="h-[1000px] w-full m-auto flex flex-col items-center justify-center relative mt-12 mb-24"
+  class="hidden h-[1000px] w-full m-auto xl:flex flex-col items-center justify-center relative mt-12 mb-24"
 >
   {#if showHeader}
     <div
@@ -129,6 +149,43 @@
       </div>
     {/each}
   </div>
+</div>
+<div
+  class="visible xl:invisible flex flex-col mt-32 mb-24 items-center justify-center px-6 space-y-12"
+>
+  <div
+    class="text-4xl font-bold w-full max-w-[1362px] m-auto text-left text-slate-800"
+  >
+    <span transition:fade={{ delay: 0, duration: 150 }}>{data.header}</span>
+  </div>
+  {#each data.content as figureContent, i}
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div class="max-w-[480px]">
+      {#if showCards}
+        <div
+          transition:fly={{
+            delay: i * 10,
+            duration: 500,
+            y: 40,
+            opacity: 0,
+            easing: quintOut,
+          }}
+        >
+          <img
+            src="{PUBLIC_CMS_URL}{figureContent.smallLogo.data.attributes.url}"
+            class="w-5 h-5"
+            alt="mini-logo"
+          />
+          <h3 class="text-xl text-[#374151] font-semibold mb-3">
+            {figureContent.Header}
+          </h3>
+          <p class="text-lg text-[#374151] mb-4">
+            {figureContent.TextBlock}
+          </p>
+        </div>
+      {/if}
+    </div>
+  {/each}
 </div>
 
 <style>
