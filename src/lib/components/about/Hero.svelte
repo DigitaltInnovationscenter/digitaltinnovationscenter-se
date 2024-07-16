@@ -154,7 +154,7 @@
   class="visible xl:hidden flex flex-col mt-32 mb-24 items-center justify-center px-6 space-y-12"
 >
   <div
-    class="text-4xl max-w-[480px] font-bold w-full max-w-[1362px] m-auto text-left text-slate-800"
+    class="text-4xl max-w-[480px] font-bold w-full m-auto text-left text-slate-800"
   >
     <span transition:fade={{ delay: 0, duration: 150 }}>{data.header}</span>
   </div>

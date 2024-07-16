@@ -12,7 +12,7 @@
   };
 </script>
 
-<div class="flex flex-col space-y-2">
+<div class="flex flex-col space-y-2 min-w-[234px]">
   <div
     style="aspect-ratio: 1.2/1;"
     class="w-full bg-gray-100 border border-gray-300 rounded-xl"
