@@ -9,6 +9,37 @@
   import Hero from "../shared/Hero.svelte";
 
   let bulbSection: null | string = null;
+
+  let horizonContent = [
+    {
+      hex: "#2F2FEA",
+      header: "Horisont 0",
+      subHeader: "Verksamhetsförvaltning",
+      text: "Upprätthålla tjänster och se till att allt fungerar. Vi rättar fel genom att behandla symptom och inte orsaken.",
+      relevant: false,
+    },
+    {
+      hex: "#C6E4AA",
+      header: "Horisont 1",
+      subHeader: "Välkänd",
+      text: "Löser användarnas direkta och tydliga behov genom att justera och utveckla befintliga tjänster. Fokus ligger på att uppnå våra kundlöften och utföra vårt regeringsuppdrag.",
+      relevant: false,
+    },
+    {
+      hex: "#060693",
+      header: "Horisont 2",
+      subHeader: "Ny för oss",
+      text: "Angriper redan kända ellernya problem på nya sätt. Det kan handla om att automatisera, skapa möjligheter, använda ny teknik eller på annat sätt kraftigt öka värde eller riva hinder.",
+      relevant: true,
+    },
+    {
+      hex: "#7EC13D",
+      header: "Horisont 3",
+      subHeader: 'Ny på "marknaden"',
+      text: "Ta sig an utmaningar som inte kan lösas genom att optimera eller förbättra. Genom att utforska, experimentera och testa kan man visa på möjligheter och inspirera.",
+      relevant: true,
+    },
+  ];
 </script>
 
 <Container backgroundColor="bg-[#eee]" foreGroundColor="bg-white">
@@ -25,7 +56,7 @@
         }}
       />
     </div>
-    <div class="grid grid-cols-6 gap-2">
+    <div class="hidden xl:grid xl:grid-cols-6 xl:gap-2">
       <div class="grid grid-rows-2 grid-flow-col gap-48">
         <!-- svelte-ignore a11y-no-static-element-interactions -->
         <div
@@ -377,6 +408,30 @@
             >Vi jobbar i den här horisonten.</span
           >
         </div>
+      </div>
+    </div>
+    <div class="xl:hidden px-6">
+      <div
+        class="flex overflow-x-auto sm:overflow-hidden sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 pb-12 sm:pb-0 px-4"
+      >
+        {#each horizonContent as item}
+          <div
+            class="flex flex-col min-w-[340px] max-w-[400px] rounded-xl overflow-hidden shadow-md mb-4 pb-6"
+          >
+            <div class="p-4 bg-[{item.hex}] text-white">{item.header}</div>
+            <div class="p-4">
+              <div class="font-semibold my-4 text-lg">
+                {item.subHeader}
+              </div>
+              <div class="font-light text-gray-500">{item.text}</div>
+              <div>
+                {#if item.relevant}
+                  <!--  -->
+                {/if}
+              </div>
+            </div>
+          </div>
+        {/each}
       </div>
     </div>
   </div>

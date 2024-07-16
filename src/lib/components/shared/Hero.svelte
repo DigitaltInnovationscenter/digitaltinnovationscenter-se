@@ -11,7 +11,7 @@
     <div class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-center">
       <span class="font-bold text-[#9B4AFF] text-lg">{data.SubHeader}</span>
       <h6
-        class="font-bold text-5xl text-slate-800 text-center mb-8 block w-full max-w-[700px] leading-tight"
+        class="font-bold text-4xl lg:text-5xl text-slate-800 text-center mb-8 block w-full max-w-[700px] leading-tight"
       >
         {data.MainHeader}
         {#if suffix !== ""}

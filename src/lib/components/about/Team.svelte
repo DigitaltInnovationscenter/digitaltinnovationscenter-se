@@ -19,7 +19,7 @@
       {data.header}
     </h3>
     <div
-      class="flex overflow-x-auto sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 pb-12 sm:pb-0"
+      class="flex overflow-x-auto sm:overflow-hidden sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 pb-12 sm:pb-0"
     >
       {#each data.content as member}
         <MemberCard {member} />
