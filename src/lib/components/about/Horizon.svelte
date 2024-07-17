@@ -7,6 +7,7 @@
   import logotypeSvg from "$lib/images/af-logotype.svg";
   import Container from "../shared/Container.svelte";
   import Hero from "../shared/Hero.svelte";
+  import logo from "$lib/images/innovationscenter-logo-small.svg";
 
   let bulbSection: null | string = null;
 
@@ -419,19 +420,23 @@
             class="flex flex-col min-w-[340px] max-w-[400px] rounded-xl overflow-hidden shadow-md mb-4 pb-6"
           >
             <div class="p-4 bg-[{item.hex}] text-white">{item.header}</div>
-            <div class="p-4">
+            <div class="p-4 space-y-6">
               <div class="font-semibold my-4 text-lg">
                 {item.subHeader}
               </div>
               <div class="font-light text-gray-500">{item.text}</div>
-              <div>
+              <div class="flex flex-row items-center">
                 {#if item.relevant}
-                  <!--  -->
+                  <img src={logo} alt="logotype" class="w-11 mr-3" />
+                  <div>Vi jobbar i den <br /> här horisonten!</div>
                 {/if}
               </div>
             </div>
           </div>
         {/each}
+      </div>
+      <div class="mt-4 block text-gray-500">
+        <span class="text-[#7EC13D]">*</span>Värdeskapande
       </div>
     </div>
   </div>
