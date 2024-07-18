@@ -435,7 +435,7 @@
           </div>
         {/each}
       </div>
-      <div class="mt-4 block text-gray-500">
+      <div class="mt-6 block text-gray-500">
         <span class="text-[#7EC13D]">*</span>Värdeskapande
       </div>
     </div>
