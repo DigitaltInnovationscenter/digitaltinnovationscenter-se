@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
   import { ArrowTopRightOnSquare, Icon } from "svelte-hero-icons";
   import TechCard from "./TechCard.svelte";
-
-  export let data;
+  import type { TechCardData } from "$lib/interfaces";
+  export let data: TechCardData[];
 </script>
 
 <div class="w-full bg-white">

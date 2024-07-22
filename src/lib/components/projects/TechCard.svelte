@@ -1,7 +1,7 @@
 <script lang="ts">
   import { CodeBracket, Icon } from "svelte-hero-icons";
-
-  export let data: any;
+  import type { TechCardData } from "$lib/interfaces";
+  export let data: TechCardData;
 </script>
 
 <div class="border border-gray-200 flex flex-col rounded-2xl overflow-hidden">
