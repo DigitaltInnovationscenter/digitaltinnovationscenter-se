@@ -41,7 +41,7 @@ export function parseMarkdown(messages: string) {
       }
     });
 
-    const paragraph = wrapperDiv.querySelectorAll("p, span").forEach((p) => {
+    wrapperDiv.querySelectorAll("p, span").forEach((p) => {
       p.className = "font-light text-gray-700";
 
       p.querySelectorAll("u").forEach((underline) => {
@@ -60,7 +60,7 @@ export function parseMarkdown(messages: string) {
         "bg-transparent",
         "rounded-xl",
         "text-gray-700",
-        "font-light",
+        "font-light"
       );
 
       // Select all <li> elements within these lists
