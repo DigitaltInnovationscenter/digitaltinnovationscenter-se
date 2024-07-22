@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
   import Container from "../shared/Container.svelte";
   import NewsCardMini from "./NewsCardMini.svelte";
-
-  export let data;
+  import type { NewsCardMiniData } from "$lib/interfaces";
+  export let NewsCardMiniData: NewsCardMiniData[];
 </script>
 
 <Container backgroundColor="bg-white" paddingTop="pt-0">
@@ -12,7 +12,7 @@
       <div class="w-24 h-1 bg-secondary-purple-100 mt-5"></div>
     </div>
     <div class="grid grid-cols-3 gap-7">
-      {#each data as card}
+      {#each NewsCardMiniData as card}
         <NewsCardMini data={card} />
       {/each}
     </div>

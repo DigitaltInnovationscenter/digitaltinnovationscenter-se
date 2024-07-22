@@ -3,7 +3,7 @@
   import Hero from "$lib/components/shared/Hero.svelte";
   import NewsOverview from "$lib/components/shared/NewsOverview.svelte";
 
-  export let data: any;
+  export let data;
 </script>
 
 {#if data.pages}
@@ -16,7 +16,7 @@
         headerType={null}
         data={page.posts.data.slice(0, 3)}
       />
-      <NewsOverviewMini data={page.posts.data.slice(3)} />
+      <NewsOverviewMini NewsCardMiniData={page.posts.data.slice(3)} />
     {/if}
   {/each}
 {/if}
