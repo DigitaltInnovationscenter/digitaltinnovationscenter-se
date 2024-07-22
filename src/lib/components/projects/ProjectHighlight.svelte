@@ -5,6 +5,7 @@
   import { browser } from "$app/environment";
   import { parseMarkdown } from "$lib/utils/helperFunctions";
   import type { ProjectHighlightData } from "$lib/interfaces";
+  import Cta from "./CTA.svelte";
 
   export let data: ProjectHighlightData[] | ProjectHighlightData;
   let projectId: string;
@@ -86,28 +87,7 @@
       <div
         class="w-full text-center text-secondary-purple-100 flex flex-row items-center justify-center space-x-8"
       >
-        {#if project.CTA && project.CTA[0]}
-          <a
-            href={project.CTA[0].url}
-            class="flex items-center justify-center transition hover:opacity-50 text-lg"
-          >
-            {project.CTA[0].text}
-            <Icon
-              src={project.CTA[0].external ? ArrowTopRightOnSquare : ArrowRight}
-              class="w-6 h-6 inline ml-2"
-            />
-          </a>
-          <a
-            href={project.CTA[1].url}
-            class="flex items-center justify-center transition hover:opacity-50 text-lg"
-          >
-            {project.CTA[1].text}
-            <Icon
-              src={project.CTA[1].external ? ArrowTopRightOnSquare : ArrowRight}
-              class="w-6 h-6 inline ml-2"
-            />
-          </a>
-        {/if}
+        <Cta ctas={project.CTA} />
       </div>
       <div class="grid grid-cols-2 gap-14 w-full max-w-[1080px] m-auto">
         {#if project.RepeatableRichText && browser}
