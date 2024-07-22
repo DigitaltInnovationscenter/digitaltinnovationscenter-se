@@ -11,7 +11,7 @@
   {#if page.__component == "block.project-hero"}
     <Hero data={page} />
   {:else if page.__component == "block.section-project" && page.Header === "focused-project"}
-    <ProjectHighlight data={page.projects} />
+    <ProjectHighlight data={page.projects.data} />
   {:else if page.__component == "block.section-project" && page.Header === "all-projects"}
     <ProjectsOverview projectData={page.projects.data} />
   {:else if page.__component == "block.tech-group"}
