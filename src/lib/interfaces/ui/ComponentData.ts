@@ -9,7 +9,7 @@ interface Banner {
   data: ImageData[];
 }
 
-interface Attributes {
+export interface NewsCardMiniAttributes {
   Banner: Banner;
   Header: string;
   Date: string;
@@ -19,5 +19,5 @@ interface Attributes {
 
 export interface NewsCardMiniData {
   id: number;
-  attributes: Attributes;
+  attributes: NewsCardMiniAttributes;
 }
