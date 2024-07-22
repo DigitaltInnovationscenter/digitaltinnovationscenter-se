@@ -1,7 +1,6 @@
 <script lang="ts">
   import { formatDate } from "$lib/assets/helperFunctions";
   import { PUBLIC_CMS_URL } from "$env/static/public";
-  import { goto } from "$app/navigation";
   export let data: any;
   $: ({ id, attributes } = data);
 </script>
