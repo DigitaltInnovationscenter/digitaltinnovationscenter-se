@@ -364,8 +364,8 @@
           </p>
         </div>
 
-        <!-- svelte-ignore a11y-no-static-element-interactions -->
         <div
+          role="contentinfo"
           class="space-y-3 grow transition-all duration-300 {bulbSection ===
             'bottomRight' || !bulbSection
             ? ''

@@ -1,20 +1,12 @@
+<!-- src/lib/components/MyComponent.svelte -->
 <script lang="ts">
   import { fly, fade } from "svelte/transition";
   import { quintOut } from "svelte/easing";
   import { PUBLIC_CMS_URL } from "$env/static/public";
   import { onMount } from "svelte";
+  import type { HeroFigureData } from "$lib/interfaces";
 
-  export let data: {
-    header: string;
-    content: {
-      Header: string;
-      TextBlock: string;
-      id: number;
-      position: "right" | "bottom" | "top";
-      smallLogo: { data: { attributes: { url: string } } };
-      svg: { data: { attributes: { url: string } } };
-    }[];
-  };
+  export let data: HeroFigureData;
 
   let activeHover: { bool: boolean; id: "right" | "bottom" | "top" | null } = {
     bool: false,
