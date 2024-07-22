@@ -13,7 +13,7 @@
     </div>
     <div class="grid grid-cols-3 gap-7">
       {#each NewsCardMiniData as card}
-        <NewsCardMini data={card} />
+        <NewsCardMini NewsCardMiniData={card} />
       {/each}
     </div>
   </div>
