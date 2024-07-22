@@ -1,6 +1,6 @@
 <script lang="ts">
   import { PUBLIC_CMS_URL } from "$env/static/public";
-  import { parseMarkdown } from "$lib/assets/helperFunctions";
+  import { parseMarkdown } from "$lib/utils/helperFunctions";
   import Container from "$lib/components/shared/Container.svelte";
   import { ArrowRight, Icon } from "svelte-hero-icons";
   import linkedin from "$lib/images/linkedin.svg";

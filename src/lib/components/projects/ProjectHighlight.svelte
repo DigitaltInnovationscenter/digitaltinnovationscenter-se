@@ -3,7 +3,7 @@
   import { PUBLIC_CMS_URL } from "$env/static/public";
   import { writable, type Writable } from "svelte/store";
   import { browser } from "$app/environment";
-  import { parseMarkdown } from "$lib/assets/helperFunctions";
+  import { parseMarkdown } from "$lib/utils/helperFunctions";
 
   export let data: any;
   let projectId: string = data.data[0].id;

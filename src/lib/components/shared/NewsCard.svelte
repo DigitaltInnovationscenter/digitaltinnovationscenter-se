@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { formatDate, parseMarkdown } from "$lib/assets/helperFunctions";
+  import { formatDate, parseMarkdown } from "$lib/utils/helperFunctions";
   import { PUBLIC_CMS_URL } from "$env/static/public";
   import { browser } from "$app/environment";
 

@@ -2,7 +2,7 @@
 <script lang="ts">
   import { browser } from "$app/environment";
   import { PUBLIC_CMS_URL } from "$env/static/public";
-  import { parseMarkdown } from "$lib/assets/helperFunctions";
+  import { parseMarkdown } from "$lib/utils/helperFunctions";
   import type {
     ProjectCardData,
     ProjectCardDataAttributes,

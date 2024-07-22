@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { formatDate } from "$lib/assets/helperFunctions";
+  import { formatDate } from "$lib/utils/helperFunctions";
   import { PUBLIC_CMS_URL } from "$env/static/public";
   import type {
     NewsCardMiniData,
