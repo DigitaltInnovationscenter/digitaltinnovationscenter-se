@@ -59,8 +59,8 @@
     </div>
     <div class="hidden xl:grid xl:grid-cols-6 xl:gap-2">
       <div class="grid grid-rows-2 grid-flow-col gap-48">
-        <!-- svelte-ignore a11y-no-static-element-interactions -->
         <div
+          role="contentinfo"
           class="space-y-3 transition-all duration-300 {bulbSection ===
             'topLeft' || !bulbSection
             ? ''
@@ -76,7 +76,7 @@
             class="text-3xl text-center flex flex-row items-center justify-center"
           >
             Horisont <span
-              class="bg-horizon-primary-blue text-white w-12 h-12 flex items-center justify-center ml-3 text-3xl rounded-full block font-semibold"
+              class="bg-horizon-primary-blue text-white w-12 h-12 flex items-center justify-center ml-3 text-3xl rounded-full font-semibold"
               >0</span
             >
           </h3>
@@ -85,8 +85,8 @@
             genom att behandla symptom och inte orsaken.
           </p>
         </div>
-        <!-- svelte-ignore a11y-no-static-element-interactions -->
         <div
+          role="contentinfo"
           class="space-y-3 transition-all duration-300 {bulbSection ===
             'bottomLeft' || !bulbSection
             ? ''
@@ -102,7 +102,7 @@
             class="text-3xl text-center flex flex-row items-center justify-center"
           >
             Horisont <span
-              class="bg-horizon-primary-green text-white w-12 h-12 flex items-center justify-center ml-3 text-3xl rounded-full block font-semibold"
+              class="bg-horizon-primary-green text-white w-12 h-12 flex items-center justify-center ml-3 text-3xl rounded-full font-semibold"
               >3<span class="relative"
                 ><span
                   class="absolute -top-11 -right-8 text-6xl text-horizon-purple"
@@ -119,8 +119,8 @@
         </div>
       </div>
       <div class="grid grid-rows-2 grid-flow-col gap-48">
-        <!-- svelte-ignore a11y-no-static-element-interactions -->
         <div
+          role="contentinfo"
           class="transition-all duration-300 {bulbSection === 'topLeft' ||
           !bulbSection
             ? ''
@@ -133,17 +133,17 @@
           }}
         >
           <h3
-            class="text-2xl text-secondary-green font-extralight italic relative top-6 -left-2 text-center block w-full border-dotted border-b-2 pb-2 border-gray-300 relative"
+            class="text-2xl text-horizon-secondary-green font-extralight italic top-6 -left-2 text-center block w-full border-dotted border-b-2 pb-2 border-gray-300 relative"
           >
             Verksamhets-<br />förvaltning
 
             <span
-              class="-bottom-[48px] -right-[25px] absolute block h-14 -rotate-[48deg] w-[1px] border-l-2 border-gray-300 border-dotted w-1 z-1"
+              class="-bottom-[48px] -right-[25px] absolute block h-14 -rotate-[48deg] border-l-2 border-gray-300 border-dotted w-1 z-1"
             ></span>
           </h3>
         </div>
-        <!-- svelte-ignore a11y-no-static-element-interactions -->
         <div
+          role="contentinfo"
           class="transition-all duration-300 {bulbSection === 'bottomLeft' ||
           !bulbSection
             ? ''
@@ -156,17 +156,17 @@
           }}
         >
           <h3
-            class="text-2xl text-secondary-green font-extralight italic relative top-12 -left-2 text-center block w-full border-dotted border-b-2 pb-2 border-gray-300 relative"
+            class="text-2xl text-horizon-secondary-green font-extralight italic top-12 -left-2 text-center block w-full border-dotted border-b-2 pb-2 border-gray-300 relative"
           >
             Ny för <br />"marknaden"
             <span
-              class="-top-[64px] -right-[35px] absolute block h-36 rotate-[24deg] w-[1px] border-l-2 border-gray-300 border-dotted w-1 z-1"
+              class="-top-[64px] -right-[35px] absolute block h-36 rotate-[24deg] border-l-2 border-gray-300 border-dotted w-1 z-1"
             ></span>
           </h3>
         </div>
       </div>
       <div
-        class="col-span-2 grid grid-rows-1 grid-flow-col relative flex items-center justify-center"
+        class="col-span-2 grid grid-rows-1 grid-flow-col relative items-center justify-center"
       >
         <div class="grid grid-cols-2 relative top-8 z-50">
           <div
@@ -180,8 +180,8 @@
               >
             </h3>
           </div>
-          <!-- svelte-ignore a11y-no-static-element-interactions -->
           <div
+            role="contentinfo"
             class="flex items-end justify-end relative transition-all duration-300 {bulbSection ===
               'topLeft' || !bulbSection
               ? ''
@@ -207,8 +207,8 @@
               ></span>
             </span>
           </div>
-          <!-- svelte-ignore a11y-no-static-element-interactions -->
           <div
+            role="contentinfo"
             class="relative transition-all duration-300 {bulbSection ===
               'topRight' || !bulbSection
               ? ''
@@ -234,8 +234,8 @@
               ></span>
             </span>
           </div>
-          <!-- svelte-ignore a11y-no-static-element-interactions -->
           <div
+            role="contentinfo"
             class="relative -top-2 transition-all duration-300 {bulbSection ===
               'bottomLeft' || !bulbSection
               ? ''
@@ -261,8 +261,8 @@
               ></span>
             </span>
           </div>
-          <!-- svelte-ignore a11y-no-static-element-interactions -->
           <div
+            role="contentinfo"
             class="relative -top-[12px] transition-all duration-300 {bulbSection ===
               'bottomRight' || !bulbSection
               ? ''
@@ -290,8 +290,8 @@
         </div>
       </div>
       <div class="grid grid-rows-2 grid-flow-col gap-48">
-        <!-- svelte-ignore a11y-no-static-element-interactions -->
         <div
+          role="contentinfo"
           class="transition-all duration-300 {bulbSection === 'topRight' ||
           !bulbSection
             ? ''
@@ -304,16 +304,16 @@
           }}
         >
           <h3
-            class="text-2xl text-secondary-green font-extralight italic relative top-12 -left-6 text-center block w-full border-dotted border-b-2 pb-2 border-gray-300 relative"
+            class="text-2xl text-horizon-secondary-green font-extralight italic relative top-12 -left-6 text-center block w-full border-dotted border-b-2 pb-2 border-gray-300"
           >
             Välkänd
             <span
-              class="top-[37px] -left-[17px] absolute block h-14 rotate-[30deg] w-[1px] border-l-2 border-gray-300 border-dotted w-1 z-1"
+              class="top-[37px] -left-[17px] absolute block h-14 rotate-[30deg] border-l-2 border-gray-300 border-dotted w-1 z-1"
             ></span>
           </h3>
         </div>
-        <!-- svelte-ignore a11y-no-static-element-interactions -->
         <div
+          role="contentinfo"
           class="relative transition-all duration-300 {bulbSection ===
             'bottomRight' || !bulbSection
             ? ''
@@ -326,18 +326,18 @@
           }}
         >
           <h3
-            class="text-2xl text-secondary-green font-extralight italic relative top-12 -left-6 text-center block w-full border-dotted border-b-2 pb-2 border-gray-300 relative"
+            class="text-2xl text-horizon-secondary-green font-extralight italic relative top-12 -left-6 text-center block w-full border-dotted border-b-2 pb-2 border-gray-300"
           >
             Ny för oss
             <span
-              class="-bottom-[6px] -left-[27px] absolute block h-28 -rotate-[24deg] w-[1px] border-l-2 border-gray-300 border-dotted w-1 z-1"
+              class="-bottom-[6px] -left-[27px] absolute block h-28 -rotate-[24deg] border-l-2 border-gray-300 border-dotted w-1 z-1"
             ></span>
           </h3>
         </div>
       </div>
       <div class="grid grid-rows-2 grid-flow-col gap-48">
-        <!-- svelte-ignore a11y-no-static-element-interactions -->
         <div
+          role="contentinfo"
           class="space-y-3 grow transition-all duration-300 {bulbSection ===
             'topRight' || !bulbSection
             ? ''
@@ -353,7 +353,7 @@
             class="text-3xl text-center flex flex-row items-center justify-center"
           >
             Horisont <span
-              class="bg-horizon-alternative-green text-white w-12 h-12 flex items-center justify-center ml-3 text-3xl rounded-full block font-semibold"
+              class="bg-horizon-alternative-green text-white w-12 h-12 items-center justify-center ml-3 text-3xl rounded-full flex font-semibold"
               >1</span
             >
           </h3>
@@ -381,7 +381,7 @@
             class="text-3xl text-center flex flex-row items-center justify-center"
           >
             Horisont <span
-              class="bg-horizon-secondary-blue text-white w-12 h-12 flex items-center justify-center ml-3 text-3xl rounded-full block font-semibold"
+              class="bg-horizon-secondary-blue text-white w-12 h-12 flex items-center justify-center ml-3 text-3xl rounded-full font-semibold"
               >2<span class="relative"
                 ><span
                   class="absolute -top-11 -right-8 text-6xl text-horizon-purple"

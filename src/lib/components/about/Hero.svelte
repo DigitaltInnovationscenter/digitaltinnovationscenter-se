@@ -99,8 +99,8 @@
   <!-- Aspect + width controls svg placing -->
   <div class="relative aspect-[1.15] w-full max-w-[300px]">
     {#each data.content as figureContent, i}
-      <!-- svelte-ignore a11y-no-static-element-interactions -->
       <div
+        role="contentinfo"
         class="{activeHover.id !== figureContent.position && activeHover.bool
           ? 'pointer-events-none'
           : ''} {figureStyling[figureContent.position].wrapper}"
@@ -161,7 +161,6 @@
     <span transition:fade={{ delay: 0, duration: 150 }}>{data.header}</span>
   </div>
   {#each data.content as figureContent, i}
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div class="max-w-[480px]">
       {#if showCards}
         <div
