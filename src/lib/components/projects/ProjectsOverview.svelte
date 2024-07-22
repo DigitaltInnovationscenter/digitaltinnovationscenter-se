@@ -1,9 +1,8 @@
 <script lang="ts">
   import ProjectCard from "./ProjectCard.svelte";
+  import type { ProjectCardData } from "$lib/interfaces";
 
-  export let data: any;
-
-  $: data = data.data;
+  export let projectData: ProjectCardData[];
 </script>
 
 <div class="w-full bg-default-gray-100">
@@ -14,7 +13,7 @@
         <h3 class="text-4xl font-bold">Läs gärna om våra andra projekt</h3>
       </div>
       <div class="grid grid-cols-3 gap-14">
-        {#each data as card}
+        {#each projectData as card}
           <ProjectCard data={card} />
         {/each}
       </div>

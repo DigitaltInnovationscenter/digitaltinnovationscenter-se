@@ -99,11 +99,10 @@
             <div
               class="relative order-1 lg:order-2 aspect-[1.68/1] lg:aspect-auto overflow-hidden"
             >
-              <!-- svelte-ignore a11y-img-redundant-alt -->
               <img
                 src={PUBLIC_CMS_URL +
                   project.attributes.Banner.data[0].attributes.url}
-                alt="project-image"
+                alt="Bild som representerar {project.attributes.MainHeader}"
                 class="absolute lg:right-0 lg:top-0 h-full w-full"
               />
               <div

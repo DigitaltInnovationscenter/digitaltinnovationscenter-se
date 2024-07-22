@@ -77,11 +77,10 @@
       <div
         class="h-screen overflow-hidden flex items-center justify-center relative"
       >
-        <!-- svelte-ignore a11y-img-redundant-alt -->
         <img
           src={PUBLIC_CMS_URL + attributes.Banner.data[0].attributes.url}
           class="w-full"
-          alt="image"
+          alt="Bild som representerar {attributes.MainHeader}"
         />
         <div
           class="w-full h-24 rounded-t-[50px] absolute bottom-0 bg-white flex items-center"

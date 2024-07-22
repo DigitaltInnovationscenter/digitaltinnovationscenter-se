@@ -66,11 +66,10 @@
           </div>
         </div>
         <div>
-          <!-- svelte-ignore a11y-img-redundant-alt -->
           <img
             src={PUBLIC_CMS_URL + data.Banner.data[0].attributes.url}
             class="w-full max-w-[1000px] rounded-xl"
-            alt="image"
+            alt="Bild som representerar {data.MainHeader}"
           />
         </div>
       </div>

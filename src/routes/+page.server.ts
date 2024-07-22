@@ -1,7 +1,6 @@
-import { getStartPage } from "$lib/server/service-handler";
 import { PUBLIC_CMS_URL } from "$env/static/public";
 
-export const load = async ({ params }) => {
+export const load = async () => {
   const landingPageResponse: Response = await fetch(
     `${PUBLIC_CMS_URL}/api/pages/5?populate=deep`
   );
@@ -9,9 +8,11 @@ export const load = async ({ params }) => {
   let pages;
 
   if (landingPageResponse.ok) {
-    const result: any = await landingPageResponse.json();
+    const result = await landingPageResponse.json();
     pages = [...result.data.attributes.DynamicPage];
   }
+
+  console.log(pages);
 
   let sectionPost = pages?.find(
     ({ __component }) => __component === "block.section-post"

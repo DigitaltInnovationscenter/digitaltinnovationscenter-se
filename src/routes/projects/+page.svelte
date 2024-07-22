@@ -13,7 +13,7 @@
   {:else if page.__component == "block.section-project" && page.Header === "focused-project"}
     <ProjectHighlight data={page.projects} />
   {:else if page.__component == "block.section-project" && page.Header === "all-projects"}
-    <ProjectsOverview data={page.projects} />
+    <ProjectsOverview projectData={page.projects.data} />
   {:else if page.__component == "block.tech-group"}
     <OurTech data={page.TechCard} />
   {/if}
