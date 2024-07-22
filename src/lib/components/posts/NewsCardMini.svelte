@@ -1,7 +1,8 @@
 <script lang="ts">
   import { formatDate } from "$lib/assets/helperFunctions";
   import { PUBLIC_CMS_URL } from "$env/static/public";
-  export let data: any;
+  import type { NewsCardMiniData } from "$lib/interfaces";
+  export let data: NewsCardMiniData;
   $: ({ id, attributes } = data);
 </script>
 
@@ -13,10 +14,9 @@
     <div
       class="aspect-square min-w-[80px] h-[80px] bg-neutral-50 relative rounded-lg overflow-hidden"
     >
-      <!-- svelte-ignore a11y-img-redundant-alt -->
       <img
         src={PUBLIC_CMS_URL + attributes.Banner.data[0].attributes.url}
-        alt="image"
+        alt="Bild som representerar rubriken {attributes.Header}"
         class="min-w-full min-h-full absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
       />
     </div>
