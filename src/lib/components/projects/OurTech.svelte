@@ -11,7 +11,9 @@
       <div
         class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-center"
       >
-        <span class="font-bold text-[#9B4AFF] text-lg">Tekniksamling</span>
+        <span class="font-bold text-secondary-purple-100 text-lg"
+          >Tekniksamling</span
+        >
         <h6
           class="font-bold text-5xl text-slate-800 leading-snug text-center mb-4"
         >
@@ -25,7 +27,7 @@
         <a
           href="https://docs.digitaltinnovationscenter.se"
           target="_blank"
-          class="flex items-center justify-center transition hover:opacity-50 font-semibold text-[#9B4AFF]"
+          class="flex items-center justify-center transition hover:opacity-50 font-semibold text-secondary-purple-100"
         >
           Dokumentation av utveckling <Icon
             src={ArrowTopRightOnSquare}

@@ -9,7 +9,7 @@
   register();
 </script>
 
-<Container foreGroundColor="bg-[#eeeeee]" rounded={false}>
+<Container foreGroundColor="bg-default-gray-100" rounded={false}>
   <div class="max-w-[1362px] w-full m-auto space-y-12 lg:space-y-20 px-10">
     <div class="w-full text-center">
       <h3 class="text-3xl leading-snug lg:text-6xl font-bold text-slate-800">
@@ -21,7 +21,7 @@
         <ExploreCard data={card} />
       {/each}
     </div>
-    <div class="w-full text-center text-[#9B4AFF]">
+    <div class="w-full text-center text-secondary-purple-100">
       {#if data.CTA && data.CTA[0]}
         <a
           href={data.CTA[0].url}

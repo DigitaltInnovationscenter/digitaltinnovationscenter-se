@@ -12,7 +12,7 @@
   });
 </script>
 
-<Container backgroundColor="bg-[#eeeeee]" rounded={false}>
+<Container backgroundColor="bg-default-gray-100" rounded={false}>
   <div class="max-w-[1362px] w-full m-auto space-y-12 lg:space-y-20 px-10">
     <div class="w-full max-w-[900px]">
       <h3 class="text-3xl leading-snug lg:text-6xl font-bold text-slate-800">

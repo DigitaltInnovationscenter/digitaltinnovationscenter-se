@@ -9,8 +9,8 @@
 
 <a
   {href}
-  class="py-3 px-8 {className} left bg-white rounded-full text-[#9B4AFF] flex flex-row items-center {hover
-    ? 'hover:bg-[#F3E5FF]'
+  class="py-3 px-8 {className} left bg-white rounded-full text-secondary-purple-100 flex flex-row items-center {hover
+    ? 'hover:bg-alternative-purple-800'
     : ''} duration-300 transition-colors"
 >
   <slot />

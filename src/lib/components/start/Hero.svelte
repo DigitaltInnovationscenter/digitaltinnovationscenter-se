@@ -46,7 +46,7 @@
     </svg>
   </div>
   <div
-    class="w-full h-24 rounded-t-[50px] absolute -bottom-1 bg-[#eeeeee]"
+    class="w-full h-24 rounded-t-[50px] absolute -bottom-1 bg-default-gray-100"
   ></div>
 </div>
 

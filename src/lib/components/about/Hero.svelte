@@ -138,10 +138,12 @@
               class="w-4 h-4 xl:w-6 xl:h-6"
               alt="mini-logo"
             />
-            <h3 class="{headerBreakpoints} text-[#374151] font-semibold mb-2">
+            <h3
+              class="{headerBreakpoints} text-primary-dark-300 font-semibold mb-2"
+            >
               {figureContent.Header}
             </h3>
-            <p class="{paragraphBreakpoints} text-[#374151] mb-4">
+            <p class="{paragraphBreakpoints} text-primary-dark-300 mb-4">
               {figureContent.TextBlock}
             </p>
           </div>
@@ -176,10 +178,10 @@
             class="w-5 h-5"
             alt="mini-logo"
           />
-          <h3 class="text-xl text-[#374151] font-semibold mb-3">
+          <h3 class="text-xl text-primary-dark-300 font-semibold mb-3">
             {figureContent.Header}
           </h3>
-          <p class="text-lg text-[#374151] mb-4">
+          <p class="text-lg text-primary-dark-300 mb-4">
             {figureContent.TextBlock}
           </p>
         </div>

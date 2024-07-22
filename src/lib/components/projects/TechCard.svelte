@@ -9,9 +9,12 @@
     <!-- svelte-ignore a11y-img-redundant-alt -->
     <div class="w-full flex items-center justify-center relative">
       <div
-        class="w-8 h-8 bg-[#F9F2FF] rounded-full absolute -top-1 left-[47%]"
+        class="w-8 h-8 bg-alternative-purple-900] rounded-full absolute -top-1 left-[47%]"
       ></div>
-      <Icon src={CodeBracket} class="w-8 h-8 text-[#9B4AFF] relative z-50" />
+      <Icon
+        src={CodeBracket}
+        class="w-8 h-8 text-secondary-purple-100 relative z-50"
+      />
     </div>
     <div class="space-y-2">
       <a

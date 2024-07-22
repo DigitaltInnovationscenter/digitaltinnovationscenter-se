@@ -22,7 +22,8 @@
         />
       </div>
       <div class="mb-6">
-        <span class="py-2 px-4 bg-[#DAB1FF] rounded-lg text-sm text-[#111928]"
+        <span
+          class="py-2 px-4 bg-alternative-purple-400 rounded-lg text-sm text-primary-dark-100"
           >{formatDate(attributes.Date)}</span
         >
       </div>

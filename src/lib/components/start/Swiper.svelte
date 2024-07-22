@@ -128,7 +128,7 @@
   >
     <Icon
       src={ArrowLeft}
-      class="w-6 h-6 bg-[#9B4AFF] box-content p-3 rounded-full text-white"
+      class="w-6 h-6 bg-secondary-purple-100 box-content p-3 rounded-full text-white"
     />
   </div>
   <div
@@ -136,7 +136,7 @@
   >
     <Icon
       src={ArrowRight}
-      class="w-6 h-6 bg-[#9B4AFF] box-content p-3 rounded-full text-white"
+      class="w-6 h-6 bg-secondary-purple-100 box-content p-3 rounded-full text-white"
     />
   </div>
 </div>

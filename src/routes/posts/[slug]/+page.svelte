@@ -44,7 +44,9 @@
           <div><Icon src={ArrowRight} class="w-4 h-4" /></div>
           <a href="/posts" class="hover:underline">Aktuellt</a>
           <div><Icon src={ArrowRight} class="w-4 h-4" /></div>
-          <div class="font-medium text-[#9B4AFF]">{attributes.Header}</div>
+          <div class="font-medium text-secondary-purple-100">
+            {attributes.Header}
+          </div>
         </div>
         <div class="flex items-center justify-center">
           <!-- svelte-ignore a11y-missing-attribute -->
@@ -92,5 +94,5 @@
   data={latestPosts}
   headerType="extra"
   bgColor="bg-white"
-  fgColor="bg-[#EEEEEE]"
+  fgColor="bg-default-gray-100"
 />

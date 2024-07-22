@@ -39,14 +39,16 @@
 </script>
 
 <!-- Parse markdown does not work without checking if client document is loaded properly, since we're accidentally creating a dom before the document is loaded. -->
-<div class="w-full bg-[#F9FAFB]">
-  <div class="w-full bg-[#eeeeee] py-32 rounded-t-[50px]">
+<div class="w-full bg-primary-gray-100]">
+  <div class="w-full bg-default-gray-100 py-32 rounded-t-[50px]">
     <div class="max-w-[1362px] w-full m-auto py-18 space-y-14">
       <div
         class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-center space-y-10"
       >
         <div class="text-center">
-          <span class="font-bold text-[#9B4AFF] text-lg">{data.SubHeader}</span>
+          <span class="font-bold text-secondary-purple-100 text-lg"
+            >{data.SubHeader}</span
+          >
           <a
             href={`/projects/${projectId}/`}
             class="font-bold text-5xl text-slate-800 leading-snug text-center mb-8 block hover:underline transition-all"
@@ -55,10 +57,10 @@
           </a>
           <div class="text-center space-y-2">
             <span class="font-bold text-gray-800">{data.Progress}</span>
-            <div class="w-[570px] h-3 bg-[#DFE4EA] rounded-full">
+            <div class="w-[570px] h-3 bg-misc-colors-progress-bg rounded-full">
               <div
                 style="width: {$progress}%;"
-                class="bg-[#9B4AFF] h-full rounded-full"
+                class="bg-secondary-purple-100 h-full rounded-full"
               ></div>
             </div>
           </div>
@@ -74,7 +76,7 @@
       </div>
 
       <div
-        class="w-full text-center text-[#9B4AFF] flex flex-row items-center justify-center space-x-8"
+        class="w-full text-center text-secondary-purple-100 flex flex-row items-center justify-center space-x-8"
       >
         {#if data.CTA && data.CTA[0]}
           <a

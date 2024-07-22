@@ -23,14 +23,14 @@
       <div class="p-8">
         <a
           href="/projects/{id}"
-          class="hover:underline text-2xl font-semibold mb-4 text-[#9B4AFF]"
+          class="hover:underline text-2xl font-semibold mb-4 text-secondary-purple-100"
           >{attributes.MainHeader}</a
         >
         {#if attributes.RepeatableRichText && attributes.RepeatableRichText[0]}
           <p class="my-4 text-gray-600">
             {#if browser}
               {@html parseMarkdown(
-                attributes.RepeatableRichText[0].Content.slice(0, 250),
+                attributes.RepeatableRichText[0].Content.slice(0, 250)
               )}
             {/if}
           </p>
@@ -41,7 +41,7 @@
       {#if attributes.CTA[0]}
         <a
           href={attributes.CTA[0].url}
-          class="rounded-full bg-[#9B4AFF] text-white py-3 px-6 transition hover:opacity-75"
+          class="rounded-full bg-secondary-purple-100 text-white py-3 px-6 transition hover:opacity-75"
           >{attributes.CTA[0].text}</a
         >
       {/if}

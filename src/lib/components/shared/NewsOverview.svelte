@@ -6,7 +6,7 @@
   export let data: any;
   export let header: string | null = null;
 
-  export let bgColor = "bg-[#eeeeee]";
+  export let bgColor = "bg-default-gray-100";
   export let fgColor = "bg-white";
 </script>
 
@@ -24,7 +24,8 @@
       <div
         class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-center"
       >
-        <span class="font-bold text-[#9B4AFF] text-lg">Aktuellt</span>
+        <span class="font-bold text-secondary-purple-100 text-lg">Aktuellt</span
+        >
         <h6
           class="font-bold text-5xl text-slate-800 leading-snug text-center mb-4"
         >

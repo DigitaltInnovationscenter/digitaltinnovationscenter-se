@@ -1,5 +1,4 @@
 <script lang="ts">
-  import copy from "$lib/images/copy.svg";
   let copied = false;
 
   const copyMailToClipboard = (e: any) => {
@@ -23,12 +22,13 @@
     </div>
     <div class="text-lg max-w-[460px] text-center font-light text-gray-700">
       Den sidan du försöker besöka verkar inte finnas. Gå tillbaka till
-      <a href="/" class="underline text-[#9B4AFF]">startsidan</a> eller
+      <a href="/" class="underline text-secondary-purple-100">startsidan</a>
+      eller
       <!-- svelte-ignore missing-declaration -->
       <button
         on:click={copyMailToClipboard}
         class:copied
-        class="underline text-[#9B4AFF]">mejla oss</button
+        class="underline text-secondary-purple-100">mejla oss</button
       >
       <span class="text-gray-400">(tryck för att kopiera mejladressen)</span>.
     </div>

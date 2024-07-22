@@ -9,7 +9,7 @@
   <div class="grow">
     <a
       href="/"
-      class="hover:underline text-2xl font-semibold mb-4 text-[#9B4AFF]"
+      class="hover:underline text-2xl font-semibold mb-4 text-secondary-purple-100"
       >{data.Header}</a
     >
     <p class="mb-16 mt-4 text-gray-600">
@@ -17,7 +17,7 @@
     </p>
     <a
       href="/"
-      class="rounded-full bg-[#9B4AFF] text-white py-3 px-6 transition hover:opacity-75"
+      class="rounded-full bg-secondary-purple-100 text-white py-3 px-6 transition hover:opacity-75"
       >Läs mer</a
     >
   </div>

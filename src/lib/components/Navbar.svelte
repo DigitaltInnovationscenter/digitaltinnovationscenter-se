@@ -83,7 +83,7 @@
       <ul class="flex flex-row space-x-16">
         {#each links as link}
           <li
-            class="font-light inline-block w-[60px] hover:text-[#9B4AFF] transition-colors duration-200 text-[#374151]"
+            class="font-light inline-block w-[60px] hover:text-secondary-purple-100 transition-colors duration-200 text-primary-dark-300"
             aria-current={route === link.path ? "page" : undefined}
             class:active={route === link.path}
           >
@@ -109,7 +109,7 @@
   <ul class="flex flex-col items-center justify-center text-center">
     {#each links as link}
       <li
-        class="font-light mb-8 inline-block w-[60px] hover:text-[#9B4AFF] transition-colors duration-200 text-[#374151]"
+        class="font-light mb-8 inline-block w-[60px] hover:text-secondary-purple-100 transition-colors duration-200 text-primary-dark-300"
         aria-current={route === link.path ? "page" : undefined}
         class:active={route === link.path}
       >
@@ -119,7 +119,7 @@
       </li>
     {/each}
     <li
-      class="mt-8 font-light inline-block hover:text-[#9B4AFF] transition-colors duration-200 text-[#374151]"
+      class="mt-8 font-light inline-block hover:text-secondary-purple-100 transition-colors duration-200 text-primary-dark-300"
     >
       <button on:click={() => (defaultModal = false)}>X</button>
     </li>

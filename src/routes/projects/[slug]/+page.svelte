@@ -94,7 +94,7 @@
               <div><Icon src={ArrowRight} class="w-4 h-4" /></div>
               <a href="/projects" class="hover:underline">Projekt</a>
               <div><Icon src={ArrowRight} class="w-4 h-4" /></div>
-              <div class="font-medium text-[#9B4AFF]">
+              <div class="font-medium text-secondary-purple-100">
                 {attributes.MainHeader}
               </div>
             </div>
@@ -116,7 +116,7 @@
         >
           <div class="text-center">
             {#if attributes.SubHeader}
-              <span class="font-bold text-[#9B4AFF] text-lg"
+              <span class="font-bold text-secondary-purple-100 text-lg"
                 >{attributes.SubHeader}</span
               >
             {/if}
@@ -131,10 +131,12 @@
                 <span class="font-bold text-gray-800"
                   >{attributes.Progress}</span
                 >
-                <div class="w-[570px] m-auto h-3 bg-[#DFE4EA] rounded-full">
+                <div
+                  class="w-[570px] m-auto h-3 bg-misc-colors-progress-bg rounded-full"
+                >
                   <div
                     style="width: {handleProgress(attributes.Progress)}%;"
-                    class="bg-[#9B4AFF] h-full rounded-full"
+                    class="bg-secondary-purple-100 h-full rounded-full"
                   ></div>
                 </div>
               </div>
@@ -162,7 +164,7 @@
                   </p>
                   <a
                     href={CTACard.url}
-                    class="text-center rounded-full bg-[#9B4AFF] py-3 px-8 text-white hover:bg-[#9B4AFF]/75 transition-all"
+                    class="text-center rounded-full bg-secondary-purple-100 py-3 px-8 text-white hover:bg-secondary-purple-100/75 transition-all"
                     target={CTACard.external ? "_blank" : ""}
                     >{CTACard.buttonText}</a
                   >

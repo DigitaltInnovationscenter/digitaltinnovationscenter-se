@@ -43,7 +43,7 @@
   ];
 </script>
 
-<Container backgroundColor="bg-[#eee]" foreGroundColor="bg-white">
+<Container backgroundColor="bg-default-gray-100" foreGroundColor="bg-white">
   <div class="max-w-[1362px] m-auto space-y-20 flex flex-col" id="horizon">
     <div>
       <Hero
@@ -76,7 +76,7 @@
             class="text-3xl text-center flex flex-row items-center justify-center"
           >
             Horisont <span
-              class="bg-[#2F2FEA] text-white w-12 h-12 flex items-center justify-center ml-3 text-3xl rounded-full block font-semibold"
+              class="bg-horizon-primary-blue text-white w-12 h-12 flex items-center justify-center ml-3 text-3xl rounded-full block font-semibold"
               >0</span
             >
           </h3>
@@ -102,9 +102,10 @@
             class="text-3xl text-center flex flex-row items-center justify-center"
           >
             Horisont <span
-              class="bg-[#7EC13D] text-white w-12 h-12 flex items-center justify-center ml-3 text-3xl rounded-full block font-semibold"
+              class="bg-horizon-primary-green text-white w-12 h-12 flex items-center justify-center ml-3 text-3xl rounded-full block font-semibold"
               >3<span class="relative"
-                ><span class="absolute -top-11 -right-8 text-6xl text-[#C88AFF]"
+                ><span
+                  class="absolute -top-11 -right-8 text-6xl text-horizon-purple"
                   >*</span
                 ></span
               ></span
@@ -132,7 +133,7 @@
           }}
         >
           <h3
-            class="text-2xl text-[#83C344] font-extralight italic relative top-6 -left-2 text-center block w-full border-dotted border-b-2 pb-2 border-gray-300 relative"
+            class="text-2xl text-secondary-green font-extralight italic relative top-6 -left-2 text-center block w-full border-dotted border-b-2 pb-2 border-gray-300 relative"
           >
             Verksamhets-<br />förvaltning
 
@@ -155,7 +156,7 @@
           }}
         >
           <h3
-            class="text-2xl text-[#83C344] font-extralight italic relative top-12 -left-2 text-center block w-full border-dotted border-b-2 pb-2 border-gray-300 relative"
+            class="text-2xl text-secondary-green font-extralight italic relative top-12 -left-2 text-center block w-full border-dotted border-b-2 pb-2 border-gray-300 relative"
           >
             Ny för <br />"marknaden"
             <span
@@ -174,7 +175,9 @@
             <h3 class="text-center text-[22px]">
               <img src={logotypeSvg} alt="img" class="w-24 m-auto" />
               <span class="text-gray-600">Innovation på</span> <br />
-              <span class="font-bold text-[#060693]">Arbetsförmedlingen</span>
+              <span class="font-bold text-horizon-secondary-blue"
+                >Arbetsförmedlingen</span
+              >
             </h3>
           </div>
           <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -301,7 +304,7 @@
           }}
         >
           <h3
-            class="text-2xl text-[#83C344] font-extralight italic relative top-12 -left-6 text-center block w-full border-dotted border-b-2 pb-2 border-gray-300 relative"
+            class="text-2xl text-secondary-green font-extralight italic relative top-12 -left-6 text-center block w-full border-dotted border-b-2 pb-2 border-gray-300 relative"
           >
             Välkänd
             <span
@@ -323,7 +326,7 @@
           }}
         >
           <h3
-            class="text-2xl text-[#83C344] font-extralight italic relative top-12 -left-6 text-center block w-full border-dotted border-b-2 pb-2 border-gray-300 relative"
+            class="text-2xl text-secondary-green font-extralight italic relative top-12 -left-6 text-center block w-full border-dotted border-b-2 pb-2 border-gray-300 relative"
           >
             Ny för oss
             <span
@@ -350,7 +353,7 @@
             class="text-3xl text-center flex flex-row items-center justify-center"
           >
             Horisont <span
-              class="bg-[#C6E4AA] text-white w-12 h-12 flex items-center justify-center ml-3 text-3xl rounded-full block font-semibold"
+              class="bg-horizon-alternative-green text-white w-12 h-12 flex items-center justify-center ml-3 text-3xl rounded-full block font-semibold"
               >1</span
             >
           </h3>
@@ -378,9 +381,10 @@
             class="text-3xl text-center flex flex-row items-center justify-center"
           >
             Horisont <span
-              class="bg-[#060693] text-white w-12 h-12 flex items-center justify-center ml-3 text-3xl rounded-full block font-semibold"
+              class="bg-horizon-secondary-blue text-white w-12 h-12 flex items-center justify-center ml-3 text-3xl rounded-full block font-semibold"
               >2<span class="relative"
-                ><span class="absolute -top-11 -right-8 text-6xl text-[#C88AFF]"
+                ><span
+                  class="absolute -top-11 -right-8 text-6xl text-horizon-purple"
                   >*</span
                 ></span
               ></span
@@ -397,14 +401,14 @@
         class="col-span-6 pt-12 text-center text-lg w-[400px] m-auto space-y-4"
       >
         <div>
-          <span class="text-[#7EC13D]">*</span><span
+          <span class="text-horizon-primary-green">*</span><span
             class="text-gray-500 font-light"
             >Värdeskapande utveckling för att framtidssäkra och problemlösa
             effektivt och långsiktigt</span
           >
         </div>
         <div>
-          <span class="text-[#C88AFF]">*</span><span
+          <span class="text-horizon-purple">*</span><span
             class="text-gray-500 font-light"
             >Vi jobbar i den här horisonten.</span
           >
@@ -436,7 +440,7 @@
         {/each}
       </div>
       <div class="mt-6 block text-gray-500">
-        <span class="text-[#7EC13D]">*</span>Värdeskapande
+        <span class="text-horizon-primary-green">*</span>Värdeskapande
       </div>
     </div>
   </div>
