@@ -43,6 +43,7 @@
 
   .gradient-404-text {
     background: -webkit-linear-gradient(#9b4aff, #fff);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
