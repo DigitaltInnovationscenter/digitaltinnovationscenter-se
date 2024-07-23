@@ -6,7 +6,7 @@
   import { onMount } from "svelte";
   import type { HeroFigureData } from "$lib/interfaces";
 
-  export let data: HeroFigureData;
+  export let heroData: HeroFigureData;
 
   let activeHover: { bool: boolean; id: "right" | "bottom" | "top" | null } = {
     bool: false,
@@ -44,8 +44,8 @@
     }, 500);
   };
 
-  $: data.content &&
-    data.header &&
+  $: heroData.content &&
+    heroData.header &&
     setTimeout(() => {
       showSvg = true;
     }, 250) &&
@@ -85,12 +85,14 @@
     <div
       class="absolute top-[18%] text-6xl font-bold w-full max-w-[1362px] m-auto text-left text-slate-800"
     >
-      <span transition:fade={{ delay: 0, duration: 150 }}>{data.header}</span>
+      <span transition:fade={{ delay: 0, duration: 150 }}
+        >{heroData.header}</span
+      >
     </div>
   {/if}
   <!-- Aspect + width controls svg placing -->
   <div class="relative aspect-[1.15] w-full max-w-[300px]">
-    {#each data.content as figureContent, i}
+    {#each heroData.content as figureContent, i}
       <div
         role="contentinfo"
         class="{activeHover.id !== figureContent.position && activeHover.bool
@@ -150,9 +152,9 @@
   <div
     class="text-4xl max-w-[480px] font-bold w-full m-auto text-left text-slate-800"
   >
-    <span transition:fade={{ delay: 0, duration: 150 }}>{data.header}</span>
+    <span transition:fade={{ delay: 0, duration: 150 }}>{heroData.header}</span>
   </div>
-  {#each data.content as figureContent, i}
+  {#each heroData.content as figureContent, i}
     <div class="max-w-[480px]">
       {#if showCards}
         <div

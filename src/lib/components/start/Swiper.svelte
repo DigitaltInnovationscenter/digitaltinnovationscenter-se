@@ -6,7 +6,7 @@
   import { onMount } from "svelte";
   import type { SwiperProjectsData } from "$lib/interfaces/ui/SwiperData";
 
-  export let data: SwiperProjectsData;
+  export let swiperData: SwiperProjectsData;
 
   register();
 
@@ -69,7 +69,7 @@
     class="rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all bg-white"
     pagination={screenX < 1024 ? true : false}
   >
-    {#each data.projects.data as project}
+    {#each swiperData.projects.data as project}
       <swiper-slide class="cursor-pointer swiper-slide-card bg-white">
         <a href={`projects/${project.id}`}>
           <div

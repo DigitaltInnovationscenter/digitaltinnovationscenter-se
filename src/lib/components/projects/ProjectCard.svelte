@@ -8,7 +8,7 @@
     ProjectCardDataAttributes,
   } from "$lib/interfaces";
 
-  export let data: ProjectCardData | null = null;
+  export let projectCardData: ProjectCardData | null = null;
 
   let id: number | null = null;
   let attributes: ProjectCardDataAttributes | null = null;
@@ -18,8 +18,8 @@
   let ctaUrl: string = "";
   let ctaText: string = "";
 
-  $: if (data) {
-    ({ id, attributes } = data);
+  $: if (projectCardData) {
+    ({ id, attributes } = projectCardData);
     if (attributes) {
       imageUrl = PUBLIC_CMS_URL + attributes.Banner.data[0].attributes.url;
       postUrl = `/projects/${id}`;
@@ -31,7 +31,7 @@
   }
 </script>
 
-{#if data && id && attributes}
+{#if projectCardData && id && attributes}
   <a
     href={postUrl}
     class="bg-white flex flex-col rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden"

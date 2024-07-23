@@ -3,7 +3,7 @@
   import Container from "../shared/Container.svelte";
   import type { SwiperProjectsData } from "$lib/interfaces/ui/SwiperData";
 
-  export let data: SwiperProjectsData;
+  export let swiperData: SwiperProjectsData;
 
   let Swiper: any;
 
@@ -17,11 +17,11 @@
   <div class="max-w-[1362px] w-full m-auto space-y-12 lg:space-y-20 px-10">
     <div class="w-full max-w-[900px]">
       <h3 class="text-3xl leading-snug lg:text-6xl font-bold text-slate-800">
-        {data.Header}
+        {swiperData.Header}
       </h3>
     </div>
     <div class="relative">
-      <svelte:component this={Swiper} {data} />
+      <svelte:component this={Swiper} {swiperData} />
     </div>
   </div>
 </Container>

@@ -2,7 +2,7 @@
   import ButtonIcon from "../ButtonIcon.svelte";
   import type { StartHeroData } from "$lib/interfaces";
   import noiseIimage from "$lib/images/noise.svg";
-  export let data: StartHeroData;
+  export let heroData: StartHeroData;
 </script>
 
 <div
@@ -15,10 +15,10 @@
       <h6
         class="font-bold text-4xl lg:text-7xl text-white leading-snug mb-12 lg:pr-64 font-serif lg:leading-snug"
       >
-        {data.MainHeader}
+        {heroData.MainHeader}
       </h6>
-      {#if data.CTA && data.CTA.length > 0}
-        {#each data.CTA as btn}
+      {#if heroData.CTA && heroData.CTA.length > 0}
+        {#each heroData.CTA as btn}
           <ButtonIcon href={btn.url} class="shadow-lg">
             {btn.text}
           </ButtonIcon>

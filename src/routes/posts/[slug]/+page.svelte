@@ -92,7 +92,7 @@
   </Container>
 {/if}
 <NewsOverview
-  data={latestPosts}
+  newsCardData={latestPosts}
   headerType="extra"
   bgColor="bg-white"
   fgColor="bg-default-gray-100"

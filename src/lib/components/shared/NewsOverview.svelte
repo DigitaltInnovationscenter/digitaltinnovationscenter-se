@@ -4,7 +4,7 @@
   import type { NewsCardData } from "$lib/interfaces";
 
   export let headerType: "simple" | "extra" | null = "simple";
-  export let data: NewsCardData[];
+  export let newsCardData: NewsCardData[];
   export let header: string | null = null;
 
   export let bgColor = "bg-default-gray-100";
@@ -42,7 +42,7 @@
       <!-- No Header -->
     {/if}
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8">
-      {#each data as card}
+      {#each newsCardData as card}
         <NewsCard CardData={card} />
       {/each}
     </div>

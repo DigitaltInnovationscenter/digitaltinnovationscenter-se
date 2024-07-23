@@ -14,7 +14,7 @@
       <NewsOverview
         bgColor="bg-gray-50"
         headerType={null}
-        data={page.posts.data.slice(0, 3)}
+        newsCardData={page.posts.data.slice(0, 3)}
       />
       <NewsOverviewMini NewsCardMiniData={page.posts.data.slice(3)} />
     {/if}

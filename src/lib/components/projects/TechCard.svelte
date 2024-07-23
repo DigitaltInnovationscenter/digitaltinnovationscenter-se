@@ -1,7 +1,7 @@
 <script lang="ts">
   import { CodeBracket, Icon } from "svelte-hero-icons";
   import type { TechCardData } from "$lib/interfaces";
-  export let data: TechCardData;
+  export let techCardData: TechCardData;
 </script>
 
 <div class="border border-gray-200 flex flex-col rounded-2xl overflow-hidden">
@@ -19,10 +19,10 @@
       <a
         href="/"
         class="hover:underline text-2xl font-semibold mb-2 text-slate-800"
-        >{data.Header}</a
+        >{techCardData.Header}</a
       >
       <p class="text-gray-500">
-        {data.Content}
+        {techCardData.Content}
       </p>
     </div>
   </div>

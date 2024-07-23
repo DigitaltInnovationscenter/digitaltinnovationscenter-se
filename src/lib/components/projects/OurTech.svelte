@@ -2,7 +2,7 @@
   import { ArrowTopRightOnSquare, Icon } from "svelte-hero-icons";
   import TechCard from "./TechCard.svelte";
   import type { TechCardData } from "$lib/interfaces";
-  export let data: TechCardData[];
+  export let techCardData: TechCardData[];
 </script>
 
 <div class="w-full bg-white">
@@ -36,8 +36,8 @@
         </a>
       </div>
       <div class="grid grid-cols-3 gap-14">
-        {#each data as card}
-          <TechCard data={card} />
+        {#each techCardData as card}
+          <TechCard techCardData={card} />
         {/each}
       </div>
     </div>

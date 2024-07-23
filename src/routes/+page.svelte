@@ -12,15 +12,15 @@
 <div class="flex flex-col">
   {#each data.pages as page}
     {#if page.__component == "block.text-hero"}
-      <Hero data={page} />
+      <Hero heroData={page} />
     {:else if page.__component == "block.section-project"}
-      <ProjectSwiper data={page} />
+      <ProjectSwiper swiperData={page} />
     {:else if page.__component == "block.tech-group"}
       <Explorative exploreData={page} />
     {:else if page.__component == "block.section-post"}
       <NewsOverview
         header={page.Header}
-        data={page.posts.data}
+        newsCardData={page.posts.data}
         headerType="simple"
       />
     {/if}

@@ -12,6 +12,6 @@
   <meta name="description" content="About this app" />
 </svelte:head>
 
-<Hero data={data.hero} />
+<Hero heroData={data.hero} />
 <Team Team={data.team} />
 <Horizone />

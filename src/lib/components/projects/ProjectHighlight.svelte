@@ -7,16 +7,16 @@
   import type { ProjectHighlightData } from "$lib/interfaces";
   import Cta from "./CTA.svelte";
 
-  export let data: ProjectHighlightData[] | ProjectHighlightData;
+  export let projectData: ProjectHighlightData[] | ProjectHighlightData;
   let projectId: string;
   let project: ProjectHighlightData["attributes"];
 
-  if (Array.isArray(data)) {
-    projectId = data[0].id;
-    project = data[0].attributes;
+  if (Array.isArray(projectData)) {
+    projectId = projectData[0].id;
+    project = projectData[0].attributes;
   } else {
-    projectId = data.id;
-    project = data.attributes;
+    projectId = projectData.id;
+    project = projectData.attributes;
   }
 
   let progress: Writable<number> = writable(0);
@@ -45,7 +45,7 @@
     }
   };
 
-  $: data && handleProgress(project.Progress);
+  $: projectData && handleProgress(project.Progress);
 </script>
 
 <!-- Parse markdown does not work without checking if client document is loaded properly, since we're accidentally creating a dom before the document is loaded. -->

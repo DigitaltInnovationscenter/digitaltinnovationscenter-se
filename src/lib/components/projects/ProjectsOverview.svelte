@@ -14,7 +14,7 @@
       </div>
       <div class="grid grid-cols-3 gap-14">
         {#each projectData as card}
-          <ProjectCard data={card} />
+          <ProjectCard projectCardData={card} />
         {/each}
       </div>
     </div>
