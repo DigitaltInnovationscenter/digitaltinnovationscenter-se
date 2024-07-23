@@ -1,5 +1,15 @@
 import { PUBLIC_CMS_URL } from "$env/static/public";
-export const load = async ({ fetch }) => {
+export const load = async ({
+  fetch,
+}: {
+  fetch: {
+    (input: RequestInfo | URL, init?: RequestInit): Promise<Response>;
+    (
+      input: string | URL | globalThis.Request,
+      init?: RequestInit
+    ): Promise<Response>;
+  };
+}) => {
   const response: Response = await fetch(
     `${PUBLIC_CMS_URL}/api/pages/7?populate=deep`,
     {
@@ -10,7 +20,7 @@ export const load = async ({ fetch }) => {
   let pages;
 
   if (response.ok) {
-    const result: any = await response.json();
+    const result = await response.json();
     pages = [...result.data.attributes.DynamicPage];
   }
 

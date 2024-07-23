@@ -50,10 +50,10 @@
           </div>
         </div>
         <div class="flex items-center justify-center">
-          <!-- svelte-ignore a11y-missing-attribute -->
           <img
             src={PUBLIC_CMS_URL + attributes.Banner.data[0].attributes.url}
             class="rounded-xl"
+            alt="bild som reperesenterar artikeln {attributes.Header}"
           />
         </div>
       </div>

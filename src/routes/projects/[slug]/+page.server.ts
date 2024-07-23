@@ -1,9 +1,11 @@
 import { getProject } from "$lib/server/service-handler.js";
 import { error } from "@sveltejs/kit";
+import type { RouteParams } from "./$types";
 
-export const load = async ({ params }) => {
+export const load = async ({ params }: { params: RouteParams }) => {
   try {
-    const id = parseInt(params.slug);
+    const { slug } = params;
+    const id = parseInt(slug);
     const projectObject: any = await getProject(id);
 
     if (!projectObject.project) {
