@@ -1,4 +1,5 @@
 import { PUBLIC_CMS_URL } from "$env/static/public";
+import type { ApiAboutData, ApiTeamData } from "$lib/interfaces/index.js";
 
 export const load = async ({ fetch }) => {
   const heroResponse: Response = await fetch(
@@ -8,17 +9,7 @@ export const load = async ({ fetch }) => {
     }
   );
 
-  let hero: {
-    header: string;
-    content: {
-      Header: string;
-      TextBlock: string;
-      id: number;
-      position: "right" | "bottom" | "top";
-      smallLogo: { data: { attributes: { url: string } } };
-      svg: { data: { attributes: { url: string } } };
-    }[];
-  } = {
+  let hero: ApiAboutData = {
     content: [],
     header: "",
   };
@@ -36,15 +27,7 @@ export const load = async ({ fetch }) => {
     }
   );
 
-  let team: {
-    header: string;
-    content: {
-      Description: string;
-      Name: string;
-      MemberImage: { data: { attributes: { url: string } } | null };
-      Role: string;
-    }[];
-  } = {
+  let team: ApiTeamData = {
     content: [],
     header: "",
   };
