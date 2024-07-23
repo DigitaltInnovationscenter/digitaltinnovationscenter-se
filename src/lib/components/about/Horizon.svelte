@@ -49,7 +49,7 @@
       <Hero
         suffix="*"
         bgColor="bg-white"
-        data={{
+        heroData={{
           SubHeader: "Vår innovationsmodell",
           MainHeader: "Hur Arbetsförmedlingen jobbar med innovation",
           Description:
