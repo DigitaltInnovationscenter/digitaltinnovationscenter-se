@@ -2,7 +2,7 @@
   import { page } from "$app/stores";
   import logo from "$lib/images/logo.svg";
   import { Icon, Bars3 } from "svelte-hero-icons";
-  import { Button, Modal } from "flowbite-svelte";
+  import { Modal } from "flowbite-svelte";
   import copy from "$lib/images/copy.svg";
   import linkedin from "$lib/images/linkedin.svg";
   import facebook from "$lib/images/facebook.svg";
@@ -125,7 +125,7 @@
     </li>
   </ul>
   <svelte:fragment slot="footer">
-    <!-- <div class="max-w-[250px] m-auto mt-12 space-y-6">
+    <div class="max-w-[250px] m-auto mt-12 space-y-6">
       <h6 class="font-bold">Kontakt</h6>
       <p>
         Har du några funderingar? Du får gärna kontakta oss! Det gör du via vår
@@ -140,7 +140,7 @@
           <li><img src={link.img} alt={link.name} /></li>
         {/each}
       </ul>
-    </div> -->
+    </div>
   </svelte:fragment>
 </Modal>
 
