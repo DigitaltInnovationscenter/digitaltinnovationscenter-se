@@ -15,7 +15,8 @@ interface ProjectData {
       | ProjectHighlightData
       | ProjectHighlightData[]
       | ProjectCardData
-      | ProjectCardData[];
+      | ProjectCardData[]
+      | any;
   };
 }
 
