@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { ArrowLeft, ArrowRight, ArrowUp, Icon } from "svelte-hero-icons";
+  import { ArrowLeft, ArrowRight, Icon } from "svelte-hero-icons";
   import { register } from "swiper/element/bundle";
   import { PUBLIC_CMS_URL } from "$env/static/public";
   import ButtonIcon from "../ButtonIcon.svelte";
   import { onMount } from "svelte";
-  // import Button from "../Button.svelte";
+  import type { SwiperProjectsData } from "$lib/interfaces/ui/SwiperData";
 
-  export let data: any = [];
+  export let data: SwiperProjectsData;
 
   register();
 

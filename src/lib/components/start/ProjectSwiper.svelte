@@ -1,8 +1,9 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import Container from "../shared/Container.svelte";
+  import type { SwiperProjectsData } from "$lib/interfaces/ui/SwiperData";
 
-  export let data;
+  export let data: SwiperProjectsData;
 
   let Swiper: any;
 
