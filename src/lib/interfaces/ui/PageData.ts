@@ -1,4 +1,5 @@
 import type { ProjectCardData } from "./ProjectCardData";
+import type { ProjectHighlightData } from "./ProjectHighlightData";
 import type { SharedHeroData } from "./SharedHeroData";
 import type { TechCardData } from "./TechCardData";
 
@@ -10,7 +11,11 @@ interface ProjectData {
   __component: "block.section-project";
   Header: string;
   projects: {
-    data: ProjectCardData[];
+    data:
+      | ProjectHighlightData
+      | ProjectHighlightData[]
+      | ProjectCardData
+      | ProjectCardData[];
   };
 }
 
