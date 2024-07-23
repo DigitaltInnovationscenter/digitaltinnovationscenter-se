@@ -1,35 +1,49 @@
-import { CMS_URL, AUTH_TOKEN } from "$env/static/private";
+import { CMS_URL } from "$env/static/private";
 
 export const getPosts = async () => {
-  const res = await fetch(`${CMS_URL}/api/blogs`);
+  try {
+    const response = await fetch(`${CMS_URL}/api/posts?populate=deep`, {
+      method: "GET",
+    });
 
-  if (!res.ok) {
+    let posts;
+
+    if (response.ok) {
+      const result: any = await response.json();
+      posts = [...result.data];
+    }
+
+    return posts;
+  } catch (error) {
+    console.error(error);
     return [];
   }
-
-  const data = await res.json();
-  return data.data.map((p) => {
-    return { id: p.id, title: p.attributes.header, text: p.attributes.text };
-  });
 };
 
 export const getPost = async (id: number) => {
-  const res = await fetch(`${CMS_URL}/api/blogs/${id}`);
+  try {
+    const response: Response = await fetch(
+      `${CMS_URL}/api/posts/${id}?populate=deep`,
+      {
+        method: "GET",
+      }
+    );
 
-  if (!res.ok) {
-    return null;
+    let page;
+
+    if (response.ok) {
+      const result = await response.json();
+      page = { ...result.data };
+    }
+
+    return { post: page };
+  } catch (error) {
+    console.error(error);
   }
-
-  const data = await res.json();
-  console.log("fetching post for id ", id);
-  return data;
 };
 
 export const getStartPage = async (id: number) => {
-  const res = await fetch(
-    `${CMS_URL}/api/landing-pages/${id}?populate=deep`,
-    // `${CMS_URL}/api/landing-pages/${id}?populate[page][populate]=*`,
-  );
+  const res = await fetch(`${CMS_URL}/api/landing-pages/${id}?populate=deep`);
 
   if (!res.ok) {
     return null;
@@ -37,4 +51,26 @@ export const getStartPage = async (id: number) => {
 
   const data = await res.json();
   return data;
+};
+
+export const getProject = async (id: number) => {
+  try {
+    const response: Response = await fetch(
+      `${CMS_URL}/api/projects/${id}?populate=deep`,
+      {
+        method: "GET",
+      }
+    );
+
+    let page;
+
+    if (response.ok) {
+      const result = await response.json();
+      page = { ...result.data };
+    }
+
+    return { project: page };
+  } catch (error) {
+    console.error(error);
+  }
 };

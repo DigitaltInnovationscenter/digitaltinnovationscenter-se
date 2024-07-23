@@ -1,38 +1,28 @@
 <script lang="ts">
-  import CardGrid from "$lib/components/CardGrid.svelte";
-  import Container from "$lib/components/Container.svelte";
-  import Footer from "$lib/components/Footer.svelte";
-  import Header from "$lib/components/Header.svelte";
-  import Hero from "$lib/components/Hero.svelte";
-  import ProjectCarousel from "$lib/components/ProjectCarousel.svelte";
-  import ProjectGrid from "$lib/components/ProjectGrid.svelte";
   import { setContext } from "svelte";
-
-  export let data;
+  import Explorative from "$lib/components/start/Explorative.svelte";
+  import Hero from "$lib/components/start/Hero.svelte";
+  import ProjectSwiper from "$lib/components/start/ProjectSwiper.svelte";
+  import NewsOverview from "$lib/components/shared/NewsOverview.svelte";
+  export let data: any;
 
   setContext("cms_url", data.cms_url);
-
-  console.log(data);
 </script>
 
-<Header />
 <div class="flex flex-col">
   {#each data.pages as page}
-    {#if page.__component == "block.hero"}
-      <Hero data={page} />
-    {:else if page.__component == "block.project-carousel"}
-      <Container bgColor="bg-gray-100">
-        <ProjectCarousel data={page} />
-      </Container>
-    {:else if page.__component == "block.card-grid"}
-      <Container bgColor="bg-gray-100">
-        <CardGrid data={page} />
-      </Container>
-    {:else if page.__component == "block.project-grid"}
-      <Container bgColor="bg-white">
-        <ProjectGrid data={page} />
-      </Container>
+    {#if page.__component == "block.text-hero"}
+      <Hero heroData={page} />
+    {:else if page.__component == "block.section-project"}
+      <ProjectSwiper swiperData={page} />
+    {:else if page.__component == "block.tech-group"}
+      <Explorative exploreData={page} />
+    {:else if page.__component == "block.section-post"}
+      <NewsOverview
+        header={page.Header}
+        newsCardData={page.posts.data}
+        headerType="simple"
+      />
     {/if}
   {/each}
 </div>
-<Footer />
