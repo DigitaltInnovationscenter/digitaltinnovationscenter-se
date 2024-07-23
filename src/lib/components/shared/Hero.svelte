@@ -1,5 +1,6 @@
 <script lang="ts">
-  export let data;
+  import type { SharedHeroData } from "$lib/interfaces";
+  export let data: SharedHeroData;
   export let bgColor: string = "bg-primary-gray-100]";
   export let suffix: string = "";
 </script>

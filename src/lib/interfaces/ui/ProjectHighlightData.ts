@@ -12,7 +12,7 @@ interface Banner {
   data: ImageData[];
 }
 
-interface CTA {
+export interface CTA {
   url: string;
   text: string;
   external?: boolean;

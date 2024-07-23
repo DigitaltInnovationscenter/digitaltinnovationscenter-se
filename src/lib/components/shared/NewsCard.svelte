@@ -3,11 +3,13 @@
   import { PUBLIC_CMS_URL } from "$env/static/public";
   import { browser } from "$app/environment";
 
-  export let data: any;
-  $: ({ id, attributes } = data);
+  import type { NewsCardData } from "$lib/interfaces";
+
+  export let CardData: NewsCardData;
+  $: ({ id, attributes } = CardData);
 </script>
 
-{#if data}
+{#if CardData}
   <a
     href="/posts/{id}"
     class="lg:p-4 lg:hover:bg-gray-100 border border-transparent rounded-2xl flex flex-col cursor-pointer relative top-0 lg:hover:-top-4 transition-all duration-300 delay-100"

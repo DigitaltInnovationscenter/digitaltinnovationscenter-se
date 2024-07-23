@@ -1,9 +1,10 @@
 <script lang="ts">
   import Container from "./Container.svelte";
   import NewsCard from "./NewsCard.svelte";
+  import type { NewsCardData } from "$lib/interfaces";
 
   export let headerType: "simple" | "extra" | null = "simple";
-  export let data: any;
+  export let data: NewsCardData[];
   export let header: string | null = null;
 
   export let bgColor = "bg-default-gray-100";
@@ -42,7 +43,7 @@
     {/if}
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8">
       {#each data as card}
-        <NewsCard data={card} />
+        <NewsCard CardData={card} />
       {/each}
     </div>
   </div>
