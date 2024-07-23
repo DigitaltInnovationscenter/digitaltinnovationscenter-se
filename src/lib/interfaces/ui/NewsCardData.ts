@@ -1,3 +1,8 @@
+export interface NewsCardData {
+  id: number;
+  attributes: Attributes;
+}
+
 interface ImageAttributes {
   url: string;
 }
@@ -21,9 +26,4 @@ interface Attributes {
   RepeatableRichText: RepeatableRichText[];
   Author?: string;
   TimeToRead: number;
-}
-
-export interface NewsCardData {
-  id: number;
-  attributes: Attributes;
 }

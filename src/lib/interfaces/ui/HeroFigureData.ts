@@ -1,3 +1,8 @@
+export interface HeroFigureData {
+  header: string;
+  content: FigureContent[];
+}
+
 interface ImageAttributes {
   url: string;
 }
@@ -13,9 +18,4 @@ interface FigureContent {
   position: "right" | "bottom" | "top";
   smallLogo: { data: ImageData };
   svg: { data: ImageData };
-}
-
-export interface HeroFigureData {
-  header: string;
-  content: FigureContent[];
 }

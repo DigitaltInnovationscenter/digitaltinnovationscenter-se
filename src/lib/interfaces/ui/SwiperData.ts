@@ -1,3 +1,8 @@
+export interface SwiperProjectsData {
+  projects: Projects;
+  Header: string;
+}
+
 interface ImageAttributes {
   url: string;
 }
@@ -27,9 +32,4 @@ interface Project {
 
 interface Projects {
   data: Project[];
-}
-
-export interface SwiperProjectsData {
-  projects: Projects;
-  Header: string;
 }

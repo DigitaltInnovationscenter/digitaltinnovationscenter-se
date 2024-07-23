@@ -1,4 +1,14 @@
-// src/lib/interfaces/ui/ProjectCardData.ts
+export interface ProjectCardDataAttributes {
+  Banner: Banner;
+  MainHeader: string;
+  RepeatableRichText?: RepeatableRichText[];
+  CTA?: CTA[];
+}
+
+export interface ProjectCardData {
+  id: number;
+  attributes: ProjectCardDataAttributes;
+}
 
 interface ImageAttributes {
   url: string;
@@ -19,16 +29,4 @@ interface CTA {
 
 interface RepeatableRichText {
   Content: string;
-}
-
-export interface ProjectCardDataAttributes {
-  Banner: Banner;
-  MainHeader: string;
-  RepeatableRichText?: RepeatableRichText[];
-  CTA?: CTA[];
-}
-
-export interface ProjectCardData {
-  id: number;
-  attributes: ProjectCardDataAttributes;
 }

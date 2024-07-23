@@ -1,3 +1,7 @@
+export interface ProjectData {
+  project: Project;
+}
+
 interface ImageAttributes {
   url: string;
 }
@@ -37,8 +41,4 @@ interface Attributes {
 interface Project {
   id: string;
   attributes: Attributes;
-}
-
-export interface ProjectData {
-  project: Project;
 }

@@ -1,4 +1,7 @@
-// src/lib/interfaces/ui/ProjectData.ts
+export interface ProjectHighlightData {
+  id: string;
+  attributes: Attributes;
+}
 
 interface ImageAttributes {
   url: string;
@@ -29,9 +32,4 @@ interface Attributes {
   Banner: Banner;
   CTA?: CTA[];
   RepeatableRichText?: RepeatableRichText[];
-}
-
-export interface ProjectHighlightData {
-  id: string;
-  attributes: Attributes;
 }

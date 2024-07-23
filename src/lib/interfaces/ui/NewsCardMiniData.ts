@@ -1,14 +1,3 @@
-interface ImageData {
-  id: number;
-  attributes: {
-    url: string;
-  };
-}
-
-interface Banner {
-  data: ImageData[];
-}
-
 export interface NewsCardMiniAttributes {
   Banner: Banner;
   Header: string;
@@ -20,4 +9,15 @@ export interface NewsCardMiniAttributes {
 export interface NewsCardMiniData {
   id: number;
   attributes: NewsCardMiniAttributes;
+}
+
+interface ImageData {
+  id: number;
+  attributes: {
+    url: string;
+  };
+}
+
+interface Banner {
+  data: ImageData[];
 }

@@ -1,5 +1,10 @@
 import type { NewsCardData } from "./NewsCardData";
 
+export interface PostData {
+  post: Post;
+  latestPosts: NewsCardData[];
+}
+
 interface ImageAttributes {
   url: string;
 }
@@ -28,9 +33,4 @@ interface Attributes {
 interface Post {
   id: string;
   attributes: Attributes;
-}
-
-export interface PostData {
-  post: Post;
-  latestPosts: NewsCardData[];
 }
