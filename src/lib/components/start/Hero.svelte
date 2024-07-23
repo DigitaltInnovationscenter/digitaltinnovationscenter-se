@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { Icon, ArrowUp } from "svelte-hero-icons";
   import ButtonIcon from "../ButtonIcon.svelte";
-  import { onMount } from "svelte";
-  export let data;
+  import type { StartHeroData } from "$lib/interfaces";
+  export let data: StartHeroData;
 </script>
 
 <div
