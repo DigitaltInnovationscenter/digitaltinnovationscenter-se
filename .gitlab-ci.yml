@@ -44,6 +44,7 @@ pages:
     # Trigger a new build and deploy only when there is a push to the
     # below branch(es)
     # - main
+    - pages
 
 include:
   # https://docs.gitlab.com/ee/user/application_security/dependency_scanning/

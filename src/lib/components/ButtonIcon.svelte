@@ -1,7 +1,7 @@
 <script lang="ts">
   import { ArrowUp, Icon } from "svelte-hero-icons";
 
-  export let href = "";
+  export let href: string = "";
   export let hover: boolean = true;
   let className = "";
   export { className as class };
