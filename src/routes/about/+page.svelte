@@ -13,5 +13,5 @@
 </svelte:head>
 
 <Hero heroData={data.hero} />
-<Team Team={data.team} />
+<Team teamData={data.team} />
 <Horizone />
