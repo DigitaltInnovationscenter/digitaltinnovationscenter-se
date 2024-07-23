@@ -1,6 +1,7 @@
 <script lang="ts">
   import ButtonIcon from "../ButtonIcon.svelte";
   import type { StartHeroData } from "$lib/interfaces";
+  import noiseIimage from "$lib/images/noise.svg";
   export let data: StartHeroData;
 </script>
 
@@ -26,23 +27,7 @@
     </div>
   </div>
   <div class="w-full h-full opacity-50 backdrop-blur-sm">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      width="100%"
-      height="100%"
-    >
-      <filter id="n" x="0" y="0">
-        <feTurbulence
-          type="fractalNoise"
-          baseFrequency="0.75"
-          stitchTiles="stitch"
-        />
-      </filter>
-
-      <rect width="100%" height="100%" fill="#000" />
-      <rect width="100%" height="100%" filter="url(#n)" opacity="0.80" />
-    </svg>
+    <img src={noiseIimage} alt="background noise" class="w-full h-full" />
   </div>
   <div
     class="w-full h-24 rounded-t-[50px] absolute -bottom-1 bg-default-gray-100"

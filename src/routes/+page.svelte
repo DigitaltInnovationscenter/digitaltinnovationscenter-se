@@ -16,7 +16,7 @@
     {:else if page.__component == "block.section-project"}
       <ProjectSwiper data={page} />
     {:else if page.__component == "block.tech-group"}
-      <Explorative data={page} />
+      <Explorative exploreData={page} />
     {:else if page.__component == "block.section-post"}
       <NewsOverview
         header={page.Header}
