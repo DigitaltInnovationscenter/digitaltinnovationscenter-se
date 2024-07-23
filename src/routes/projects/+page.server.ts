@@ -1,6 +1,16 @@
 import { CMS_URL } from "$env/static/private";
 
-export const load = async ({ fetch }) => {
+export const load = async ({
+  fetch,
+}: {
+  fetch: {
+    (input: RequestInfo | URL, init?: RequestInit): Promise<Response>;
+    (
+      input: string | URL | globalThis.Request,
+      init?: RequestInit
+    ): Promise<Response>;
+  };
+}) => {
   const response: Response = await fetch(
     `${CMS_URL}/api/pages/4?populate=deep`,
     {

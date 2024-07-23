@@ -8,8 +8,9 @@
   import x from "$lib/images/x.svg";
   import youtube from "$lib/images/youtube.svg";
   import { browser } from "$app/environment";
+  import type { ProjectData } from "$lib/interfaces";
 
-  export let data: any;
+  export let data: ProjectData;
 
   $: ({ project } = data);
   $: ({ attributes } = project);
@@ -167,7 +168,6 @@
                     target={CTACard.external ? "_blank" : ""}
                     >{CTACard.buttonText}</a
                   >
-                  <!-- {JSON.stringify(attributes.CTACard)} -->
                 </div>
               {/each}
             {/if}
@@ -196,4 +196,4 @@
       </div>
     </div>
   </Container>
-{/if}}
+{/if}

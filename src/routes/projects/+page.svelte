@@ -3,8 +3,9 @@
   import OurTech from "$lib/components/projects/OurTech.svelte";
   import ProjectHighlight from "$lib/components/projects/ProjectHighlight.svelte";
   import ProjectsOverview from "$lib/components/projects/ProjectsOverview.svelte";
+  import type { PageData } from "$lib/interfaces";
 
-  export let data: any;
+  export let data: PageData;
 </script>
 
 {#each data.pages as page}
