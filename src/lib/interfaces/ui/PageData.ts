@@ -14,20 +14,12 @@ interface ProjectData {
   };
 }
 
-interface ProjectsOverviewData {
-  __component: "block.section-project";
-  Header: string;
-  projects: {
-    data: any; // Replace with real interface
-  };
-}
-
 interface TechGroupData extends TechCardData {
   __component: "block.tech-group";
   TechCard: TechCardData[];
 }
 
-type Page = HeroData | ProjectData | ProjectsOverviewData | TechGroupData;
+type Page = HeroData | ProjectData | TechGroupData;
 
 export interface PageData {
   pages: Page[];
