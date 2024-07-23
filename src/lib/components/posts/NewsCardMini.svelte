@@ -6,7 +6,7 @@
     NewsCardMiniAttributes,
   } from "$lib/interfaces";
 
-  export let NewsCardMiniData: NewsCardMiniData;
+  export let newsCardMiniData: NewsCardMiniData;
 
   let id: number;
   let attributes: NewsCardMiniAttributes;
@@ -14,8 +14,8 @@
   let imageUrl: string = "";
   let postUrl: string = "";
 
-  $: if (NewsCardMiniData) {
-    ({ id, attributes } = NewsCardMiniData);
+  $: if (newsCardMiniData) {
+    ({ id, attributes } = newsCardMiniData);
     author = attributes.Author || "Innovationscenter";
     imageUrl = PUBLIC_CMS_URL + attributes.Banner.data[0].attributes.url;
     postUrl = `/posts/${id}`;

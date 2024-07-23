@@ -12,8 +12,6 @@ export const load = async () => {
     pages = [...result.data.attributes.DynamicPage];
   }
 
-  console.log(pages);
-
   let sectionPost = pages?.find(
     ({ __component }) => __component === "block.section-post"
   );

@@ -1,4 +1,3 @@
-<!-- src/lib/components/ProjectCard.svelte -->
 <script lang="ts">
   import { browser } from "$app/environment";
   import { PUBLIC_CMS_URL } from "$env/static/public";

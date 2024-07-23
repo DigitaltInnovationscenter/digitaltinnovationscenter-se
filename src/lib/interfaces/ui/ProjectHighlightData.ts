@@ -3,6 +3,12 @@ export interface ProjectHighlightData {
   attributes: Attributes;
 }
 
+export interface CTA {
+  url: string;
+  text: string;
+  external?: boolean;
+}
+
 interface ImageAttributes {
   url: string;
 }
@@ -13,12 +19,6 @@ interface ImageData {
 
 interface Banner {
   data: ImageData[];
-}
-
-export interface CTA {
-  url: string;
-  text: string;
-  external?: boolean;
 }
 
 interface RepeatableRichText {

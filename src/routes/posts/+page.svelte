@@ -16,7 +16,7 @@
         headerType={null}
         newsCardData={page.posts.data.slice(0, 3)}
       />
-      <NewsOverviewMini NewsCardMiniData={page.posts.data.slice(3)} />
+      <NewsOverviewMini newsCardMiniData={page.posts.data.slice(3)} />
     {/if}
   {/each}
 {/if}
