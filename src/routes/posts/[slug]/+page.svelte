@@ -9,11 +9,12 @@
   import youtube from "$lib/images/youtube.svg";
   import NewsOverview from "$lib/components/shared/NewsOverview.svelte";
   import { browser } from "$app/environment";
+  import type { PostData } from "$lib/interfaces";
 
-  export let data: any;
+  export let data: PostData;
 
   $: ({ post, latestPosts } = data);
-  $: ({ id, attributes } = post);
+  $: ({ attributes } = post);
 
   const socialMediaLinks = [
     {
