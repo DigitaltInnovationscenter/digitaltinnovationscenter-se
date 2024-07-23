@@ -9,7 +9,7 @@
 {#if data.pages}
   {#each data.pages as page}
     {#if page.__component == "block.text-hero"}
-      <Hero data={page} />
+      <Hero heroData={page} />
     {:else if page.__component === "block.section-post"}
       <NewsOverview
         bgColor="bg-gray-50"

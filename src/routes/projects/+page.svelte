@@ -9,7 +9,7 @@
 
 {#each data.pages as page}
   {#if page.__component == "block.project-hero"}
-    <Hero data={page} />
+    <Hero heroData={page} />
   {:else if page.__component == "block.section-project" && page.Header === "focused-project"}
     <ProjectHighlight data={page.projects.data} />
   {:else if page.__component == "block.section-project" && page.Header === "all-projects"}

@@ -3,8 +3,9 @@
   import ExploreCard from "./ExploreCard.svelte";
   import Container from "../shared/Container.svelte";
   import { register } from "swiper/element/bundle";
+  import type { ExploreData } from "$lib/interfaces/ui/ExplorativeData";
 
-  export let data: any = [];
+  export let data: ExploreData;
 
   register();
 </script>
