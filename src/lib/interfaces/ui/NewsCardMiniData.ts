@@ -1,0 +1,23 @@
+export interface NewsCardMiniAttributes {
+  Banner: Banner;
+  Header: string;
+  Date: string;
+  Author?: string;
+  TimeToRead: number;
+}
+
+export interface NewsCardMiniData {
+  id: number;
+  attributes: NewsCardMiniAttributes;
+}
+
+interface ImageData {
+  id: number;
+  attributes: {
+    url: string;
+  };
+}
+
+interface Banner {
+  data: ImageData[];
+}

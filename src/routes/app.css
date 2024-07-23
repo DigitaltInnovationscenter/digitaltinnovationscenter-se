@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Inter";
+    font-optical-sizing: auto;
+    src: url("/fonts/Inter-Regular.ttf") format("ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+    font-variation-settings: "slnt" 0;
+  }
+
+  * {
+      font-family: 'Inter', sans-serif !important;
+  }
