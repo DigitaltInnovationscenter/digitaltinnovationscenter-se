@@ -47,14 +47,15 @@
 
   let copied = false;
 
-  const copyMailToClipboard = (e: any) => {
+  const copyMailToClipboard = (e: MouseEvent) => {
     e.preventDefault();
     const mail = "info@digitaltinnovationscenter.se";
     navigator.clipboard.writeText(mail);
-    e.target.classList.remove("transition");
+    const target = e.target as HTMLElement;
+    target.classList.remove("transition");
     copied = true;
     setTimeout(() => {
-      e.target.classList.add("transition");
+      target.classList.add("transition");
       copied = false;
     }, 250);
   };
