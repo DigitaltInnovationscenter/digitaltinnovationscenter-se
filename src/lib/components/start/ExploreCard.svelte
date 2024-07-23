@@ -1,5 +1,7 @@
 <script lang="ts">
-  export let data: any = [];
+  import type { TechCardData } from "$lib/interfaces";
+
+  export let exploreCard: TechCardData;
 </script>
 
 <a
@@ -10,10 +12,10 @@
     <a
       href="/"
       class="hover:underline text-2xl font-semibold mb-4 text-secondary-purple-100"
-      >{data.Header}</a
+      >{exploreCard.Header}</a
     >
     <p class="mb-16 mt-4 text-gray-600">
-      {data.Content}
+      {exploreCard.Content}
     </p>
     <a
       href="/"
