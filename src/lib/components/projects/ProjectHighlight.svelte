@@ -55,17 +55,17 @@
       <div
         class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-center space-y-10"
       >
-        <div class="text-center">
+        <div class="text-left lg:text-center">
           <span class="font-bold text-secondary-purple-100 text-lg"
             >{project.SubHeader}</span
           >
           <a
             href={`/projects/${projectId}/`}
-            class="font-bold text-5xl text-slate-800 leading-snug text-center mb-8 block hover:underline transition-all"
+            class="font-bold text-5xl text-slate-800 leading-snug mb-8 block hover:underline transition-all"
           >
             {project.MainHeader}
           </a>
-          <div class="text-center space-y-2">
+          <div class="text-left lg:text-center space-y-2">
             <span class="font-bold text-gray-800">{project.Progress}</span>
             <div class="w-[570px] h-3 bg-misc-colors-progress-bg rounded-full">
               <div
@@ -85,11 +85,13 @@
       </div>
 
       <div
-        class="w-full text-center text-secondary-purple-100 flex flex-row items-center justify-center space-x-8"
+        class="px-10 w-full text-left lg:text-center text-secondary-purple-100 flex flex-col lg:flex-row items-start lg:items-center justify-center space-y-2 lg:space-x-8 lg:space-y-0"
       >
         <Cta ctas={project.CTA} />
       </div>
-      <div class="grid grid-cols-2 gap-14 w-full max-w-[1080px] m-auto">
+      <div
+        class="px-10 grid grid-cols-1 lg:grid-cols-2 gap-14 w-full max-w-[1080px] m-auto"
+      >
         {#if project.RepeatableRichText && browser}
           {#each project.RepeatableRichText as text}
             {@html parseMarkdown(text.Content)}

@@ -423,7 +423,12 @@
           <div
             class="flex flex-col min-w-[340px] max-w-[400px] rounded-xl overflow-hidden shadow-md mb-4 pb-6"
           >
-            <div class="p-4 bg-[{item.hex}] text-white">{item.header}</div>
+            <div
+              style="background-color: {item.hex};"
+              class="p-4 bg-[{item.hex}] text-white"
+            >
+              {item.header}
+            </div>
             <div class="p-4 space-y-6">
               <div class="font-semibold my-4 text-lg">
                 {item.subHeader}

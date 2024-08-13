@@ -31,27 +31,46 @@
 </script>
 
 {#if projectCardData && id && attributes}
+  <!-- md:w-auto min-w-[80vw] md:max-w-[417px] -->
   <a
     href={postUrl}
-    class="bg-white flex flex-col rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden"
+    class="bg-white flex flex-col md:rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden md:w-auto min-w-[80vw] md:min-w-[0px] max-h-[88px] md:max-h-full"
   >
-    <div class="grow">
-      <div style="aspect-ratio: 1.7/1;" class="overflow-hidden relative">
+    <div class="grow md:grid md:grid-cols-1 flex flex-row">
+      <div
+        class="aspect-square md:aspect-[1.7/1] overflow-hidden relative min-w-[88px]"
+      >
         <img
           src={imageUrl}
           class="w-full absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
           alt="Bild som representerar {attributes.MainHeader}"
         />
       </div>
-      <div class="p-8">
+      <div class="md:p-8 md:w-full col-span-2 md:col-span-1 px-4">
         <a
           href={postUrl}
-          class="hover:underline text-2xl font-semibold mb-4 text-secondary-purple-100"
+          class="hover:underline text-md md:text-2xl font-semibold mb-4 text-secondary-purple-100"
         >
           {attributes.MainHeader}
         </a>
         {#if attributes.RepeatableRichText && attributes.RepeatableRichText[0]}
-          <p class="my-4 text-gray-600">
+          <p class="my-4 text-gray-600 hidden md:block md:text-2xl">
+            {#if browser}
+              {@html parseMarkdown(
+                attributes.RepeatableRichText[0].Content.slice(0, 250)
+              )}
+            {/if}
+          </p>
+          <p
+            class="text-gray-600 block md:hidden text-sm"
+            style="
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            "
+          >
             {#if browser}
               {@html parseMarkdown(
                 attributes.RepeatableRichText[0].Content.slice(0, 250)
@@ -61,11 +80,11 @@
         {/if}
       </div>
     </div>
-    <div class="px-8 pb-8">
+    <div class="md:py-8">
       {#if attributes.CTA && attributes.CTA[0]}
         <a
           href={ctaUrl}
-          class="rounded-full bg-secondary-purple-100 text-white py-3 px-6 transition hover:opacity-75"
+          class="rounded-full bg-secondary-purple-100 text-white md:py-3 md:px-6 transition hover:opacity-75"
         >
           {ctaText}
         </a>
