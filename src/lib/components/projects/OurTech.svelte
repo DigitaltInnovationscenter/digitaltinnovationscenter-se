@@ -7,19 +7,21 @@
 
 <div class="w-full bg-white">
   <div class="w-full bg-gray-50 py-10 rounded-t-[50px]">
-    <div class="max-w-[1362px] w-full m-auto py-48 space-y-20">
+    <div class="max-w-[1362px] w-full m-auto py-48 space-y-20 px-10">
       <div
-        class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-center"
+        class="w-full max-w-[1366px] m-auto flex flex-col items-start lg:items-center"
       >
         <span class="font-bold text-secondary-purple-100 text-lg"
           >Tekniksamling</span
         >
         <h6
-          class="font-bold text-5xl text-slate-800 leading-snug text-center mb-4"
+          class="font-bold text-5xl text-slate-800 leading-snug text-left lg:text-center mb-4"
         >
           Våra tekniker
         </h6>
-        <p class="text-center max-w-[450px] text-lg text-gray-500 mb-4">
+        <p
+          class="text-left lg:text-center max-w-[450px] text-lg text-gray-500 mb-4"
+        >
           Vi gör moduler av det tekniker vi skapar för att sedan implementera
           det i olika koncept. Besök vår Dokusaurus för att lära dig mer om hur
           vi har byggt våra moduler.
@@ -35,7 +37,9 @@
           />
         </a>
       </div>
-      <div class="grid grid-cols-3 gap-14">
+      <div
+        class="flex overflow-x-auto xl:overflow-hidden xl:grid xl:grid-cols-3 gap-10 pb-12 xl:pb-0"
+      >
         {#each techCardData as card}
           <TechCard techCardData={card} />
         {/each}

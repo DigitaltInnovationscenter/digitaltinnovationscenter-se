@@ -53,21 +53,24 @@
   <div class="w-full bg-default-gray-100 py-32 rounded-t-[50px]">
     <div class="max-w-[1362px] w-full m-auto py-18 space-y-14">
       <div
-        class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-center space-y-10"
+        class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-start lg:items-center space-y-10"
       >
-        <div class="text-left lg:text-center">
+        <div class="text-left lg:text-center w-full">
           <span class="font-bold text-secondary-purple-100 text-lg"
             >{project.SubHeader}</span
           >
           <a
             href={`/projects/${projectId}/`}
-            class="font-bold text-5xl text-slate-800 leading-snug mb-8 block hover:underline transition-all"
+            class="font-bold text-4xl lg:text-5xl text-slate-800 leading-snug mb-8 block hover:underline transition-all hyphens-auto"
+            lang="sv"
           >
             {project.MainHeader}
           </a>
-          <div class="text-left lg:text-center space-y-2">
+          <div class="text-left lg:text-center space-y-2 w-full">
             <span class="font-bold text-gray-800">{project.Progress}</span>
-            <div class="w-[570px] h-3 bg-misc-colors-progress-bg rounded-full">
+            <div
+              class="w-full max-w-[470px] lg:m-auto h-3 bg-misc-colors-progress-bg rounded-full"
+            >
               <div
                 style="width: {$progress}%;"
                 class="bg-secondary-purple-100 h-full rounded-full"

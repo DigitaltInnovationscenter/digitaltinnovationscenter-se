@@ -34,7 +34,7 @@
   <!-- md:w-auto min-w-[80vw] md:max-w-[417px] -->
   <a
     href={postUrl}
-    class="bg-white flex flex-col md:rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden md:w-auto min-w-[80vw] md:min-w-[0px] max-h-[88px] md:max-h-full"
+    class="bg-white flex flex-col md:rounded-2xl shadow-none md:shadow-md md:hover:shadow-xl transition overflow-hidden md:w-auto min-w-[80vw] md:min-w-[0px] max-h-[88px] md:max-h-full"
   >
     <div class="grow md:grid md:grid-cols-1 flex flex-row">
       <div
@@ -42,34 +42,20 @@
       >
         <img
           src={imageUrl}
-          class="w-full absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
+          class="rounded-lg md:rounded-none w-full absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
           alt="Bild som representerar {attributes.MainHeader}"
         />
       </div>
       <div class="md:p-8 md:w-full col-span-2 md:col-span-1 px-4">
         <a
           href={postUrl}
-          class="hover:underline text-md md:text-2xl font-semibold mb-4 text-secondary-purple-100"
+          class="hover:underline text-md md:text-2xl font-semibold mb-4 text-primary-dark-200 md:text-secondary-purple-100"
         >
           {attributes.MainHeader}
         </a>
         {#if attributes.RepeatableRichText && attributes.RepeatableRichText[0]}
-          <p class="my-4 text-gray-600 hidden md:block md:text-2xl">
-            {#if browser}
-              {@html parseMarkdown(
-                attributes.RepeatableRichText[0].Content.slice(0, 250)
-              )}
-            {/if}
-          </p>
           <p
-            class="text-gray-600 block md:hidden text-sm"
-            style="
-              display: -webkit-box;
-              -webkit-line-clamp: 3;
-              -webkit-box-orient: vertical;
-              overflow: hidden;
-              text-overflow: ellipsis;
-            "
+            class="mt-1 md:my-4 text-gray-600 text-sm md:text-2xl truncate-lines"
           >
             {#if browser}
               {@html parseMarkdown(
@@ -94,3 +80,20 @@
 {:else}
   <!-- TODO: Loading component ... -->
 {/if}
+
+<style>
+  .truncate-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3; /* Default to 3 lines */
+  }
+
+  @media (min-width: 1024px) {
+    /* lg breakpoint */
+    .truncate-lines {
+      -webkit-line-clamp: 6; /* Change to 6 lines on large screens */
+    }
+  }
+</style>
