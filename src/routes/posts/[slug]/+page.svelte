@@ -38,8 +38,8 @@
 
 {#if browser}
   <Container>
-    <div class="space-y-12">
-      <div class="max-w-[1362px] w-full m-auto space-y-8">
+    <div class="space-y-12 px-6">
+      <div class="max-w-[1362px] w-full m-auto space-y-8 pt-24 lg:pt-0 lg:px-0">
         <div class="flex flex-row items-center space-x-6">
           <a href="/" class="hover:underline">Start</a>
           <div><Icon src={ArrowRight} class="w-4 h-4" /></div>
