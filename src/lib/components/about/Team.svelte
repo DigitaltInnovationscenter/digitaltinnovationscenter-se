@@ -7,8 +7,10 @@
 </script>
 
 <Container backgroundColor="bg-white" foreGroundColor="bg-default-gray-100">
-  <div class="max-w-[1362px] m-auto space-y-12 px-10">
-    <h3 class="text-4xl lg:text-6xl pt-24 lg:pt-0 font-bold text-slate-800">
+  <div class="max-w-[1362px] m-auto space-y-12 lg:px-10">
+    <h3
+      class="text-4xl lg:text-6xl pt-24 lg:pt-0 px-10 lg:px-0 font-bold text-slate-800"
+    >
       {teamData.header}
     </h3>
     <div

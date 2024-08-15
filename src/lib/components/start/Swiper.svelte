@@ -84,7 +84,7 @@
               >
                 {project.attributes.MainHeader}
               </h4>
-              <p class="text-gray-600 text-left text-md lg:text-lg pr-12">
+              <p class="text-gray-600 text-left text-md lg:text-lg lg:pr-12">
                 {project.attributes.RepeatableRichText[0].Content}
               </p>
 
