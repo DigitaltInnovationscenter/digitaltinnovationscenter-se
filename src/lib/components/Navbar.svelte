@@ -74,7 +74,7 @@
     <a href="/" class="block h-full w-full grow min-w-[200px]">
       <img src={logo} alt="logotype" />
     </a>
-    <div class="flex justify-end h-full w-full grow min-w-[200px] lg:hidden">
+    <div class="flex justify-end h-full w-full grow lg:hidden">
       <button class="p-2" on:click={() => (defaultModal = !defaultModal)}>
         <Icon src={Bars3} class="w-6" />
       </button>
