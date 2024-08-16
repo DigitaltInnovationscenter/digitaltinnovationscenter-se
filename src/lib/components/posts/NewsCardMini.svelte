@@ -47,14 +47,13 @@
       <span>{formatDate(attributes.Date)}</span>
       <span class="inline w-1 h-1 rounded-full bg-gray-500"></span>
 
-      {#if attributes.Author}
+      <!-- {#if attributes.Author}
         <a href={postUrl} class="hover:underline">{attributes.Author}</a>
       {:else}
         <a href={postUrl} class="hover:underline">Innovationscenter</a>
-      {/if}
-      <span class="inline w-1 h-1 rounded-full bg-gray-500"></span><span
-        >{attributes.TimeToRead} min läsning</span
-      >
+      {/if} -->
+      <!-- <span class="inline w-1 h-1 rounded-full bg-gray-500"></span> -->
+      <span>{attributes.TimeToRead} min läsning</span>
     </div>
   </div>
 </a>
