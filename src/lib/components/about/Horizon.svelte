@@ -415,9 +415,9 @@
         </div>
       </div>
     </div>
-    <div class="xl:hidden px-6">
+    <div class="xl:hidden">
       <div
-        class="flex overflow-x-auto sm:overflow-hidden sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 pb-12 sm:pb-0 px-4"
+        class="flex overflow-x-auto sm:overflow-hidden sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 pb-12 sm:pb-0 px-10"
       >
         {#each horizonContent as item}
           <div
@@ -437,14 +437,16 @@
               <div class="flex flex-row items-center">
                 {#if item.relevant}
                   <img src={logo} alt="logotype" class="w-11 mr-3" />
-                  <div>Vi jobbar i den <br /> här horisonten!</div>
+                  <div class="font-bold leading-4">
+                    Vi jobbar i den <br /> här horisonten!
+                  </div>
                 {/if}
               </div>
             </div>
           </div>
         {/each}
       </div>
-      <div class="mt-6 block text-gray-500">
+      <div class="mt-6 block text-gray-500 px-10">
         <span class="text-horizon-primary-green">*</span>Värdeskapande
       </div>
     </div>
