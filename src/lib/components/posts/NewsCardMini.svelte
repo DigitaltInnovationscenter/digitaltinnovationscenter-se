@@ -32,7 +32,7 @@
     <img
       src={imageUrl}
       alt="Bild som representerar rubriken {attributes.Header}"
-      class="min-w-full min-h-full absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
+      class="w-full h-full object-cover absolute left-0 top-0"
     />
   </div>
   <div class="flex flex-col justify-between">

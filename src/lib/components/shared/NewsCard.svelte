@@ -18,10 +18,11 @@
       <div class="aspect-[1.68/1] overflow-hidden mb-6 rounded-xl relative">
         <img
           src={PUBLIC_CMS_URL + attributes.Banner.data[0].attributes.url}
-          class="min-w-full min-h-full absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
+          class="w-full h-full object-cover absolute left-0 top-0"
           alt="Bild som representerar {attributes.Header}"
         />
       </div>
+
       <div class="mb-6">
         <span
           class="py-2 px-4 bg-alternative-purple-400 rounded-lg text-sm text-primary-dark-100"

@@ -103,7 +103,7 @@
                 src={PUBLIC_CMS_URL +
                   project.attributes.Banner.data[0].attributes.url}
                 alt="Bild som representerar {project.attributes.MainHeader}"
-                class="absolute lg:right-0 lg:top-0 h-full w-full"
+                class="absolute lg:right-0 lg:top-0 h-full w-full object-cover"
               />
               <div
                 class="absolute flex items-center justify-center right-0 top-0 h-full w-0 backdrop-blur-sm transition-all figure-block-effect opacity-0 lg:opacity-100"

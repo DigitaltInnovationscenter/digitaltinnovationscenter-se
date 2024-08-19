@@ -42,7 +42,7 @@
       >
         <img
           src={imageUrl}
-          class="rounded-lg md:rounded-none w-full absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
+          class="rounded-lg md:rounded-none w-full h-full object-cover absolute left-0 top-0"
           alt="Bild som representerar {attributes.MainHeader}"
         />
       </div>
