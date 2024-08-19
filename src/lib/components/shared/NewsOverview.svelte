@@ -30,17 +30,10 @@
         <span class="font-bold text-secondary-purple-100 text-lg">Aktuellt</span
         >
         <h6
-          class="font-bold text-5xl text-slate-800 leading-snug text-left lg:text-center mb-4"
+          class="font-bold text-4xl text-slate-800 leading-snug text-left lg:text-center mb-4"
         >
           Senaste inläggen
         </h6>
-        <p
-          class="text-left lg:text-center max-w-[450px] text-lg text-gray-500 mb-4"
-        >
-          Vi gör moduler av det tekniker vi skapar för att sedan implementera
-          det i olika koncept. Besök vår Dokusaurus för att lära dig mer om hur
-          vi har byggt våra moduler.
-        </p>
       </div>
     {:else if headerType === null}
       <!-- No Header -->
