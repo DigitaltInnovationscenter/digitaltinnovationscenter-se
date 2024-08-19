@@ -4,5 +4,12 @@
     "config:recommended"
   ],
   "baseBranches": ["main"],
-  "addLabels": ["Prototypes", "Bot"]
+  "addLabels": ["Prototypes", "Bot"],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+        "automerge": true,
+        "autoApprove": true
+    }
+  ]
 }
