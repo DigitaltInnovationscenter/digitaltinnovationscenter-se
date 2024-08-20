@@ -121,7 +121,7 @@
           <div class="text-center w-full">
             {#if attributes.SubHeader}
               <span
-                class="font-bold text-misc-colors-progress-bg text-lg hyphens-auto"
+                class="font-bold text-secondary-purple-100 text-lg hyphens-auto"
                 lang="sv">{attributes.SubHeader}</span
               >
             {/if}
@@ -142,7 +142,7 @@
                 >
                   <div
                     style="width: {handleProgress(attributes.Progress)}%;"
-                    class=" bg-misc-colors-progress-bg h-full rounded-full"
+                    class=" bg-secondary-purple-100 h-full rounded-full"
                   ></div>
                 </div>
               </div>
@@ -180,7 +180,7 @@
                   </p>
                   <a
                     href={CTACard.url}
-                    class="text-center flex items-center rounded-full bg-secondary-purple-100 py-3 px-4 lg:px-8 text-white hover:bg-secondary-purple-100/75 transition-all text-sm lg:text-base"
+                    class="text-center flex items-center rounded-full bg-secondary-purple-100 py-2 lg:py-3 px-4 lg:px-8 text-white hover:bg-secondary-purple-100/75 transition-all text-sm lg:text-base mt-2 lg:mt-0"
                     target={CTACard.external ? "_blank" : ""}
                     >{CTACard.buttonText}
                     <Icon
