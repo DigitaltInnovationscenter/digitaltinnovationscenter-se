@@ -14,7 +14,7 @@
       ></div>
       <Icon
         src={CodeBracket}
-        class="w-8 h-8 text-secondary-purple-100 relative z-50"
+        class="w-8 h-8 text-secondary-purple-100 relative"
       />
     </div>
     <div class="space-y-2">
