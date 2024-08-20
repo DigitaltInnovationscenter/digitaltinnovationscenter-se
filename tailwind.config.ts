@@ -60,6 +60,7 @@ export default {
           800: "#E5E7EB",
         },
         ["default-gray"]: {
+          50: "#f9fafb",
           100: "#eeeeee",
         },
         ["primary-gray"]: {

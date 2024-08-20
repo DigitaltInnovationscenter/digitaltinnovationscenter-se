@@ -12,7 +12,7 @@
       <Hero heroData={page} />
     {:else if page.__component === "block.section-post"}
       <NewsOverview
-        bgColor="bg-gray-50"
+        bgColor="bg-default-gray-50"
         headerType={null}
         newsCardData={page.posts.data.slice(0, 3)}
       />

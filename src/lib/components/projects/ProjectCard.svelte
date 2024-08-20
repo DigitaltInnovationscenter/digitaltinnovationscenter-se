@@ -38,7 +38,7 @@
   >
     <div class="grow md:grid md:grid-cols-1 flex flex-row">
       <div
-        class="aspect-square md:aspect-[1.7/1] overflow-hidden relative min-w-[88px]"
+        class="aspect-square md:aspect-[1.7/1] overflow-hidden relative min-w-[88px] h-[88px] lg:h-auto"
       >
         <img
           src={imageUrl}

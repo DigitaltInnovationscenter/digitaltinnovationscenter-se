@@ -447,7 +447,11 @@
         {/each}
       </div>
       <div class="mt-6 block text-gray-500 px-10">
-        <span class="text-horizon-primary-green">*</span>Värdeskapande
+        <div>
+          <span class="text-horizon-primary-green">*</span>Värdeskapande
+          utveckling för att framtiddssäkra och problemlösa effektivt och
+          långsiktigt
+        </div>
       </div>
     </div>
   </div>
