@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { ArrowTopRightOnSquare, Icon, ArrowRight } from "svelte-hero-icons";
   import { PUBLIC_CMS_URL } from "$env/static/public";
   import { writable, type Writable } from "svelte/store";
   import { browser } from "$app/environment";
