@@ -1,7 +1,6 @@
 <script lang="ts">
   import ButtonIcon from "../ButtonIcon.svelte";
   import type { StartHeroData } from "$lib/interfaces";
-  import noiseIimage from "$lib/images/noise.svg";
   export let heroData: StartHeroData;
 </script>
 
@@ -26,9 +25,6 @@
       {/if}
     </div>
   </div>
-  <div class="w-full h-full opacity-50 backdrop-blur-sm">
-    <img src={noiseIimage} alt="background noise" class="w-full h-full" />
-  </div>
   <div
     class="w-full h-24 rounded-t-[50px] absolute -bottom-1 bg-default-gray-100"
   ></div>
@@ -36,9 +32,9 @@
 
 <style>
   .gradient-animation {
-    background: linear-gradient(-45deg, #0099ff, #cc96fc, #ff00d4, #a75fff);
+    background: linear-gradient(-45deg, #0173bf, #cc96fc, #d700b3, #a75fff);
     background-size: 400% 600%;
-    animation: gradient 15s ease infinite;
+    animation: gradient 8s ease infinite;
     height: 100vh;
   }
 

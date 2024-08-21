@@ -9,7 +9,7 @@
   {#each ctas as cta}
     <a
       href={cta.url}
-      class="flex items-center justify-center transition hover:opacity-50 text-lg"
+      class="flex items-center justify-center transition hover:opacity-50 text-md lg:text-lg"
     >
       {cta.text}
       <Icon

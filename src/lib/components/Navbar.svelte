@@ -32,7 +32,7 @@
 
   $: route = $page.route.id;
 
-  let defaultModal = false;
+  let openModal = false;
 
   const copyMailToClipboard = (e: MouseEvent) => {
     e.preventDefault();
@@ -67,38 +67,40 @@
   ];
 </script>
 
-<header class="bg-white/75 fixed w-full top-0 z-[100]">
-  <div
-    class="px-4 lg:px-10 py-6 max-w-[1366px] w-full flex flex-row items-center justify-between m-auto min-h-[70px]"
-  >
-    <a href="/" class="block h-full w-full grow min-w-[200px]">
-      <img src={logo} alt="logotype" />
-    </a>
-    <div class="flex justify-end h-full w-full grow min-w-[200px] lg:hidden">
-      <button class="p-2" on:click={() => (defaultModal = !defaultModal)}>
-        <Icon src={Bars3} class="w-6" />
-      </button>
-    </div>
+{#if !openModal}
+  <header class="bg-white/75 fixed w-full top-0 z-[100]">
+    <div
+      class="px-4 lg:px-10 py-6 max-w-[1366px] w-full flex flex-row items-center justify-between m-auto min-h-[70px]"
+    >
+      <a href="/" class="block h-full w-full grow min-w-[200px]">
+        <img src={logo} alt="logotype" />
+      </a>
+      <div class="flex justify-end h-full w-full grow lg:hidden">
+        <button class="p-2" on:click={() => (openModal = !openModal)}>
+          <Icon src={Bars3} class="w-6" />
+        </button>
+      </div>
 
-    <nav class="lg:items-center hidden lg:flex">
-      <ul class="flex flex-row space-x-16">
-        {#each links as link}
-          <li
-            class="font-light inline-block w-[60px] hover:text-secondary-purple-100 transition-colors duration-200 text-primary-dark-300"
-            aria-current={route === link.path ? "page" : undefined}
-            class:active={route === link.path}
-          >
-            <a href={link.path}>{link.name}</a>
-          </li>
-        {/each}
-      </ul>
-    </nav>
-  </div>
-</header>
+      <nav class="lg:items-center hidden lg:flex">
+        <ul class="flex flex-row space-x-16">
+          {#each links as link}
+            <li
+              class="font-light inline-block w-[60px] hover:text-secondary-purple-100 transition-colors duration-200 text-primary-dark-300"
+              aria-current={route === link.path ? "page" : undefined}
+              class:active={route === link.path}
+            >
+              <a href={link.path}>{link.name}</a>
+            </li>
+          {/each}
+        </ul>
+      </nav>
+    </div>
+  </header>
+{/if}
 
 <Modal
   title="Terms of Service"
-  bind:open={defaultModal}
+  bind:open={openModal}
   autoclose
   classDialog="shadow-none"
   backdropClass="fixed inset-0 z-40 bg-white"
@@ -114,15 +116,13 @@
         aria-current={route === link.path ? "page" : undefined}
         class:active={route === link.path}
       >
-        <a href={link.path} on:click={() => (defaultModal = false)}
-          >{link.name}</a
-        >
+        <a href={link.path} on:click={() => (openModal = false)}>{link.name}</a>
       </li>
     {/each}
     <li
       class="mt-8 font-light inline-block hover:text-secondary-purple-100 transition-colors duration-200 text-primary-dark-300"
     >
-      <button on:click={() => (defaultModal = false)}>X</button>
+      <button on:click={() => (openModal = false)}>X</button>
     </li>
   </ul>
   <svelte:fragment slot="footer">
