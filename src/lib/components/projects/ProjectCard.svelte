@@ -31,7 +31,6 @@
 </script>
 
 {#if projectCardData && id && attributes}
-  <!-- md:w-auto min-w-[80vw] md:max-w-[417px] -->
   <a
     href={postUrl}
     class="bg-white flex flex-col md:rounded-2xl shadow-none md:shadow-md md:hover:shadow-xl transition overflow-hidden md:w-auto min-w-[80vw] md:min-w-[0px] max-h-[88px] md:max-h-full"
