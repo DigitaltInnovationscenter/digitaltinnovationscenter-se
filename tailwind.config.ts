@@ -60,6 +60,7 @@ export default {
           800: "#E5E7EB",
         },
         ["default-gray"]: {
+          50: "#f9fafb",
           100: "#eeeeee",
         },
         ["primary-gray"]: {
@@ -72,7 +73,7 @@ export default {
           700: "#CED4DA",
         },
         ["misc-colors"]: {
-          "progress-bg": "#DFE4EA",
+          "progress-bg": "#DF683B",
         },
         horizon: {
           ["primary-blue"]: "#2F2FEA",

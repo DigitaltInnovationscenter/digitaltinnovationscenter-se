@@ -12,7 +12,9 @@
 </script>
 
 <Container backgroundColor={bgColor} foreGroundColor={fgColor}>
-  <div class="max-w-[1362px] w-full m-auto space-y-12 lg:space-y-20 px-10">
+  <div
+    class="max-w-[1362px] w-full m-auto space-y-12 lg:space-y-20 px-10 pt-24 lg:pt-0"
+  >
     {#if headerType === "simple" && header}
       <div class="w-full text-left">
         <h3
@@ -23,20 +25,15 @@
       </div>
     {:else if headerType === "extra"}
       <div
-        class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-center"
+        class="w-full max-w-[1366px] lg:px-10 m-auto flex flex-col items-start lg:items-center"
       >
         <span class="font-bold text-secondary-purple-100 text-lg">Aktuellt</span
         >
         <h6
-          class="font-bold text-5xl text-slate-800 leading-snug text-center mb-4"
+          class="font-bold text-4xl text-slate-800 leading-snug text-left lg:text-center mb-4"
         >
           Senaste inläggen
         </h6>
-        <p class="text-center max-w-[450px] text-lg text-gray-500 mb-4">
-          Vi gör moduler av det tekniker vi skapar för att sedan implementera
-          det i olika koncept. Besök vår Dokusaurus för att lära dig mer om hur
-          vi har byggt våra moduler.
-        </p>
       </div>
     {:else if headerType === null}
       <!-- No Header -->

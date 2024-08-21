@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { ArrowTopRightOnSquare, Icon, ArrowRight } from "svelte-hero-icons";
   import { PUBLIC_CMS_URL } from "$env/static/public";
   import { writable, type Writable } from "svelte/store";
   import { browser } from "$app/environment";
@@ -53,21 +52,24 @@
   <div class="w-full bg-default-gray-100 py-32 rounded-t-[50px]">
     <div class="max-w-[1362px] w-full m-auto py-18 space-y-14">
       <div
-        class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-center space-y-10"
+        class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-start lg:items-center space-y-10"
       >
-        <div class="text-center">
+        <div class="text-left lg:text-center w-full">
           <span class="font-bold text-secondary-purple-100 text-lg"
             >{project.SubHeader}</span
           >
           <a
             href={`/projects/${projectId}/`}
-            class="font-bold text-5xl text-slate-800 leading-snug text-center mb-8 block hover:underline transition-all"
+            class="font-bold text-4xl lg:text-5xl text-slate-800 leading-snug mb-8 block hover:underline transition-all hyphens-auto"
+            lang="sv"
           >
             {project.MainHeader}
           </a>
-          <div class="text-center space-y-2">
+          <div class="text-left lg:text-center space-y-2 w-full">
             <span class="font-bold text-gray-800">{project.Progress}</span>
-            <div class="w-[570px] h-3 bg-misc-colors-progress-bg rounded-full">
+            <div
+              class="w-full max-w-[470px] lg:m-auto h-3 bg-misc-colors-progress-bg rounded-full"
+            >
               <div
                 style="width: {$progress}%;"
                 class="bg-secondary-purple-100 h-full rounded-full"
@@ -85,11 +87,13 @@
       </div>
 
       <div
-        class="w-full text-center text-secondary-purple-100 flex flex-row items-center justify-center space-x-8"
+        class="px-10 w-full text-left lg:text-center text-secondary-purple-100 flex flex-col lg:flex-row items-start lg:items-center justify-center space-y-2 lg:space-x-8 lg:space-y-0"
       >
         <Cta ctas={project.CTA} />
       </div>
-      <div class="grid grid-cols-2 gap-14 w-full max-w-[1080px] m-auto">
+      <div
+        class="px-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-14 w-full max-w-[1080px] m-auto"
+      >
         {#if project.RepeatableRichText && browser}
           {#each project.RepeatableRichText as text}
             {@html parseMarkdown(text.Content)}

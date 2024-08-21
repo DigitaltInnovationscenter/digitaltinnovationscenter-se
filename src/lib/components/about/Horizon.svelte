@@ -415,15 +415,20 @@
         </div>
       </div>
     </div>
-    <div class="xl:hidden px-6">
+    <div class="xl:hidden">
       <div
-        class="flex overflow-x-auto sm:overflow-hidden sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 pb-12 sm:pb-0 px-4"
+        class="flex overflow-x-auto sm:overflow-hidden sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 pb-12 sm:pb-0 px-10"
       >
         {#each horizonContent as item}
           <div
             class="flex flex-col min-w-[340px] max-w-[400px] rounded-xl overflow-hidden shadow-md mb-4 pb-6"
           >
-            <div class="p-4 bg-[{item.hex}] text-white">{item.header}</div>
+            <div
+              style="background-color: {item.hex};"
+              class="p-4 bg-[{item.hex}] text-white"
+            >
+              {item.header}
+            </div>
             <div class="p-4 space-y-6">
               <div class="font-semibold my-4 text-lg">
                 {item.subHeader}
@@ -432,15 +437,21 @@
               <div class="flex flex-row items-center">
                 {#if item.relevant}
                   <img src={logo} alt="logotype" class="w-11 mr-3" />
-                  <div>Vi jobbar i den <br /> här horisonten!</div>
+                  <div class="font-bold leading-4">
+                    Vi jobbar i den <br /> här horisonten!
+                  </div>
                 {/if}
               </div>
             </div>
           </div>
         {/each}
       </div>
-      <div class="mt-6 block text-gray-500">
-        <span class="text-horizon-primary-green">*</span>Värdeskapande
+      <div class="mt-6 block text-gray-500 px-10">
+        <div>
+          <span class="text-horizon-primary-green">*</span>Värdeskapande
+          utveckling för att framtiddssäkra och problemlösa effektivt och
+          långsiktigt
+        </div>
       </div>
     </div>
   </div>
