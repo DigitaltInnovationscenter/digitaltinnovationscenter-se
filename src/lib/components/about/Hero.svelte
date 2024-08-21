@@ -147,19 +147,23 @@
   </div>
 </div>
 <div
-  class="visible xl:hidden flex flex-col mt-32 mb-24 items-center justify-center px-6 space-y-12"
+  class="visible min-h-[700px] xl:hidden flex flex-col mt-32 mb-24 items-center justify-center px-6 space-y-12"
 >
-  <div
-    class="text-4xl max-w-[480px] font-bold w-full m-auto text-left text-slate-800"
-  >
-    <span transition:fade={{ delay: 0, duration: 150 }}>{heroData.header}</span>
-  </div>
+  {#if showCards}
+    <div
+      class="text-4xl max-w-[480px] font-bold w-full m-auto text-left text-slate-800"
+    >
+      <span transition:fade={{ delay: 0, duration: 500 }}
+        >{heroData.header}</span
+      >
+    </div>
+  {/if}
   {#each heroData.content as figureContent, i}
     <div class="max-w-[480px]">
       {#if showCards}
         <div
           transition:fly={{
-            delay: i * 10,
+            delay: 0,
             duration: 500,
             y: 40,
             opacity: 0,

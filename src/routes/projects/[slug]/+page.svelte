@@ -80,7 +80,7 @@
       >
         <img
           src={PUBLIC_CMS_URL + attributes.Banner.data[0].attributes.url}
-          class="w-full h-full object-cover absolute left-0 top-0"
+          class="w-full h-full object-cover absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
           alt="Bild som representerar {attributes.MainHeader}"
         />
         <div
