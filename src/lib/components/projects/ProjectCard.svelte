@@ -54,7 +54,7 @@
         </a>
         {#if attributes.RepeatableRichText && attributes.RepeatableRichText[0]}
           <p
-            class="mt-1 md:my-4 text-gray-600 text-sm md:text-2xl truncate-lines"
+            class="mt-1 md:my-4 text-gray-600 text-sm md:text-lg truncate-lines"
           >
             {#if browser}
               {@html parseMarkdown(
