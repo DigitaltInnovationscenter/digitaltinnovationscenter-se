@@ -39,43 +39,53 @@
       <div
         class="aspect-square md:aspect-[1.7/1] overflow-hidden relative min-w-[88px] h-[88px] lg:h-auto"
       >
-        <img
-          src={imageUrl}
-          class="rounded-lg md:rounded-none w-full h-full object-cover absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
-          alt="Bild som representerar {attributes.MainHeader}"
-        />
-      </div>
-      <div class="md:p-8 md:w-full col-span-2 md:col-span-1 px-4">
-        <a
-          href={postUrl}
-          class="hover:underline text-md md:text-2xl font-semibold mb-4 text-primary-dark-200 md:text-secondary-purple-100"
-        >
-          {attributes.MainHeader}
-        </a>
-        {#if attributes.RepeatableRichText && attributes.RepeatableRichText[0]}
-          <p
-            class="mt-1 md:my-4 text-gray-600 text-sm md:text-lg truncate-lines"
+        <div class="grow md:grid md:grid-cols-1 flex flex-row">
+          <div
+            class="aspect-square md:aspect-[1.7/1] overflow-hidden relative min-w-[88px] h-[88px] lg:h-auto"
           >
-            {#if browser}
-              {@html parseMarkdown(
-                attributes.RepeatableRichText[0].Content.slice(0, 250)
-              )}
-            {/if}
-          </p>
-        {/if}
+            <img
+              src={imageUrl}
+              class="rounded-lg md:rounded-none w-full h-full object-cover absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
+              alt="Bild som representerar {attributes.MainHeader}"
+            />
+          </div>
+          <div class="md:p-8 md:w-full col-span-2 md:col-span-1 px-4">
+            <div class="md:p-8 md:w-full col-span-2 md:col-span-1 px-4">
+              <a
+                href={postUrl}
+                class="hover:underline text-md md:text-2xl font-semibold mb-4 text-primary-dark-200 md:text-secondary-purple-100"
+              >
+                {attributes.MainHeader}
+              </a>
+              {#if attributes.RepeatableRichText && attributes.RepeatableRichText[0]}
+                <p
+                  class="mt-1 md:my-4 text-gray-600 text-sm md:text-lg truncate-lines"
+                >
+                  {#if browser}
+                    {@html parseMarkdown(
+                      attributes.RepeatableRichText[0].Content.slice(0, 250)
+                    )}
+                  {/if}
+                </p>
+              {/if}
+            </div>
+          </div>
+          <div class="md:py-8">
+            <div class="md:py-8">
+              {#if attributes.CTA && attributes.CTA[0]}
+                <a
+                  href={ctaUrl}
+                  class="rounded-full bg-secondary-purple-100 text-white md:py-3 md:px-6 transition hover:opacity-75"
+                >
+                  {ctaText}
+                </a>
+              {/if}
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="md:py-8">
-      {#if attributes.CTA && attributes.CTA[0]}
-        <a
-          href={ctaUrl}
-          class="rounded-full bg-secondary-purple-100 text-white md:py-3 md:px-6 transition hover:opacity-75"
-        >
-          {ctaText}
-        </a>
-      {/if}
-    </div>
-  </a>
+    </div></a
+  >
 {:else}
   <!-- TODO: Loading component ... -->
 {/if}
