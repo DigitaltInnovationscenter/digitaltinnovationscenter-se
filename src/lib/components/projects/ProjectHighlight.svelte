@@ -95,9 +95,8 @@
         class="px-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-14 w-full max-w-[1080px] m-auto"
       >
         {#if project.RepeatableRichText && browser}
-          {#each project.RepeatableRichText as text}
-            {@html parseMarkdown(text.Content)}
-          {/each}
+          {@html parseMarkdown(project.RepeatableRichText[0].Content)}
+          {@html parseMarkdown(project.RepeatableRichText[1].Content)}
         {/if}
       </div>
     </div>

@@ -24,7 +24,7 @@
 
 <a
   href={postUrl}
-  class="flex flex-row space-x-4 hover:bg-gray-100 rounded-xl cursor-pointer relative top-0 hover:-top-2 transition-all duration-300 delay-100 min-w-[95vw] md:min-w-[0px]"
+  class="flex flex-row space-x-4 hover:bg-gray-100 rounded-xl cursor-pointer relative top-0 hover:-top-2 transition-all duration-300 delay-100 min-w-[95vw] md:min-w-[0px] p-2 box-content"
 >
   <div
     class="aspect-square min-w-[80px] h-[80px] bg-neutral-50 relative rounded-lg overflow-hidden"
@@ -39,7 +39,7 @@
     <div class="grow">
       <a
         href={postUrl}
-        class="hover:underline text-lg font-semibold leading-snug"
+        class="hover:underline text-lg font-semibold leading-snug truncate-2-lines"
         >{attributes.Header}</a
       >
     </div>
@@ -50,3 +50,13 @@
     </div>
   </div>
 </a>
+
+<style>
+  .truncate-2-lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>

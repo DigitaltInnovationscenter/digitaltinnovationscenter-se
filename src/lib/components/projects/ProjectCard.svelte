@@ -54,7 +54,7 @@
         </a>
         {#if attributes.RepeatableRichText && attributes.RepeatableRichText[0]}
           <p
-            class="mt-1 md:my-4 text-gray-600 text-sm md:text-2xl truncate-lines"
+            class="mt-1 md:my-4 text-gray-600 text-sm md:text-lg truncate-lines"
           >
             {#if browser}
               {@html parseMarkdown(
@@ -64,18 +64,20 @@
           </p>
         {/if}
       </div>
-    </div>
-    <div class="md:py-8">
-      {#if attributes.CTA && attributes.CTA[0]}
-        <a
-          href={ctaUrl}
-          class="rounded-full bg-secondary-purple-100 text-white md:py-3 md:px-6 transition hover:opacity-75"
-        >
-          {ctaText}
-        </a>
-      {/if}
-    </div>
-  </a>
+      <div class="md:py-8">
+        <div class="md:py-8">
+          {#if attributes.CTA && attributes.CTA[0]}
+            <a
+              href={ctaUrl}
+              class="rounded-full bg-secondary-purple-100 text-white md:py-3 md:px-6 transition hover:opacity-75"
+            >
+              {ctaText}
+            </a>
+          {/if}
+        </div>
+      </div>
+    </div></a
+  >
 {:else}
   <!-- TODO: Loading component ... -->
 {/if}
