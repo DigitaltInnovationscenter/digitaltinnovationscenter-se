@@ -102,7 +102,7 @@
             </div>
 
             <div
-              class="lg:flex lg:flex-row items-center space-x-3 hidden lg:visible"
+              class="lg:flex lg:flex-row items-center space-x-3 hidden lg:visible px-10"
             >
               <span class="text-gray-500 text-sm">Dela det här projektet</span>
               <ul class="flex flex-row gap-2">
@@ -156,9 +156,13 @@
           <div
             class="w-full max-w-[680px] space-y-6 order-2 lg:order-1 px-10 lg:px-0"
           >
-            {#each attributes.RepeatableRichText as { Content }}
-              {@html parseMarkdown(Content)}
-            {/each}
+            {#if attributes.RepeatableRichText[0]}
+              {@html parseMarkdown(attributes.RepeatableRichText[0].Content)}
+            {/if}
+
+            {#if attributes.RepeatableRichText[1]}
+              {@html parseMarkdown(attributes.RepeatableRichText[1].Content)}
+            {/if}
           </div>
           <div
             class="lg:grow lg:space-y-12 order-1 lg:order-2 flex justify-center lg:block px-6 lg:px-0 my-10 lg:my-0 space-x-8 lg:space-x-0"
@@ -218,4 +222,15 @@
       </div>
     </div>
   </Container>
+
+  {#each attributes.RepeatableRichText.slice(2) as { Content, ForegroundColor, BackgroundColor }}
+    <Container
+      backgroundColor={BackgroundColor}
+      foreGroundColor={ForegroundColor}
+    >
+      <div class="max-w-[980px] mx-auto flex items-center justify-center">
+        {@html parseMarkdown(Content)}
+      </div>
+    </Container>
+  {/each}
 {/if}
