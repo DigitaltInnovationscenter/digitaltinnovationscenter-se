@@ -223,12 +223,16 @@
     </div>
   </Container>
 
-  {#each attributes.RepeatableRichText.slice(2) as { Content, ForegroundColor, BackgroundColor }}
+  {#each attributes.RepeatableRichText.slice(2) as { Content, ForegroundColor, BackgroundColor, Width }}
     <Container
       backgroundColor={BackgroundColor}
       foreGroundColor={ForegroundColor}
     >
-      <div class="max-w-[980px] mx-auto flex items-center justify-center">
+      <div
+        class="{Width === 'full'
+          ? 'w-full px-24'
+          : 'max-w-[680px]'} mx-auto flex items-center justify-center"
+      >
         {@html parseMarkdown(Content)}
       </div>
     </Container>
