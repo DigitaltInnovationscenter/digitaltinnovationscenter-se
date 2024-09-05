@@ -21,7 +21,7 @@
       path: "/projects",
     },
     {
-      name: "Nyheter",
+      name: "Aktuellt",
       path: "/posts",
     },
   ];
