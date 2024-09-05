@@ -65,16 +65,14 @@
         {/if}
       </div>
       <div class="md:py-8">
-        <div class="md:py-8">
-          {#if attributes.CTA && attributes.CTA[0]}
-            <a
-              href={ctaUrl}
-              class="rounded-full bg-secondary-purple-100 text-white md:py-3 md:px-6 transition hover:opacity-75"
-            >
-              {ctaText}
-            </a>
-          {/if}
-        </div>
+        {#if attributes.CTA && attributes.CTA[0]}
+          <a
+            href={ctaUrl}
+            class="rounded-full bg-secondary-purple-100 text-white md:py-3 md:px-6 transition hover:opacity-75"
+          >
+            {ctaText}
+          </a>
+        {/if}
       </div>
     </div></a
   >
