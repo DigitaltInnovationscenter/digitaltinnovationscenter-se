@@ -227,13 +227,26 @@
     <Container
       backgroundColor={BackgroundColor}
       foreGroundColor={ForegroundColor}
+      paddingBottom="pb-2"
     >
       <div
         class="{Width === 'full'
-          ? 'w-full px-24'
-          : 'max-w-[680px]'} mx-auto flex items-center justify-center"
+          ? 'w-full px-10 py-10 lg:px-24 lg:py-0'
+          : 'max-w-[1114px] m-auto lg:order-1 px-10 py-10 lg:py-0 lg:px-0'} flex items-center justify-center"
       >
-        {@html parseMarkdown(Content)}
+        {#if Width !== "full"}
+          <div class="w-full max-w-[680px] space-y-6 order-2">
+            {@html parseMarkdown(Content)}
+          </div>
+
+          <!-- <div
+            class="lg:grow lg:space-y-12 order-1 lg:order-2 flex justify-center lg:block px-6 lg:px-0 my-10 lg:my-0 space-x-8 lg:space-x-0"
+          >
+
+          </div> -->
+        {:else}
+          {@html parseMarkdown(Content)}
+        {/if}
       </div>
     </Container>
   {/each}
