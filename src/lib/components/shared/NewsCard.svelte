@@ -35,11 +35,9 @@
       >
         {attributes.Header}
       </a>
-      <p class="mb-8 mt-4 text-gray-600">
+      <p class="mb-8 mt-4 text-gray-600 truncate-lines">
         {#if browser}
-          {@html parseMarkdown(
-            attributes.RepeatableRichText[0].Content.slice(0, 250)
-          )}
+          {@html parseMarkdown(attributes.RepeatableRichText[0].Content)}
         {/if}
       </p>
     </div>
@@ -55,3 +53,13 @@
     </div>
   </a>
 {/if}
+
+<style>
+  .truncate-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3; /* Default to 3 lines */
+  }
+</style>
