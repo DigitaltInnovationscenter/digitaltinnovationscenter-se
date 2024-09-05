@@ -227,7 +227,7 @@
     <Container
       backgroundColor={BackgroundColor}
       foreGroundColor={ForegroundColor}
-      paddingBottom="pb-2"
+      paddingBottom="pb-2 lg:pb-48"
     >
       <div
         class="{Width === 'full'
@@ -239,11 +239,9 @@
             {@html parseMarkdown(Content)}
           </div>
 
-          <!-- <div
+          <div
             class="lg:grow lg:space-y-12 order-1 lg:order-2 flex justify-center lg:block px-6 lg:px-0 my-10 lg:my-0 space-x-8 lg:space-x-0"
-          >
-
-          </div> -->
+          ></div>
         {:else}
           {@html parseMarkdown(Content)}
         {/if}
