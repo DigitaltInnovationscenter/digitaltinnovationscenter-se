@@ -84,7 +84,9 @@
               >
                 {project.attributes.MainHeader}
               </h4>
-              <p class="text-gray-600 text-left text-md lg:text-lg lg:pr-12">
+              <p
+                class="text-gray-600 text-left text-md lg:text-lg lg:pr-12 truncate-lines"
+              >
                 {project.attributes.RepeatableRichText[0].Content}
               </p>
 
@@ -151,5 +153,13 @@
 
   :global(.swiper-slide-card:hover .figure-block-button) {
     visibility: visible;
+  }
+
+  .truncate-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3; /* Default to 3 lines */
   }
 </style>
