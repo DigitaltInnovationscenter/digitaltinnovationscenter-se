@@ -30,6 +30,18 @@
   <div class="pt-4">
     <h3 class="font-bold text-lg text-gray-700">{member.Name}</h3>
     <span class="mb-2 block text-gray-500">{member.Role}</span>
-    <p class="text-base text-gray-700 grayscale-0">{member.Description}</p>
+    <p class="text-base text-gray-700 grayscale-0">
+      {member.Description}
+    </p>
   </div>
 </div>
+
+<style>
+  .truncate-lines {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3; /* Default to 3 lines */
+  }
+</style>
