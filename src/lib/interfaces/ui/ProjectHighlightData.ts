@@ -30,6 +30,7 @@ interface Attributes {
   MainHeader: string;
   Progress: string;
   Banner: Banner;
+  slug?: string;
   CTA?: CTA[];
   RepeatableRichText?: RepeatableRichText[];
 }

@@ -26,4 +26,5 @@ interface Attributes {
   RepeatableRichText: RepeatableRichText[];
   Author?: string;
   TimeToRead: number;
+  slug?: string;
 }

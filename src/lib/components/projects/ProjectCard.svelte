@@ -21,7 +21,7 @@
     ({ id, attributes } = projectCardData);
     if (attributes) {
       imageUrl = PUBLIC_CMS_URL + attributes.Banner.data[0].attributes.url;
-      postUrl = `/projects/${id}`;
+      postUrl = `/projects/${attributes.slug ?? id}`;
       if (attributes.CTA && attributes.CTA[0]) {
         ctaUrl = attributes.CTA[0].url;
         ctaText = attributes.CTA[0].text;
@@ -58,7 +58,7 @@
           >
             {#if browser}
               {@html parseMarkdown(
-                attributes.RepeatableRichText[0].Content.slice(0, 250)
+                attributes.RepeatableRichText[0].Content.slice(0, 250),
               )}
             {/if}
           </p>

@@ -71,7 +71,7 @@
   >
     {#each swiperData.projects.data as project}
       <swiper-slide class="cursor-pointer swiper-slide-card bg-white">
-        <a href={`projects/${project.id}`}>
+        <a href={`projects/${project.attributes.slug ?? project.id}`}>
           <div
             class="w-full h-full lg:aspect-[3.1/1] grid grid-cols-1 lg:grid-cols-2 lg:gap-4 overflow-hidden"
           >
@@ -93,7 +93,7 @@
               <ButtonIcon
                 hover={false}
                 class="!p-0 w-full overflow-hidden text-wrap visible lg:invisible text-md"
-                href={`projects/${project.id}`}
+                href={`projects/${project.attributes.slug ?? project.id}`}
               >
                 Läs mer
               </ButtonIcon>
@@ -112,7 +112,7 @@
               >
                 <ButtonIcon
                   class="figure-block-button min-w-[260px] max-h-[48px] overflow-hidden text-wrap opacity-0 lg:opacity-100"
-                  href={`projects/${project.id}`}
+                  href={`projects/${project.attributes.slug ?? project.id}`}
                 >
                   Läs mer om projektet
                 </ButtonIcon>

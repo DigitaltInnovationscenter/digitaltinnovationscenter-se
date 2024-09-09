@@ -23,6 +23,7 @@ interface Attributes {
   MainHeader: string;
   Banner: Banner;
   RepeatableRichText: RepeatableRichText[];
+  slug?: string;
 }
 
 interface Project {

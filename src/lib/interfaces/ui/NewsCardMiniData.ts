@@ -4,6 +4,7 @@ export interface NewsCardMiniAttributes {
   Date: string;
   Author?: string;
   TimeToRead: number;
+  slug?: string;
 }
 
 export interface NewsCardMiniData {
