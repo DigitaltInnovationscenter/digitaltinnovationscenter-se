@@ -36,6 +36,11 @@
   ];
 </script>
 
+<svelte:head>
+  <title>Digitalt Innovationscenter - {attributes.Header}</title>
+  <meta name="description" content="About this app" />
+</svelte:head>
+
 {#if browser}
   <Container>
     <div class="space-y-12 px-6">

@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-  <title>About</title>
+  <title>Digitalt Innovationscenter - Om oss</title>
   <meta name="description" content="About this app" />
 </svelte:head>
 
