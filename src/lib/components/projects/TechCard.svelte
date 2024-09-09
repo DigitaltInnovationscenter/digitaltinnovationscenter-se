@@ -18,11 +18,9 @@
       />
     </div>
     <div class="space-y-2">
-      <a
-        href="/"
-        class="hover:underline text-2xl font-semibold mb-2 text-slate-800"
-        >{techCardData.Header}</a
-      >
+      <h4 class="text-2xl font-semibold mb-2 text-slate-800">
+        {techCardData.Header}
+      </h4>
       <p class="text-gray-500">
         {techCardData.Content}
       </p>
