@@ -5,7 +5,7 @@
 </script>
 
 <div
-  class="border border-gray-200 flex flex-col rounded-2xl overflow-hidden min-w-[402px]"
+  class="border border-gray-200 flex flex-col rounded-2xl overflow-hidden min-w-[402px] bg-white/60"
 >
   <div class="grow text-center p-8 space-y-8">
     <div class="w-full flex items-center justify-center relative">

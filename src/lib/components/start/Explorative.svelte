@@ -4,6 +4,7 @@
   import Container from "../shared/Container.svelte";
   import { register } from "swiper/element/bundle";
   import type { ExploreData } from "$lib/interfaces/ui/ExplorativeData";
+  import TechCard from "../projects/TechCard.svelte";
 
   export let exploreData: ExploreData;
 
@@ -19,7 +20,7 @@
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
       {#each exploreData.TechCard as card}
-        <ExploreCard exploreCard={card} />
+        <TechCard techCardData={card} />
       {/each}
     </div>
     <div class="w-full text-center text-secondary-purple-100">
