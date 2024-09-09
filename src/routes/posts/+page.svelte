@@ -6,6 +6,14 @@
   export let data;
 </script>
 
+<svelte:head>
+  <title>Digitalt Innovationscenter - Aktuellt</title>
+  <meta
+    name="description"
+    content="Nyhetssida för Digitalt Innovationscenter"
+  />
+</svelte:head>
+
 {#if data.pages}
   {#each data.pages as page}
     {#if page.__component == "block.text-hero"}

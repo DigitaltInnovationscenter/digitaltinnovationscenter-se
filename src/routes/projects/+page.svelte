@@ -8,6 +8,14 @@
   export let data: PageData;
 </script>
 
+<svelte:head>
+  <title>Digitalt Innovationscenter - Projekt</title>
+  <meta
+    name="description"
+    content="Projektsida för Digitalt Innovationscenter"
+  />
+</svelte:head>
+
 {#each data.pages as page}
   {#if page.__component == "block.project-hero"}
     <Hero heroData={page} />

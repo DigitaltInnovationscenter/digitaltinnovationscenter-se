@@ -8,8 +8,8 @@
 </script>
 
 <svelte:head>
-  <title>About</title>
-  <meta name="description" content="About this app" />
+  <title>Digitalt Innovationscenter - Om oss</title>
+  <meta name="description" content="Digitalt Innovationscenters om oss-sida" />
 </svelte:head>
 
 <Hero heroData={data.hero} />

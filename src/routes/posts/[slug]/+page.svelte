@@ -36,6 +36,14 @@
   ];
 </script>
 
+<svelte:head>
+  <title>Digitalt Innovationscenter - {attributes.Header}</title>
+  <meta
+    name="description"
+    content={attributes.RepeatableRichText[0].Content.slice(0, 155)}
+  />
+</svelte:head>
+
 {#if browser}
   <Container>
     <div class="space-y-12 px-6">

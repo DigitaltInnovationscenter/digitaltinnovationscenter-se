@@ -4,10 +4,16 @@
   import Hero from "$lib/components/start/Hero.svelte";
   import ProjectSwiper from "$lib/components/start/ProjectSwiper.svelte";
   import NewsOverview from "$lib/components/shared/NewsOverview.svelte";
+
   export let data: any;
 
   setContext("cms_url", data.cms_url);
 </script>
+
+<svelte:head>
+  <title>Digitalt Innovationscenter - Start</title>
+  <meta name="description" content="Startsida för Digitalt Innovationscenter" />
+</svelte:head>
 
 <div class="flex flex-col">
   {#each data.pages as page}
