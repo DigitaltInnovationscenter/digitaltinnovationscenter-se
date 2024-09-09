@@ -10,7 +10,10 @@
 
 <svelte:head>
   <title>Digitalt Innovationscenter - Projekt</title>
-  <meta name="description" content="About this app" />
+  <meta
+    name="description"
+    content="Projektsida för Digitalt Innovationscenter"
+  />
 </svelte:head>
 
 {#each data.pages as page}

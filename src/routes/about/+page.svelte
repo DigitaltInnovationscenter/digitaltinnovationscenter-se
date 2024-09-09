@@ -9,7 +9,7 @@
 
 <svelte:head>
   <title>Digitalt Innovationscenter - Om oss</title>
-  <meta name="description" content="About this app" />
+  <meta name="description" content="Digitalt Innovationscenters om oss-sida" />
 </svelte:head>
 
 <Hero heroData={data.hero} />

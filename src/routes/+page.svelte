@@ -12,6 +12,7 @@
 
 <svelte:head>
   <title>Digitalt Innovationscenter - Start</title>
+  <meta name="description" content="Startsida för Digitalt Innovationscenter" />
 </svelte:head>
 
 <div class="flex flex-col">

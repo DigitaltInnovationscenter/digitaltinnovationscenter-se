@@ -29,18 +29,22 @@
   const socialMediaLinks = [
     {
       name: "linkedin",
+      href: "https://www.linkedin.com/company/digitalt-innovationscenter/",
       img: linkedin,
     },
     {
       name: "x",
+      href: "https://twitter.com/digitaltinnovc",
       img: x,
     },
     {
       name: "youtube",
+      href: "https://www.youtube.com/@digitaltinnovationscenter2060",
       img: youtube,
     },
     {
       name: "facebook",
+      href: "https://www.facebook.com/DigitaltInnovationscenter",
       img: facebook,
     },
   ];
@@ -96,7 +100,8 @@
       <h1 class=" font-bold text-primary-dark-200]">Följ oss</h1>
       <ul class="flex flex-row gap-2">
         {#each socialMediaLinks as link}
-          <li><img src={link.img} alt={link.name} /></li>
+          <a href={link.href}><li><img src={link.img} alt={link.name} /></li></a
+          >
         {/each}
       </ul>
       <p class="font-thin text-primary-dark-400]">2024 Innovationscenter</p>

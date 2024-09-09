@@ -8,7 +8,10 @@
 
 <svelte:head>
   <title>Digitalt Innovationscenter - Aktuellt</title>
-  <meta name="description" content="About this app" />
+  <meta
+    name="description"
+    content="Nyhetssida för Digitalt Innovationscenter"
+  />
 </svelte:head>
 
 {#if data.pages}
