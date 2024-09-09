@@ -26,7 +26,7 @@ export const getPost = async (id: number) => {
       `${CMS_URL}/api/posts/${id}?populate=deep`,
       {
         method: "GET",
-      }
+      },
     );
 
     let page;
@@ -42,15 +42,58 @@ export const getPost = async (id: number) => {
   }
 };
 
-export const getStartPage = async (id: number) => {
-  const res = await fetch(`${CMS_URL}/api/landing-pages/${id}?populate=deep`);
+export const getPostSlug = async (slug: string) => {
+  try {
+    const response: Response = await fetch(
+      `${CMS_URL}/api/posts?filters[slug][$eq]=${slug}&populate=deep`,
+      {
+        method: "GET",
+      },
+    );
 
-  if (!res.ok) {
-    return null;
+    let page;
+
+    if (response.ok) {
+      const result = await response.json();
+
+      if (result.data.length === 0) {
+        return null;
+      }
+
+      page = { ...result.data[0] };
+    }
+
+    return { post: page };
+  } catch (error) {
+    console.error(error);
   }
+};
 
-  const data = await res.json();
-  return data;
+export const getProjectSlug = async (slug: string) => {
+  try {
+    const response: Response = await fetch(
+      `${CMS_URL}/api/projects?filters[slug][$eq]=${slug}&populate=deep`,
+      {
+        method: "GET",
+      },
+    );
+
+    let page;
+
+    if (response.ok) {
+      const result = await response.json();
+
+      if (result.data.length === 0) {
+        return null;
+      }
+
+      page = { ...result.data[0] };
+    }
+
+    return { project: page };
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 export const getProject = async (id: number) => {
@@ -59,7 +102,7 @@ export const getProject = async (id: number) => {
       `${CMS_URL}/api/projects/${id}?populate=deep`,
       {
         method: "GET",
-      }
+      },
     );
 
     let page;

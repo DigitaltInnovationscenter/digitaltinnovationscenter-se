@@ -2,6 +2,7 @@ export interface ProjectCardDataAttributes {
   Banner: Banner;
   MainHeader: string;
   RepeatableRichText?: RepeatableRichText[];
+  slug?: string;
   CTA?: CTA[];
 }
 

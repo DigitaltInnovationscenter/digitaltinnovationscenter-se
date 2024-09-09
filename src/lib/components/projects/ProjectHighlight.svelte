@@ -59,7 +59,7 @@
             >{project.SubHeader}</span
           >
           <a
-            href={`/projects/${projectId}/`}
+            href={`/projects/${project.slug ?? projectId}/`}
             class="font-bold text-4xl lg:text-5xl text-slate-800 leading-snug mb-8 block hover:underline transition-all hyphens-auto"
             lang="sv"
           >

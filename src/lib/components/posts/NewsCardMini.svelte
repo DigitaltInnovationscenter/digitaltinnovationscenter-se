@@ -18,7 +18,7 @@
     ({ id, attributes } = newsCardMiniData);
     author = attributes.Author || "Innovationscenter";
     imageUrl = PUBLIC_CMS_URL + attributes.Banner.data[0].attributes.url;
-    postUrl = `/posts/${id}`;
+    postUrl = `/posts/${attributes.slug ?? id}`;
   }
 </script>
 
