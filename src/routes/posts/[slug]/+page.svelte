@@ -38,7 +38,10 @@
 
 <svelte:head>
   <title>Digitalt Innovationscenter - {attributes.Header}</title>
-  <meta name="description" content="About this app" />
+  <meta
+    name="description"
+    content={attributes.RepeatableRichText[0].Content.slice(0, 155)}
+  />
 </svelte:head>
 
 {#if browser}
