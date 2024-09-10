@@ -24,8 +24,6 @@ export function parseMarkdown(messages: string) {
     const match = str.match(regex);
 
     if (match && match[1].includes(".mp4")) {
-      console.log(match[1]);
-
       return DOMPurify.sanitize(
         `<video controls loop src='${match[1]}' className="w-full cursor-pointer rounded-lg opacity-50 transition hover:opacity-100"></video>`
       );
