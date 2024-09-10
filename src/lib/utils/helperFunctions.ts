@@ -19,6 +19,18 @@ export function formatDate(dateString: string) {
 
 export function parseMarkdown(messages: string) {
   try {
+    const str = JSON.stringify(messages);
+    const regex = /\(([^)]+)\)/;
+    const match = str.match(regex);
+
+    if (match && match[1].includes(".mp4")) {
+      console.log(match[1]);
+
+      return DOMPurify.sanitize(
+        `<video controls loop src='${match[1]}' className="w-full cursor-pointer rounded-lg opacity-50 transition hover:opacity-100"></video>`
+      );
+    }
+
     const md = new MarkdownIt({
       breaks: true,
       linkify: true,
