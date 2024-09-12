@@ -58,22 +58,12 @@
           >
             {#if browser}
               {@html parseMarkdown(
-                attributes.RepeatableRichText[0].Content.slice(0, 250),
+                attributes.RepeatableRichText[0].Content.slice(0, 250)
               )}
             {/if}
           </p>
         {/if}
       </div>
-      {#if attributes.CTA && attributes.CTA[0]}
-        <div class="md:py-8">
-          <a
-            href={ctaUrl}
-            class="rounded-full bg-secondary-purple-100 text-white md:py-3 md:px-6 transition hover:opacity-75"
-          >
-            {ctaText}
-          </a>
-        </div>
-      {/if}
     </div></a
   >
 {:else}
