@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "baseBranches": ["main"],
+  "addLabels": ["Prototypes", "Bot"],
+
+  // Grouping all dependencies together
+  "packageRules": [
+    {
+      "groupName": "all dependencies",   // Group all dependency updates
+      "groupSlug": "all",
+      "matchPackageNames": ["*"],        // Match all packages
+      "autoApprove": true,
+      "automerge": false
+    }
+  ],
+
+  // Lock file maintenance as requested
+  "lockFileMaintenance": {
+    "enabled": false
+  },
+
+  // Separating major and minor updates
+  "separateMajorMinor": true
+
+}
