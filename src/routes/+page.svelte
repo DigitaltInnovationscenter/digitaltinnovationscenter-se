@@ -1,9 +1,9 @@
 <script lang="ts">
   import { setContext } from "svelte";
-  import Explorative from "$lib/components/start/Explorative.svelte";
   import Hero from "$lib/components/start/Hero.svelte";
   import ProjectSwiper from "$lib/components/start/ProjectSwiper.svelte";
   import NewsOverview from "$lib/components/shared/NewsOverview.svelte";
+  import OurTech from "$lib/components/projects/OurTech.svelte";
 
   export let data: any;
 
@@ -22,7 +22,7 @@
     {:else if page.__component == "block.section-project"}
       <ProjectSwiper swiperData={page} />
     {:else if page.__component == "block.tech-group"}
-      <Explorative exploreData={page} />
+      <OurTech techCardData={page.TechCard} />
     {:else if page.__component == "block.section-post"}
       <NewsOverview
         header={page.Header}
