@@ -110,7 +110,7 @@
         {#if showSvg}
           <img
             transition:fade={{ delay: i * 50, duration: 200 }}
-            src="{PUBLIC_CMS_URL}{figureContent.svg.data.attributes.url}"
+            src="{PUBLIC_CMS_URL}{figureContent.svg.url}"
             class="h-full"
             alt="logotype"
           />
@@ -127,8 +127,7 @@
             }}
           >
             <img
-              src="{PUBLIC_CMS_URL}{figureContent.smallLogo.data.attributes
-                .url}"
+              src="{PUBLIC_CMS_URL}{figureContent.smallLogo.url}"
               class="w-4 h-4 xl:w-6 xl:h-6"
               alt="mini-logo"
             />
@@ -171,7 +170,7 @@
           }}
         >
           <img
-            src="{PUBLIC_CMS_URL}{figureContent.smallLogo.data.attributes.url}"
+            src="{PUBLIC_CMS_URL}{figureContent.smallLogo.url}"
             class="w-5 h-5"
             alt="mini-logo"
           />

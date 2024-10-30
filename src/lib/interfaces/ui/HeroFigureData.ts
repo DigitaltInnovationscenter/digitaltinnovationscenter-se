@@ -3,12 +3,8 @@ export interface HeroFigureData {
   content: FigureContent[];
 }
 
-interface ImageAttributes {
-  url: string;
-}
-
 interface ImageData {
-  attributes: ImageAttributes;
+  url: string;
 }
 
 interface FigureContent {
@@ -16,6 +12,6 @@ interface FigureContent {
   TextBlock: string;
   id: number;
   position: "right" | "bottom" | "top";
-  smallLogo: { data: ImageData };
-  svg: { data: ImageData };
+  smallLogo: ImageData;
+  svg: ImageData;
 }

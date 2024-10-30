@@ -1,6 +1,12 @@
 export interface ProjectHighlightData {
-  id: string;
-  attributes: Attributes;
+  documentId: string;
+  SubHeader: string;
+  MainHeader: string;
+  Progress: string;
+  Banner: Banner[];
+  slug?: string;
+  CTA?: CTA[];
+  RepeatableRichText?: RepeatableRichText[];
 }
 
 export interface CTA {
@@ -9,28 +15,10 @@ export interface CTA {
   external?: boolean;
 }
 
-interface ImageAttributes {
-  url: string;
-}
-
-interface ImageData {
-  attributes: ImageAttributes;
-}
-
 interface Banner {
-  data: ImageData[];
+  url: string;
 }
 
 interface RepeatableRichText {
   Content: string;
-}
-
-interface Attributes {
-  SubHeader: string;
-  MainHeader: string;
-  Progress: string;
-  Banner: Banner;
-  slug?: string;
-  CTA?: CTA[];
-  RepeatableRichText?: RepeatableRichText[];
 }

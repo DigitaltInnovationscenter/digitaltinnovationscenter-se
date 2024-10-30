@@ -6,7 +6,7 @@
     Name: "",
     Role: "",
     Description: "",
-    MemberImage: { data: { attributes: { url: "" } } },
+    MemberImage: { url: "" },
   };
 </script>
 
@@ -17,9 +17,9 @@
     style="aspect-ratio: 1.2/1;"
     class="w-full bg-gray-100 border border-gray-300 rounded-xl relative overflow-hidden transition-all"
   >
-    {#if member.MemberImage.data}
+    {#if member.MemberImage}
       <img
-        src={PUBLIC_CMS_URL + member.MemberImage.data?.attributes.url}
+        src={PUBLIC_CMS_URL + member.MemberImage?.url}
         alt="Bild som representerar rubriken medlem"
         class="w-full h-full object-cover absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
       />
@@ -42,6 +42,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    line-clamp: 3;
     -webkit-line-clamp: 3; /* Default to 3 lines */
   }
 </style>

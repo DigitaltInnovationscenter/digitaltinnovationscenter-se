@@ -20,9 +20,9 @@
   {#if page.__component == "block.project-hero"}
     <Hero heroData={page} />
   {:else if page.__component == "block.section-project" && page.Header === "focused-project"}
-    <ProjectHighlight projectData={page.projects.data} />
+    <ProjectHighlight projectData={page.projects} />
   {:else if page.__component == "block.section-project" && page.Header === "all-projects"}
-    <ProjectsOverview projectData={page.projects.data} />
+    <ProjectsOverview projectData={page.projects} />
   {:else if page.__component == "block.tech-group"}
     <OurTech techCardData={page.TechCard} />
   {/if}

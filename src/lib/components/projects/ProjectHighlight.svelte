@@ -8,14 +8,14 @@
 
   export let projectData: ProjectHighlightData[] | ProjectHighlightData;
   let projectId: string;
-  let project: ProjectHighlightData["attributes"];
+  let project: ProjectHighlightData;
 
   if (Array.isArray(projectData)) {
-    projectId = projectData[0].id;
-    project = projectData[0].attributes;
+    projectId = projectData[0].documentId;
+    project = projectData[0];
   } else {
-    projectId = projectData.id;
-    project = projectData.attributes;
+    projectId = projectData.documentId;
+    project = projectData;
   }
 
   let progress: Writable<number> = writable(0);
@@ -79,7 +79,7 @@
         </div>
         <div>
           <img
-            src={PUBLIC_CMS_URL + project.Banner.data[0].attributes.url}
+            src={PUBLIC_CMS_URL + project.Banner[0].url}
             class="w-full max-w-[1000px] rounded-xl"
             alt="Bild som representerar {project.MainHeader}"
           />

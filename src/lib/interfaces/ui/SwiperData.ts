@@ -1,36 +1,21 @@
 export interface SwiperProjectsData {
-  projects: Projects;
+  projects: Project[];
   Header: string;
 }
 
-interface ImageAttributes {
-  url: string;
-}
-
-interface ImageData {
-  attributes: ImageAttributes;
-}
-
 interface Banner {
-  data: ImageData[];
+  url: string;
 }
 
 interface RepeatableRichText {
   Content: string;
 }
 
-interface Attributes {
+interface Project {
+  documentId: string;
   MainHeader: string;
-  Banner: Banner;
+  Banner: Banner[];
   RepeatableRichText: RepeatableRichText[];
   slug?: string;
-}
-
-interface Project {
-  id: string;
-  attributes: Attributes;
-}
-
-interface Projects {
-  data: Project[];
+  publishedAt?: string;
 }

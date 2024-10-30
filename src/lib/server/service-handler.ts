@@ -2,7 +2,7 @@ import { CMS_URL } from "$env/static/private";
 
 export const getPosts = async () => {
   try {
-    const response = await fetch(`${CMS_URL}/api/posts?populate=deep`, {
+    const response = await fetch(`${CMS_URL}/api/posts?pLevel`, {
       method: "GET",
     });
 
@@ -20,10 +20,10 @@ export const getPosts = async () => {
   }
 };
 
-export const getPost = async (id: number) => {
+export const getPost = async (documentId: string) => {
   try {
     const response: Response = await fetch(
-      `${CMS_URL}/api/posts/${id}?populate=deep`,
+      `${CMS_URL}/api/posts/${documentId}?pLevel`,
       {
         method: "GET",
       },
@@ -45,7 +45,7 @@ export const getPost = async (id: number) => {
 export const getPostSlug = async (slug: string) => {
   try {
     const response: Response = await fetch(
-      `${CMS_URL}/api/posts?filters[slug][$eq]=${slug}&populate=deep`,
+      `${CMS_URL}/api/posts?filters[slug][$eq]=${slug}&pLevel`,
       {
         method: "GET",
       },
@@ -72,7 +72,7 @@ export const getPostSlug = async (slug: string) => {
 export const getProjectSlug = async (slug: string) => {
   try {
     const response: Response = await fetch(
-      `${CMS_URL}/api/projects?filters[slug][$eq]=${slug}&populate=deep`,
+      `${CMS_URL}/api/projects?filters[slug][$eq]=${slug}&pLevel`,
       {
         method: "GET",
       },
@@ -96,10 +96,10 @@ export const getProjectSlug = async (slug: string) => {
   }
 };
 
-export const getProject = async (id: number) => {
+export const getProject = async (documentId: string) => {
   try {
     const response: Response = await fetch(
-      `${CMS_URL}/api/projects/${id}?populate=deep`,
+      `${CMS_URL}/api/projects/${documentId}?pLevel`,
       {
         method: "GET",
       },

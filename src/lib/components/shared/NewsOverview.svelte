@@ -39,7 +39,7 @@
       <!-- No Header -->
     {/if}
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8">
-      {#each newsCardData as card}
+      {#each newsCardData.filter((card) => card.publishedAt !== null) as card}
         <NewsCard cardData={card} />
       {/each}
     </div>

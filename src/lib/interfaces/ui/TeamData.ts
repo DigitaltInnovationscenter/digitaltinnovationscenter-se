@@ -11,9 +11,5 @@ export interface TeamData {
 }
 
 interface MemberImage {
-  data: {
-    attributes: {
-      url: string;
-    };
-  } | null;
+  url: string | null;
 }

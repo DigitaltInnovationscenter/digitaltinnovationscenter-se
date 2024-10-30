@@ -8,6 +8,8 @@
 
   export let swiperData: SwiperProjectsData;
 
+  console.log(swiperData);
+
   register();
 
   let swiperContainer: any;
@@ -19,7 +21,7 @@
       if (swiperContainer) {
         const swiper = swiperContainer.swiper;
         const swiperButtonNextEl = document.querySelector(
-          ".swiper-button-next"
+          ".swiper-button-next",
         );
         if (swiperButtonNextEl) {
           swiperButtonNextEl.addEventListener("click", () => {
@@ -27,7 +29,7 @@
           });
         }
         const swiperButtonPrevEl = document.querySelector(
-          ".swiper-button-prev"
+          ".swiper-button-prev",
         );
         if (swiperButtonPrevEl) {
           swiperButtonPrevEl.addEventListener("click", () => {
@@ -69,9 +71,9 @@
     class="rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all bg-white"
     pagination={screenX < 1024 ? true : false}
   >
-    {#each swiperData.projects.data as project}
+    {#each swiperData.projects.filter((project) => project.publishedAt !== null) as project}
       <swiper-slide class="cursor-pointer swiper-slide-card bg-white">
-        <a href={`projects/${project.attributes.slug ?? project.id}`}>
+        <a href={`projects/${project.slug ?? project.documentId}`}>
           <div
             class="w-full h-full lg:aspect-[3.1/1] grid grid-cols-1 lg:grid-cols-2 lg:gap-4 overflow-hidden"
           >
@@ -82,18 +84,18 @@
               <h4
                 class="text-xl md:text-3xl lg:text-5xl font-bold text-left text-slate-800"
               >
-                {project.attributes.MainHeader}
+                {project.MainHeader}
               </h4>
               <p
                 class="text-gray-600 text-left text-md lg:text-lg lg:pr-12 truncate-lines"
               >
-                {project.attributes.RepeatableRichText[0].Content}
+                {project.RepeatableRichText[0].Content}
               </p>
 
               <ButtonIcon
                 hover={false}
                 class="!p-0 w-full overflow-hidden text-wrap visible lg:invisible text-md"
-                href={`projects/${project.attributes.slug ?? project.id}`}
+                href={`projects/${project.slug ?? project.documentId}`}
               >
                 Läs mer
               </ButtonIcon>
@@ -102,9 +104,8 @@
               class="relative order-1 lg:order-2 aspect-[1.68/1] lg:aspect-auto overflow-hidden"
             >
               <img
-                src={PUBLIC_CMS_URL +
-                  project.attributes.Banner.data[0].attributes.url}
-                alt="Bild som representerar {project.attributes.MainHeader}"
+                src={PUBLIC_CMS_URL + project.Banner[0].url}
+                alt="Bild som representerar {project.MainHeader}"
                 class="absolute lg:right-0 lg:top-0 h-full w-full object-cover"
               />
               <div
@@ -112,7 +113,7 @@
               >
                 <ButtonIcon
                   class="figure-block-button min-w-[260px] max-h-[48px] overflow-hidden text-wrap opacity-0 lg:opacity-100"
-                  href={`projects/${project.attributes.slug ?? project.id}`}
+                  href={`projects/${project.slug ?? project.documentId}`}
                 >
                   Läs mer om projektet
                 </ButtonIcon>
@@ -160,6 +161,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    line-clamp: 3;
     -webkit-line-clamp: 3; /* Default to 3 lines */
   }
 </style>

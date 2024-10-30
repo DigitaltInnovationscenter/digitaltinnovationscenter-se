@@ -3,10 +3,10 @@ import type { ApiAboutData, ApiTeamData } from "$lib/interfaces/index.js";
 
 export const load = async ({ fetch }) => {
   const heroResponse: Response = await fetch(
-    `${PUBLIC_CMS_URL}/api/pages/1?populate=deep`,
+    `${PUBLIC_CMS_URL}/api/pages?filters[slug][$eq]=hero&pLevel`,
     {
       method: "GET",
-    }
+    },
   );
 
   let hero: ApiAboutData = {
@@ -16,15 +16,15 @@ export const load = async ({ fetch }) => {
 
   if (heroResponse.ok) {
     const result = await heroResponse.json();
-    hero.content = [...result.data.attributes.DynamicPage];
-    hero.header = result.data.attributes.Header;
+    hero.content = [...result.data[0].DynamicPage];
+    hero.header = result.data[0].Header;
   }
 
   const teamResponse: Response = await fetch(
-    `${PUBLIC_CMS_URL}/api/pages/3?populate=deep`,
+    `${PUBLIC_CMS_URL}/api/pages?filters[slug][$eq]=team&pLevel`,
     {
       method: "GET",
-    }
+    },
   );
 
   let team: ApiTeamData = {
@@ -34,8 +34,8 @@ export const load = async ({ fetch }) => {
 
   if (teamResponse.ok) {
     const result = await teamResponse.json();
-    team.content = [...result.data.attributes.DynamicPage];
-    team.header = result.data.attributes.Header;
+    team.content = [...result.data[0].DynamicPage];
+    team.header = result.data[0].Header;
   }
 
   return { hero, team };

@@ -13,7 +13,6 @@
   export let data: ProjectData;
 
   $: ({ project } = data);
-  $: ({ attributes } = project);
 
   const socialMediaLinks = [
     {
@@ -73,10 +72,10 @@
 </script>
 
 <svelte:head>
-  <title>Digitalt Innovationscenter - {attributes.MainHeader}</title>
+  <title>Digitalt Innovationscenter - {project.MainHeader}</title>
   <meta
     name="description"
-    content={attributes.RepeatableRichText[0].Content.slice(0, 155)}
+    content={project.RepeatableRichText[0].Content.slice(0, 155)}
   />
 </svelte:head>
 
@@ -87,9 +86,9 @@
         class="h-screen overflow-hidden flex lg:items-center lg:justify-center relative"
       >
         <img
-          src={PUBLIC_CMS_URL + attributes.Banner.data[0].attributes.url}
+          src={PUBLIC_CMS_URL + project.Banner[0].url}
           class="w-full h-full object-cover absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
-          alt="Bild som representerar {attributes.MainHeader}"
+          alt="Bild som representerar {project.MainHeader}"
         />
         <div
           class="w-full h-24 rounded-t-[50px] absolute -bottom-1 bg-white flex items-center"
@@ -105,7 +104,7 @@
               <a href="/projects" class="hover:underline">Projekt</a>
               <div><Icon src={ArrowRight} class="w-4 h-4" /></div>
               <div class="font-medium text-secondary-purple-100 truncate">
-                {attributes.MainHeader}
+                {project.MainHeader}
               </div>
             </div>
 
@@ -127,29 +126,27 @@
           class="w-full max-w-[1366px] px-10 m-auto flex flex-col items-center space-y-10"
         >
           <div class="text-center w-full">
-            {#if attributes.SubHeader}
+            {#if project.SubHeader}
               <span
                 class="font-bold text-secondary-purple-100 text-lg hyphens-auto"
-                lang="sv">{attributes.SubHeader}</span
+                lang="sv">{project.SubHeader}</span
               >
             {/if}
             <h6
               class="font-bold text-4xl lg:text-5xl text-slate-800 leading-snug text-center mb-8 hyphens-auto"
               lang="sv"
             >
-              {attributes.MainHeader}
+              {project.MainHeader}
             </h6>
 
-            {#if attributes.Horisont}
+            {#if project.Horisont}
               <div class="text-center space-y-2">
-                <span class="font-bold text-gray-800"
-                  >{attributes.Progress}</span
-                >
+                <span class="font-bold text-gray-800">{project.Progress}</span>
                 <div
                   class="w-full lg:w-[570px] m-auto h-3 bg-default-gray-100 rounded-full"
                 >
                   <div
-                    style="width: {handleProgress(attributes.Progress)}%;"
+                    style="width: {handleProgress(project.Progress)}%;"
                     class=" bg-secondary-purple-100 h-full rounded-full"
                   ></div>
                 </div>
@@ -164,19 +161,19 @@
           <div
             class="w-full max-w-[680px] space-y-6 order-2 lg:order-1 px-10 lg:px-0"
           >
-            {#if attributes.RepeatableRichText[0]}
-              {@html parseMarkdown(attributes.RepeatableRichText[0].Content)}
+            {#if project.RepeatableRichText[0]}
+              {@html parseMarkdown(project.RepeatableRichText[0].Content)}
             {/if}
 
-            {#if attributes.RepeatableRichText[1]}
-              {@html parseMarkdown(attributes.RepeatableRichText[1].Content)}
+            {#if project.RepeatableRichText[1]}
+              {@html parseMarkdown(project.RepeatableRichText[1].Content)}
             {/if}
           </div>
           <div
             class="lg:grow lg:space-y-12 order-1 lg:order-2 flex justify-center lg:block px-6 lg:px-0 my-10 lg:my-0 space-x-8 lg:space-x-0"
           >
-            {#if attributes.CTACard.length > 0}
-              {#each attributes.CTACard as CTACard}
+            {#if project.CTACard.length > 0}
+              {#each project.CTACard as CTACard}
                 <div
                   class="w-[370px] h-[264px] rounded-xl border border-gray-300 flex flex-col items-center justify-center relative p-4"
                 >
@@ -203,20 +200,20 @@
                 </div>
               {/each}
             {/if}
-            {#if attributes.Horisont}
+            {#if project.Horisont}
               <div
                 class="w-[370px] h-[264px] rounded-xl border border-gray-300 flex flex-col items-center justify-center relative"
               >
                 <div
                   class="rounded-full !aspect-square !w-[56px] !h-[56px] mb-3 flex items-center justify-center text-white text-4xl p-2"
                   style="background-color: {handleHorizonColor(
-                    attributes.Horisont
+                    project.Horisont,
                   )}"
                 >
-                  {attributes.Horisont.split(" ")[1]}
+                  {project.Horisont.split(" ")[1]}
                 </div>
                 <h6 class="font-medium text-xl lg:text-2xl">
-                  {attributes.Horisont}
+                  {project.Horisont}
                 </h6>
                 <a
                   href="/about#horizon"
@@ -231,7 +228,7 @@
     </div>
   </Container>
 
-  {#each attributes.RepeatableRichText.slice(2) as { Content, ForegroundColor, BackgroundColor, Width }}
+  {#each project.RepeatableRichText.slice(2) as { Content, ForegroundColor, BackgroundColor, Width }}
     <Container
       backgroundColor={BackgroundColor}
       foreGroundColor={ForegroundColor}

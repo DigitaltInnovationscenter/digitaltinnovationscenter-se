@@ -14,14 +14,12 @@ interface HeroData extends SharedHeroData {
 interface ProjectData {
   __component: "block.section-project";
   Header: string;
-  projects: {
-    data:
-      | ProjectHighlightData
-      | ProjectHighlightData[]
-      | ProjectCardData
-      | ProjectCardData[]
-      | any;
-  };
+  projects:
+    | ProjectHighlightData
+    | ProjectHighlightData[]
+    | ProjectCardData
+    | ProjectCardData[]
+    | any;
 }
 
 interface TechGroupData extends TechCardData {

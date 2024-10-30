@@ -1,5 +1,6 @@
-export interface NewsCardMiniAttributes {
-  Banner: Banner;
+export interface NewsCardMiniData {
+  documentId: string;
+  Banner: Banner[];
   Header: string;
   Date: string;
   Author?: string;
@@ -7,18 +8,7 @@ export interface NewsCardMiniAttributes {
   slug?: string;
 }
 
-export interface NewsCardMiniData {
-  id: number;
-  attributes: NewsCardMiniAttributes;
-}
-
-interface ImageData {
-  id: number;
-  attributes: {
-    url: string;
-  };
-}
-
 interface Banner {
-  data: ImageData[];
+  id: number;
+  url: string;
 }
