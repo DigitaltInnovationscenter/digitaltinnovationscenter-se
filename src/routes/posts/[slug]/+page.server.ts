@@ -1,22 +1,22 @@
 import { getPost, getPosts, getPostSlug } from "$lib/server/service-handler";
 import { error } from "@sveltejs/kit";
 
-export const load = async ({ params }) => {
+export const load = async ({ params }: any) => {
   try {
     const { slug } = params;
-    const id = parseInt(slug);
-    let postObject: any;
-    if (!id) {
-      postObject = await getPostSlug(slug);
-    } else {
-      postObject = await getPost(id);
+    let postObject: any = null;
+
+    postObject = await getPostSlug(slug);
+
+    if (!postObject) {
+      postObject = await getPost(slug);
     }
 
     const posts: any = await getPosts();
 
     if (!postObject.post) {
       error(404, {
-        message: `Post with id not found: ${id}.`,
+        message: `Post with slug not found: ${slug}.`,
       });
     }
 

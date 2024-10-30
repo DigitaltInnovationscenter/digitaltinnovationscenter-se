@@ -22,9 +22,9 @@
       <NewsOverview
         bgColor="bg-default-gray-50"
         headerType={null}
-        newsCardData={page.posts.data.slice(0, 3)}
+        newsCardData={page.posts.slice(0, 3)}
       />
-      <NewsOverviewMini newsCardMiniData={page.posts.data.slice(3)} />
+      <NewsOverviewMini newsCardMiniData={page.posts.slice(3)} />
     {/if}
   {/each}
 {/if}

@@ -2,7 +2,7 @@
   import { ArrowTopRightOnSquare, Icon, ArrowRight } from "svelte-hero-icons";
   import type { ProjectHighlightData } from "$lib/interfaces";
 
-  export let ctas: ProjectHighlightData["attributes"]["CTA"];
+  export let ctas: ProjectHighlightData["CTA"];
 </script>
 
 {#if ctas && ctas.length > 0}

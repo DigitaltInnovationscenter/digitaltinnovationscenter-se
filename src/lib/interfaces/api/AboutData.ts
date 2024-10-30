@@ -5,8 +5,8 @@ export interface ApiAboutData {
     TextBlock: string;
     id: number;
     position: "right" | "bottom" | "top";
-    smallLogo: { data: { attributes: { url: string } } };
-    svg: { data: { attributes: { url: string } } };
+    smallLogo: { url: string };
+    svg: { url: string };
   }[];
 }
 
@@ -15,7 +15,7 @@ export interface ApiTeamData {
   content: {
     Description: string;
     Name: string;
-    MemberImage: { data: { attributes: { url: string } } | null };
+    MemberImage: { url: string | null };
     Role: string;
   }[];
 }

@@ -7,11 +7,11 @@
   let sortedProjectData: ProjectCardData[];
 
   function sortProjectsByDate(
-    projectData: ProjectCardData[]
+    projectData: ProjectCardData[],
   ): ProjectCardData[] {
     return projectData.sort((a, b) => {
-      const dateA = a.attributes.date;
-      const dateB = b.attributes.date;
+      const dateA = a.date;
+      const dateB = b.date;
 
       if (dateA === null && dateB === null) {
         return 0;

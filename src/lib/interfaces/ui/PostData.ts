@@ -5,32 +5,20 @@ export interface PostData {
   latestPosts: NewsCardData[];
 }
 
-interface ImageAttributes {
-  url: string;
-}
-
-interface ImageData {
-  attributes: ImageAttributes;
-}
-
 interface Banner {
-  data: ImageData[];
+  url: string;
 }
 
 interface RepeatableRichText {
   Content: string;
 }
 
-interface Attributes {
+interface Post {
+  documentId: string;
   Header: string;
   Date: string;
   Author?: string;
   TimeToRead: number;
-  Banner: Banner;
+  Banner: Banner[];
   RepeatableRichText: RepeatableRichText[];
-}
-
-interface Post {
-  id: string;
-  attributes: Attributes;
 }

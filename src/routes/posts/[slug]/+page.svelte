@@ -14,7 +14,6 @@
   export let data: PostData;
 
   $: ({ post, latestPosts } = data);
-  $: ({ attributes } = post);
 
   const socialMediaLinks = [
     {
@@ -37,10 +36,10 @@
 </script>
 
 <svelte:head>
-  <title>Digitalt Innovationscenter - {attributes.Header}</title>
+  <title>Digitalt Innovationscenter - {post.Header}</title>
   <meta
     name="description"
-    content={attributes.RepeatableRichText[0].Content.slice(0, 155)}
+    content={post.RepeatableRichText[0].Content.slice(0, 155)}
   />
 </svelte:head>
 
@@ -54,36 +53,36 @@
           <a href="/posts" class="hover:underline">Aktuellt</a>
           <div><Icon src={ArrowRight} class="w-4 h-4" /></div>
           <div class="font-medium text-secondary-purple-100 truncate">
-            {attributes.Header}
+            {post.Header}
           </div>
         </div>
         <div class="flex items-center justify-center">
           <img
-            src={PUBLIC_CMS_URL + attributes.Banner.data[0].attributes.url}
+            src={PUBLIC_CMS_URL + post.Banner[0].url}
             class="rounded-xl"
-            alt="bild som reperesenterar artikeln {attributes.Header}"
+            alt="bild som reperesenterar artikeln {post.Header}"
           />
         </div>
       </div>
       <div class="max-w-[680px] w-full m-auto space-y-8">
         <div>
-          <h1 class="text-4xl font-bold">{attributes.Header}</h1>
+          <h1 class="text-4xl font-bold">{post.Header}</h1>
         </div>
 
         <div class="flex flex-row items-center space-x-3 text-gray-500 text-sm">
-          <span>{formatDate(attributes.Date)}</span>
+          <span>{formatDate(post.Date)}</span>
           <span class="inline w-1 h-1 rounded-full bg-gray-500"></span>
-          {#if attributes.Author}
-            <a href="/" class="hover:underline">{attributes.Author}</a>
+          {#if post.Author}
+            <a href="/" class="hover:underline">{post.Author}</a>
           {:else}
             <a href="/" class="hover:underline">Innovationscenter</a>
           {/if}
           <span class="inline w-1 h-1 rounded-full bg-gray-500"></span><span
-            >{attributes.TimeToRead} min läsning</span
+            >{post.TimeToRead} min läsning</span
           >
         </div>
         <div>
-          {#each attributes.RepeatableRichText as { Content }}
+          {#each post.RepeatableRichText as { Content }}
             {@html parseMarkdown(Content)}
           {/each}
         </div>

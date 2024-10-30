@@ -26,7 +26,7 @@
     {:else if page.__component == "block.section-post"}
       <NewsOverview
         header={page.Header}
-        newsCardData={page.posts.data}
+        newsCardData={page.posts}
         headerType="simple"
       />
     {/if}

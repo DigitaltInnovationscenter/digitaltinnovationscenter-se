@@ -1,24 +1,18 @@
 <script lang="ts">
   import { formatDate } from "$lib/utils/helperFunctions";
   import { PUBLIC_CMS_URL } from "$env/static/public";
-  import type {
-    NewsCardMiniData,
-    NewsCardMiniAttributes,
-  } from "$lib/interfaces";
+  import type { NewsCardMiniData } from "$lib/interfaces";
 
   export let newsCardMiniData: NewsCardMiniData;
 
-  let id: number;
-  let attributes: NewsCardMiniAttributes;
   let author: string = "";
   let imageUrl: string = "";
   let postUrl: string = "";
 
   $: if (newsCardMiniData) {
-    ({ id, attributes } = newsCardMiniData);
-    author = attributes.Author || "Innovationscenter";
-    imageUrl = PUBLIC_CMS_URL + attributes.Banner.data[0].attributes.url;
-    postUrl = `/posts/${attributes.slug ?? id}`;
+    author = newsCardMiniData.Author || "Innovationscenter";
+    imageUrl = PUBLIC_CMS_URL + newsCardMiniData.Banner[0].url;
+    postUrl = `/posts/${newsCardMiniData.slug ?? newsCardMiniData.documentId}`;
   }
 </script>
 
@@ -31,7 +25,7 @@
   >
     <img
       src={imageUrl}
-      alt="Bild som representerar rubriken {attributes.Header}"
+      alt="Bild som representerar rubriken {newsCardMiniData.Header}"
       class="w-full h-full object-cover absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2"
     />
   </div>
@@ -40,13 +34,13 @@
       <a
         href={postUrl}
         class="hover:underline text-lg font-semibold leading-snug truncate-2-lines"
-        >{attributes.Header}</a
+        >{newsCardMiniData.Header}</a
       >
     </div>
     <div class="flex flex-row items-center space-x-2 text-gray-500 text-xs">
-      <span>{formatDate(attributes.Date)}</span>
+      <span>{formatDate(newsCardMiniData.Date)}</span>
       <span class="inline w-1 h-1 rounded-full bg-gray-500"></span>
-      <span>{attributes.TimeToRead} min läsning</span>
+      <span>{newsCardMiniData.TimeToRead} min läsning</span>
     </div>
   </div>
 </a>
@@ -54,6 +48,7 @@
 <style>
   .truncate-2-lines {
     display: -webkit-box;
+    line-clamp: 2;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;

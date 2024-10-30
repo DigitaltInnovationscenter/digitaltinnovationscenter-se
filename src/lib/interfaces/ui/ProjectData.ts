@@ -2,20 +2,15 @@ export interface ProjectData {
   project: Project;
 }
 
-interface ImageAttributes {
-  url: string;
-}
-
-interface ImageData {
-  attributes: ImageAttributes;
-}
-
 interface Banner {
-  data: ImageData[];
+  url: string;
 }
 
 interface RepeatableRichText {
   Content: string;
+  ForegroundColor: string;
+  BackgroundColor: string;
+  Width: string;
 }
 
 interface CTACard {
@@ -26,19 +21,15 @@ interface CTACard {
   external?: boolean;
 }
 
-interface Attributes {
+interface Project {
+  documentId: string;
   MainHeader: string;
   SubHeader?: string;
   Progress: string;
   Horisont?: string;
   TimeToRead?: number;
   Author?: string;
-  Banner: Banner;
+  Banner: Banner[];
   RepeatableRichText: RepeatableRichText[];
   CTACard: CTACard[];
-}
-
-interface Project {
-  id: string;
-  attributes: Attributes;
 }

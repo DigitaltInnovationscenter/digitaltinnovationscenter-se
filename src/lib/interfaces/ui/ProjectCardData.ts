@@ -1,26 +1,15 @@
-export interface ProjectCardDataAttributes {
-  Banner: Banner;
+export interface ProjectCardData {
+  documentId: string;
+  Banner: Banner[];
   MainHeader: string;
   RepeatableRichText?: RepeatableRichText[];
   slug?: string;
   CTA?: CTA[];
-}
-
-export interface ProjectCardData {
-  id: number;
-  attributes: ProjectCardDataAttributes;
-}
-
-interface ImageAttributes {
-  url: string;
-}
-
-interface ImageData {
-  attributes: ImageAttributes;
+  date: string;
 }
 
 interface Banner {
-  data: ImageData[];
+  url: string;
 }
 
 interface CTA {
