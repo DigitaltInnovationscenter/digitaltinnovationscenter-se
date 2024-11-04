@@ -24,6 +24,10 @@
   {:else if page.__component == "block.section-project" && page.Header === "all-projects"}
     <ProjectsOverview projectData={page.projects} />
   {:else if page.__component == "block.tech-group"}
-    <OurTech techCardData={page.TechCard} />
+    <OurTech
+      techCardData={page.TechCard}
+      bgColor="bg-white"
+      fgColor="bg-default-gray-100"
+    />
   {/if}
 {/each}
