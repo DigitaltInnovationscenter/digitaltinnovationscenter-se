@@ -3,10 +3,13 @@
   import TechCard from "./TechCard.svelte";
   import type { TechCardData } from "$lib/interfaces";
   export let techCardData: TechCardData[];
+
+  export let bgColor = "bg-default-gray-100";
+  export let fgColor = "bg-white";
 </script>
 
-<div class="w-full bg-white">
-  <div class="w-full bg-gray-50 py-10 rounded-t-[50px]">
+<div class="w-full {bgColor}">
+  <div class="w-full {fgColor} py-10 rounded-t-[50px]">
     <div class="max-w-[1362px] w-full m-auto py-48 space-y-20">
       <div
         class="w-full max-w-[1366px] m-auto flex flex-col items-start lg:items-center px-10"

@@ -2,6 +2,7 @@
   import { formatDate } from "$lib/utils/helperFunctions";
   import { PUBLIC_CMS_URL } from "$env/static/public";
   import type { NewsCardMiniData } from "$lib/interfaces";
+  import { goto } from "$app/navigation";
 
   export let newsCardMiniData: NewsCardMiniData;
 
@@ -16,8 +17,12 @@
   }
 </script>
 
-<a
-  href={postUrl}
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div
+  on:click={() => {
+    goto(postUrl);
+  }}
   class="flex flex-row space-x-4 hover:bg-gray-100 rounded-xl cursor-pointer relative top-0 hover:-top-2 transition-all duration-300 delay-100 min-w-[95vw] md:min-w-[0px] p-2 box-content"
 >
   <div
@@ -43,7 +48,7 @@
       <span>{newsCardMiniData.TimeToRead} min läsning</span>
     </div>
   </div>
-</a>
+</div>
 
 <style>
   .truncate-2-lines {

@@ -6,7 +6,7 @@ export const load = async ({
     (input: RequestInfo | URL, init?: RequestInit): Promise<Response>;
     (
       input: string | URL | globalThis.Request,
-      init?: RequestInit,
+      init?: RequestInit
     ): Promise<Response>;
   };
 }) => {
@@ -14,18 +14,21 @@ export const load = async ({
     `${PUBLIC_CMS_URL}/api/pages?filters[slug][$eq]=news&pLevel`,
     {
       method: "GET",
-    },
+    }
   );
 
   let pages;
 
   if (response.ok) {
     const result = await response.json();
-    pages = [...result.data[0].DynamicPage];
+
+    if (result.data && result.data.length) {
+      pages = [...result.data[0].DynamicPage];
+    }
   }
 
   let sectionPost = pages?.find(
-    ({ __component }) => __component === "block.section-post",
+    ({ __component }) => __component === "block.section-post"
   );
 
   /**
@@ -36,7 +39,7 @@ export const load = async ({
       `${PUBLIC_CMS_URL}/api/posts?pLevel`,
       {
         method: "GET",
-      },
+      }
     );
 
     if (latestPostsResponse.ok) {

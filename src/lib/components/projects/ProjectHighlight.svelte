@@ -48,7 +48,7 @@
 </script>
 
 <!-- Parse markdown does not work without checking if client document is loaded properly, since we're accidentally creating a dom before the document is loaded. -->
-<div class="w-full bg-primary-gray-100]">
+<div class="w-full bg-default-gray-50">
   <div class="w-full bg-default-gray-100 py-32 rounded-t-[50px]">
     <div class="max-w-[1362px] w-full m-auto py-18 space-y-14">
       <div

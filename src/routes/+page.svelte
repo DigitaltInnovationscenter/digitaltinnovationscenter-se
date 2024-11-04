@@ -22,12 +22,13 @@
     {:else if page.__component == "block.section-project"}
       <ProjectSwiper swiperData={page} />
     {:else if page.__component == "block.tech-group"}
-      <OurTech techCardData={page.TechCard} />
+      <OurTech techCardData={page.TechCard} fgColor="bg-default-gray-50" />
     {:else if page.__component == "block.section-post"}
       <NewsOverview
         header={page.Header}
         newsCardData={page.posts}
         headerType="simple"
+        bgColor="bg-default-gray-50"
       />
     {/if}
   {/each}

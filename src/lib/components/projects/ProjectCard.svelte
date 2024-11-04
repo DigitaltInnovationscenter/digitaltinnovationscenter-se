@@ -3,6 +3,7 @@
   import { PUBLIC_CMS_URL } from "$env/static/public";
   import { parseMarkdown } from "$lib/utils/helperFunctions";
   import type { ProjectCardData } from "$lib/interfaces";
+  import { goto } from "$app/navigation";
 
   export let projectCardData: ProjectCardData | null = null;
 
@@ -22,9 +23,13 @@
 </script>
 
 {#if projectCardData && projectCardData.documentId}
-  <a
-    href={postUrl}
-    class="bg-white flex flex-col md:rounded-2xl shadow-none md:shadow-md md:hover:shadow-xl transition overflow-hidden md:w-auto min-w-[80vw] md:min-w-[0px] max-h-[88px] md:max-h-full"
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <!-- svelte-ignore a11y-no-static-element-interactions -->
+  <div
+    on:click={() => {
+      goto(postUrl);
+    }}
+    class="bg-white flex flex-col md:rounded-2xl shadow-none md:shadow-md md:hover:shadow-xl transition overflow-hidden md:w-auto min-w-[80vw] md:min-w-[0px] max-h-[88px] md:max-h-full cursor-pointer"
   >
     <div class="grow md:grid md:grid-cols-1 flex flex-row">
       <div
@@ -49,14 +54,14 @@
           >
             {#if browser}
               {@html parseMarkdown(
-                projectCardData.RepeatableRichText[0].Content.slice(0, 250),
+                projectCardData.RepeatableRichText[0].Content.slice(0, 250)
               )}
             {/if}
           </p>
         {/if}
       </div>
-    </div></a
-  >
+    </div>
+  </div>
 {:else}
   <!-- TODO: Loading component ... -->
 {/if}

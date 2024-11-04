@@ -2,6 +2,7 @@
   import { formatDate, parseMarkdown } from "$lib/utils/helperFunctions";
   import { PUBLIC_CMS_URL } from "$env/static/public";
   import { browser } from "$app/environment";
+  import { goto } from "$app/navigation";
 
   import type { NewsCardData } from "$lib/interfaces";
 
@@ -19,8 +20,12 @@
 </script>
 
 {#if cardData}
-  <a
-    href="/posts/{slug ?? documentId}"
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <!-- svelte-ignore a11y-no-static-element-interactions -->
+  <div
+    on:click={() => {
+      goto(`/posts/${slug ?? documentId}`);
+    }}
     class="lg:p-4 lg:hover:bg-gray-100 border border-transparent rounded-2xl flex flex-col cursor-pointer relative top-0 lg:hover:-top-4 transition-all duration-300 delay-100"
   >
     <div class="grow">
@@ -60,7 +65,7 @@
         >{TimeToRead} min läsning</span
       >
     </div>
-  </a>
+  </div>
 {/if}
 
 <style>
