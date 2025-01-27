@@ -94,7 +94,7 @@
 
               <ButtonIcon
                 hover={false}
-                class="!p-0 w-full overflow-hidden text-wrap visible lg:invisible text-md"
+                class="p-0! w-full overflow-hidden text-wrap visible lg:invisible text-md"
                 href={`projects/${project.slug ?? project.documentId}`}
               >
                 Läs mer
@@ -109,7 +109,7 @@
                 class="absolute lg:right-0 lg:top-0 h-full w-full object-cover"
               />
               <div
-                class="absolute flex items-center justify-center right-0 top-0 h-full w-0 backdrop-blur-sm transition-all figure-block-effect opacity-0 lg:opacity-100"
+                class="absolute flex items-center justify-center right-0 top-0 h-full w-0 backdrop-blur-xs transition-all figure-block-effect opacity-0 lg:opacity-100"
               >
                 <ButtonIcon
                   class="figure-block-button min-w-[260px] max-h-[48px] overflow-hidden text-wrap opacity-0 lg:opacity-100"

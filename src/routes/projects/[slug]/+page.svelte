@@ -205,7 +205,7 @@
                 class="w-[370px] h-[264px] rounded-xl border border-gray-300 flex flex-col items-center justify-center relative"
               >
                 <div
-                  class="rounded-full !aspect-square !w-[56px] !h-[56px] mb-3 flex items-center justify-center text-white text-4xl p-2"
+                  class="rounded-full aspect-square! w-[56px]! h-[56px]! mb-3 flex items-center justify-center text-white text-4xl p-2"
                   style="background-color: {handleHorizonColor(
                     project.Horisont,
                   )}"

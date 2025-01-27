@@ -68,7 +68,7 @@
 </script>
 
 {#if !openModal}
-  <header class="bg-white/75 fixed w-full top-0 z-[100]">
+  <header class="bg-white/75 fixed w-full top-0 z-100">
     <div
       class="px-4 lg:px-10 py-6 max-w-[1366px] w-full flex flex-row items-center justify-between m-auto min-h-[70px]"
     >
@@ -106,7 +106,7 @@
   backdropClass="fixed inset-0 z-40 bg-white"
   headerClass="hidden"
   footerClass="border-none"
-  bodyClass="!p-8 md:p-5 space-y-4 flex-1 overflow-y-auto overscroll-contain border-none"
+  bodyClass="p-8! md:p-5 space-y-4 flex-1 overflow-y-auto overscroll-contain border-none"
   class="shadow-none"
 >
   <ul class="flex flex-col items-center justify-center text-center">

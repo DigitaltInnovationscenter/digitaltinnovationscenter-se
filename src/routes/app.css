@@ -1,6 +1,88 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin 'flowbite/plugin';
+
+@theme {
+  --color-primary-50: #fff5f2;
+  --color-primary-100: #fff1ee;
+  --color-primary-200: #ffe4de;
+  --color-primary-300: #ffd5cc;
+  --color-primary-400: #ffbcad;
+  --color-primary-500: #fe795d;
+  --color-primary-600: #ef562f;
+  --color-primary-700: #eb4f27;
+  --color-primary-800: #cc4522;
+  --color-primary-900: #a5371b;
+
+  --color-primary-purple-100: #5500c9;
+  --color-primary-purple-200: #4c00b3;
+  --color-primary-purple-300: #42009c;
+  --color-primary-purple-400: #390086;
+  --color-primary-purple-500: #2f0070;
+  --color-primary-purple-600: #260059;
+  --color-primary-purple-700: #1c0043;
+  --color-primary-purple-800: #13002d;
+  --color-primary-purple-900: #090016;
+
+  --color-secondary-purple-100: #9b4aff;
+
+  --color-alternative-purple-100: #c88aff;
+  --color-alternative-purple-200: #ce97ff;
+  --color-alternative-purple-300: #d4a4ff;
+  --color-alternative-purple-400: #dab1ff;
+  --color-alternative-purple-500: #e0beff;
+  --color-alternative-purple-600: #e7cbff;
+  --color-alternative-purple-700: #edd8ff;
+  --color-alternative-purple-800: #f3e5ff;
+  --color-alternative-purple-900: #f9f2ff;
+
+  --color-primary-dark-100: #111928;
+  --color-primary-dark-200: #1f2a37;
+  --color-primary-dark-300: #374151;
+  --color-primary-dark-400: #4b5563;
+  --color-primary-dark-500: #6b7280;
+  --color-primary-dark-600: #9ca3af;
+  --color-primary-dark-700: #d1d5db;
+  --color-primary-dark-800: #e5e7eb;
+
+  --color-default-gray-50: #f9fafb;
+  --color-default-gray-100: #eeeeee;
+
+  --color-primary-gray-100: #f9fafb;
+  --color-primary-gray-200: #f3f4f6;
+  --color-primary-gray-300: #e5e7eb;
+  --color-primary-gray-400: #dee2e6;
+  --color-primary-gray-500: #ced4da;
+  --color-primary-gray-600: #ced4da;
+  --color-primary-gray-700: #ced4da;
+
+  --color-misc-colors-progress-bg: #df683b;
+
+  --color-horizon-primary-blue: #2f2fea;
+  --color-horizon-secondary-blue: #060693;
+  --color-horizon-primary-green: #7ec13d;
+  --color-horizon-secondary-green: #83c344;
+  --color-horizon-alternative-green: #c6e4aa;
+  --color-horizon-purple: #c88aff;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 @font-face {
     font-family: "Inter";
