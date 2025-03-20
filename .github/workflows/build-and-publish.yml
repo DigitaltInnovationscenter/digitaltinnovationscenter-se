@@ -26,6 +26,8 @@ jobs:
         run: npm install
 
       - name: Build
+        env:
+          PUBLIC_CMS_URL: ${{ vars.PUBLIC_CMS_URL }}
         run: npm run build
 
       - name: Deploy to GitHub Pages
